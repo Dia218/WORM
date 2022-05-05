@@ -1,4 +1,4 @@
-package Component;
+package Block;
 
 //기본 블록
 public class BasicBlock extends BlockType {

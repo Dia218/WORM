@@ -1,4 +1,4 @@
-package Component;
+package Block;
 
 //지렁이가 닿으면 죽는 블록, 지렁이의 길이를 초기화하고 게임 종료
 public class KillBlock extends BlockType {

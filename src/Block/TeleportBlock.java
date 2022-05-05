@@ -1,4 +1,4 @@
-package Component;
+package Block;
 
 //지렁이를 이동시키는 블록, 두 개 생성 고정(짝 블록)
 public class TeleportBlock extends BlockType {
