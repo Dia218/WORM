@@ -28,9 +28,7 @@ public class ScreenFrame extends JFrame {
 		
 		//게임 공간 패널
 		JPanel playPanel = new JPanel();
-		playPanel.setLayout(new GridLayout(20, 20));
-		
-		
+		//playPanel.setLayout(new GridLayout(20, 20));
 		
 		playPanel.add(new ScreenBox());
 		mainScreen.add(playPanel);

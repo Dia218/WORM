@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /bin/
 =======
 # Compiled class file
@@ -25,4 +26,9 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 >>>>>>> d756ac73f4e2614d8a4f0c672bff6751a30a16f5
+<<<<<<< HEAD
+=======
+>>>>>>> efbc0ef5b9a88e56a899b22345cdd2fd0e07599f
+=======
+>>>>>>> 51d5d777255111818abe20cf918f94e5ee91179a
 /.metadata/
