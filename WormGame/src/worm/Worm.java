@@ -1,4 +1,4 @@
-package Worm;
+package worm;
 
 public class Worm {
 	int headX; int headY;
@@ -8,8 +8,8 @@ public class Worm {
 	int Max_Size= 1000;
 	public void wormHead(){
 		//시작좌표
-		this.headX = 
-		this.headY =
+		this.headX = 12;
+		this.headY = 12;
 	}
 	
 	public void headMove() {
@@ -108,7 +108,7 @@ public class Worm {
 		//점수 증가 시켜주기
 		
 				//지렁이 크기가 최대면
-				if(size>=Max_size)return;
+				if(size>=Max_Size)return;
 				if(size>=1){
 					bodyX[size] = bodyX[size-1];
 					bodyY[size] = bodyY[size-1];
