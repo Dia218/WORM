@@ -1,4 +1,4 @@
-package Block;
+package block;
 
 //삭제
 //출구가 되는 블록, 지렁이 길이 그대로 게임 종료

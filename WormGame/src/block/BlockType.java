@@ -1,4 +1,4 @@
-package Block;
+package block;
 
 //블록들의 추상 클래스
 public abstract class BlockType {

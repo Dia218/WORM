@@ -1,4 +1,4 @@
-package Worm;
+package worm;
 
 public class Worm {
 

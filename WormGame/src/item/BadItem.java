@@ -1,4 +1,4 @@
-package Item;
+package item;
 
 public class BadItem {
 
@@ -16,6 +16,6 @@ public class BadItem {
 		worm.speed += speedChange;
 	}
 	public void LengthDec() {		//지령이 길이를 줄임
-		Worm.length -= 1;
+		worm.length -= 1;
 	}
 }

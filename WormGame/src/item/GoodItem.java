@@ -1,4 +1,4 @@
-package Item;
+package item;
 
 public class GoodItem extends ItemType {
 	
@@ -16,9 +16,9 @@ public class GoodItem extends ItemType {
 		worm.speed += speedChange;
 	}
 	public void Life() {			//Áö··ÀÌ ¸ñ¼ûÀ» ´Ã¸²
-		Worm.life += 1;
+		worm.life += 1;
 	}
 	public void LengthInc() {		//Áö··ÀÌ ±æÀÌ¸¦ ´Ã¸²
-		Worm.Length += 1;
+		worm.Length += 1;
 	}
 }

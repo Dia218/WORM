@@ -1,4 +1,4 @@
-package System;
+package system;
 
 //게임을 제어하는 클래스
 public class ControlGame {

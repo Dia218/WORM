@@ -1,5 +1,5 @@
-package Create;
-import Block.BasicBlock;
+package create;
+import block.BasicBlock;
 
 //블록을 생성시키는 클래스
 public class BlockCreate {
