@@ -1,13 +1,2 @@
-=\=\=\=\=\=\=
-<<<<<<<=HEAD
->>>>>>>=51d5d777255111818abe20cf918f94e5ee91179a
 eclipse.preferences.version=1
-<<<<<<< HEAD
-<<<<<<< HEAD
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1651722671496">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1651722671496" name\="jdk-17.0.2" path\="C\:\\Program Files\\Java\\jdk-17.0.2"/>\r\n    </vmType>\r\n</vmSettings>\r\n
-=======
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1651722671496" defaultVMConnector\="">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1651722671496" name\="jdk-17.0.2" path\="C\:\\Program Files\\Java\\jdk-17.0.2"/>\r\n    </vmType>\r\n</vmSettings>\r\n
->>>>>>> c6e3fa3582ff5e0b553069c9d699fc4ca90438f3
-=======
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1652341694229" defaultVMConnector\="">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1652341694229" name\="jre" path\="C\:\\Users\\\uC774\uC0C1\uC740\\Downloads\\eclipse-java-2022-03-R-win32-x86_64\\eclipse\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\\jre"/>\r\n    </vmType>\r\n</vmSettings>\r\n
->>>>>>> 25829e1dfaef7473a4c0a40919ff2dd210eaf95c
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1652871841048">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1652871841048" name\="jdk-17.0.2" path\="C\:\\Program Files\\Java\\jdk-17.0.2"/>\r\n    </vmType>\r\n</vmSettings>\r\n
