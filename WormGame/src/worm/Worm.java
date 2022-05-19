@@ -1,9 +1,7 @@
 package worm;
 
 public class Worm {
-<<<<<<< HEAD
 
-=======
 	int headX; int headY;
 	int[] bodyX;
 	int[] bodyY;
