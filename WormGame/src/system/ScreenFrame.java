@@ -18,14 +18,14 @@ public class ScreenFrame extends JFrame {
 		Container mainScreen = this.getContentPane();
 		mainScreen.setLayout(new FlowLayout());
 		
-		//게임 메뉴 버튼 패널
-		JPanel menuPanel = new JPanel();
-		JButton start = new JButton("게임시작"); 
-		JButton exit = new JButton("게임종료"); 
-		menuPanel.add(start); 
-		menuPanel.add(exit);
-		mainScreen.add(menuPanel);
-		
+//		//게임 메뉴 버튼 패널
+//		JPanel menuPanel = new JPanel();
+//		JButton start = new JButton("게임시작"); 
+//		JButton exit = new JButton("게임종료"); 
+//		menuPanel.add(start); 
+//		menuPanel.add(exit);
+//		mainScreen.add(menuPanel);
+//		
 		//게임 공간 패널
 		JPanel playPanel = new JPanel();
 		//playPanel.setLayout(new GridLayout(20, 20));
