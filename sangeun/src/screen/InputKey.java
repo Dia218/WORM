@@ -25,6 +25,7 @@ public class InputKey extends KeyAdapter {
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
+		tern t = new tern();
 		super.keyPressed(e);
 			// TODO Auto-generated method stub
 			switch (e.getKeyCode()) {

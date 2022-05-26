@@ -68,6 +68,9 @@ public class GameField extends JPanel {
 		System.out.println("해시맵에 요소 set");
 	}
 	
+
+	
+	
 	/*
 	//해시맵에 따라 게임 필드 전체를 그리는 메소드
 	public void drawField() {
