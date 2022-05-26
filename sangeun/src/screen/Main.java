@@ -1,7 +1,7 @@
 package screen;
 
-import element.Block;
-import element.block.*;
+import element.block.TelpoBlock;
+import element.item.GoodItem;
 
 //메인 클래스
 public class Main {
@@ -11,8 +11,8 @@ public class Main {
 		
 		
 		//임시로 생성!!
-		TelpoBlock block1 = new TelpoBlock(10, 10);
-		TelpoBlock block2 = new TelpoBlock(15, 15);		
+		TelpoBlock hhg = new TelpoBlock(1, 2);	
+		GoodItem gi = new GoodItem(3,2);
 	}
 }
 

@@ -12,6 +12,7 @@ public class ElementPanel extends JPanel {
 	
 	//element 객체 저장
 	Element element;
+	final int MaxGraphicSize = 16;
 	
 	
 	/*요소 패널의 생성자*/
@@ -52,17 +53,17 @@ public class ElementPanel extends JPanel {
 	
 		//지렁이 = 원형
 		if(element instanceof Worm) {
-			g.fillOval(0, 0, 15, 15);
+			g.fillOval(0, 0, MaxGraphicSize, MaxGraphicSize);
 		}
 		//블록 = 사각형
 		else if(element instanceof Block) {
-			g.fillRect(0, 0, 15, 15);
+			g.fillRect(0, 0, MaxGraphicSize, MaxGraphicSize);
 		}
-		//아이템 = 삼각형
+		//아이템 = 마름모
 		else if(element instanceof Item) {
-			int x[] = {0, 15, 7};
-			int y[] = {0, 0, 15};
-			g.fillPolygon(x, y, 3);
+			int x[] = {MaxGraphicSize /2, 0, MaxGraphicSize / 2 , MaxGraphicSize};
+			int y[] = {0, MaxGraphicSize / 2, MaxGraphicSize, MaxGraphicSize /2 };
+			g.fillPolygon(x, y, 4);
 		}
 		//아무 것도 해당하지 않으면 그리지 않음
 		else

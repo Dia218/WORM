@@ -5,10 +5,10 @@ import element.Block;
 
 public class TelpoBlock extends Block {
 
-	Color color = super.color.MAGENTA;
 			
 	public TelpoBlock(int blockX, int blockY) {
 		super(blockX, blockY);
+		super.color = Color.MAGENTA;
 		// TODO Auto-generated constructor stub
 		
 		//동작 확인

@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 
 public class Block extends Element {
 
-	protected Color color = super.color;
 	
 	/*블록 클래스 생성자*/
 	public Block(int blockX, int blockY) {
