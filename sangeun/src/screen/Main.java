@@ -12,7 +12,8 @@ public class Main {
 		
 		//임시로 생성!!
 		TelpoBlock block1 = new TelpoBlock(10, 10);
-		TelpoBlock block2 = new TelpoBlock(15, 15);		
+		TelpoBlock block2 = new TelpoBlock(15, 15);	
+		GoodItem block2 = new GoodItem(15, 15);		
 	}
 }
 
