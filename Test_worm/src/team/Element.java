@@ -117,6 +117,11 @@ public class Element extends JPanel implements InputKey.InputMethod, Change{
 						g.setColor(Color.MAGENTA);
 						g.fillRect(j*20, i*20+25, 15, 15);
 					}
+					else if(field[i][j]==6) {
+						g.setColor(Color.ORANGE);
+						g.fillRect(j*20, i*20+25, 15, 15);
+					}
+					
 		}
 					
 		

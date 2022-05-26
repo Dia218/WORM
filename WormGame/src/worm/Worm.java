@@ -119,5 +119,4 @@ public class Worm {
 				move();
 				//먹이 다시생성.
 	}
->>>>>>> 51d5d777255111818abe20cf918f94e5ee91179a
 }
