@@ -4,7 +4,6 @@ import java.awt.Color;
 import element.Block;
 
 public class TelpoBlock extends Block {
-
 			
 	public TelpoBlock(int blockX, int blockY) {
 		super(blockX, blockY);

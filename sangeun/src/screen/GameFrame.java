@@ -18,7 +18,7 @@ public class GameFrame extends JFrame {
 		//this.addKeyListener(new InputKey(element));
 		this.requestFocus();
 		
-		setSize(GameField.gamefield.returnSize(), GameField.gamefield.returnSize());
+		setSize(GameField.gamefield.returnFieldSize(), GameField.gamefield.returnFieldSize());
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		setResizable(false);
