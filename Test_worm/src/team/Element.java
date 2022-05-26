@@ -9,7 +9,7 @@ public class Element extends JPanel implements InputKey.InputMethod, Change{
 	Gaming gaming;
 	int[][] field;
 	int p;
-	public static int maxSize = 24;
+	public static int maxSize = 21;
 	public Element() {
 		super();
 		this.setBackground(Color.black);
