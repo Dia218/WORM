@@ -21,7 +21,7 @@ public class ElementPanel extends JPanel {
 		
 		//요소 패널의 위치와 크기 설정
 		this.setBounds(element.returnX()*GameField.gamefield.elementSize, element.returnY()*GameField.gamefield.elementSize, GameField.gamefield.elementSize, GameField.gamefield.elementSize);
-				
+		
 		//게임 필드에 배치하기
 		GameField.gamefield.add(this);
 		

@@ -14,9 +14,9 @@ public class GameField extends JPanel {
 	/*게임 필드 필드*/
 	final int elementNum = 24; //요소의 갯수
 	final int elementSize = 20; //요소의 크기
-	HashMap<Locate, Element> hashmap = new HashMap<Locate, Element>(); //좌표와 요소를 저장하는 해시맵 
-	Set<Locate> keys = hashmap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
-	Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터 
+	private HashMap<Locate, Element> hashmap = new HashMap<Locate, Element>(); //좌표와 요소를 저장하는 해시맵 
+	private Set<Locate> keys = hashmap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
+	private Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터 
 
 	
 	/*게임 필드 생성자*/
@@ -28,6 +28,9 @@ public class GameField extends JPanel {
 		
 		//해시맵 초기화 호출
 		initElement();
+		
+		//동작 확인
+		System.out.println("gamefield 객체 생성");
 	}
 	
 	
@@ -40,7 +43,7 @@ public class GameField extends JPanel {
 	
 	//해시맵을 초기화하는 메소드
 	private void initElement() {
-		//좌료 : (0~23, 0~23)
+		//좌표 : (0~23, 0~23)
 		for(int x = 0; x < elementNum; x++) {
 			for(int y = 0; y < elementNum; y++) {
 				//해시맵 키: Locate(좌표) 객체 순차적으로 생성 후 삽입 
@@ -50,6 +53,7 @@ public class GameField extends JPanel {
 		}
 	}
 	
+	/*삭제 예정*/
 	//해당 좌표에 element가 들어있는 지 확인하는 메소드
 	public boolean checkLocate(int checkX, int checkY) {
 		//해당 좌표와 일치하는 좌표 값에 들어있는 element가 null이면 true
@@ -57,6 +61,12 @@ public class GameField extends JPanel {
 			return true;
 		else
 			return false;
+	}
+	
+	//해당 좌표에 들어있는 element를 리턴해주는 메소드
+	public Element checkElement(int checkX, int checkY) {
+		//해당 좌표와 일치하는 좌표 키 값에 들어있는 element가 없으면 null 리턴
+		return hashmap.get(new Locate(checkX, checkY));
 	}
 	
 	//생성된 객체를 받아서 해당 좌표 키의 해시맵에 저장하는 메소드
