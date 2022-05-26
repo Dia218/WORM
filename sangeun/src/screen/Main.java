@@ -1,6 +1,7 @@
 package screen;
 
 import element.Block;
+import element.block.*;
 
 //皋牢 努贰胶
 public class Main {
@@ -8,12 +9,10 @@ public class Main {
 	public static void main(String[] args) {
 		GameFrame gameFrame = new GameFrame();	
 		
-
+		
 		//烙矫肺 积己!!
-		Block block1 = new Block(10, 10);
-		Block block2 = new Block(15, 15);
-		CreateElement creat = new CreateElement(block2); 
-		GameField.gamefield.repaint();
+		TelpoBlock block1 = new TelpoBlock(10, 10);
+		TelpoBlock block2 = new TelpoBlock(15, 15);		
 	}
 }
 
@@ -23,6 +22,5 @@ public class Main {
  * gameField 积己
  * createElement 积己
  * element 积己
- * 
  * 
  * */

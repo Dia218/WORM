@@ -4,4 +4,8 @@
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.awt.Graphics"/>
     <fullyQualifiedTypeName name="element.Element"/>
+    <fullyQualifiedTypeName name="element.Block"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="element.block.TelpoBlock"/>
+    <fullyQualifiedTypeName name="screen.ElementPanel"/>
 </qualifiedTypeNameHistroy>

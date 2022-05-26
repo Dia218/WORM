@@ -11,17 +11,19 @@ public class GameField extends JPanel {
 	public static final GameField gamefield = new GameField(); 
 	
 	/*게임 필드 필드*/
-
-	int size;
+	private int elementNum = 24; //요소의 갯수
 	static HashMap<Locate, Element> hashmap = new HashMap<Locate, Element>(); //좌표와 요소를 저장하는 해시맵 
 	static Set<Locate> keys = hashmap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
 	static Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터 
 	
 	
 	/*게임 필드 생성자*/
-	
 	private GameField() {
-		//this.setSize();
+		//배치 관리자 제거
+		this.setLayout(null);
+		
+		//게임 필드의 크기와 위치
+		this.setBounds(20*elementNum, 20*elementNum, 0, 0);
 	}
 	
 	
@@ -29,14 +31,14 @@ public class GameField extends JPanel {
 	
 	//게임 필드 크기를 리턴해주는 메소드
 	public int returnSize() {
-		return this.size;
+		return this.elementNum*20;
 	}
 	
 	//해시맵을 초기화하는 메소드
 	void initElement() {
 		//좌료 : (0~23, 0~23)
-		for(int x = 0; x < 24; x++) {
-			for(int y = 0; y < 24; y++) {
+		for(int x = 0; x < elementNum; x++) {
+			for(int y = 0; y < elementNum; y++) {
 				//해시맵 키: Locate(좌표) 객체 순차적으로 생성 후 삽입 
 				//해시맵 값: null 
 				hashmap.put(new Locate(x, y), null);
@@ -57,25 +59,44 @@ public class GameField extends JPanel {
 	public void setElement(Element element) {		
 		Locate locate = new Locate(element.returnX(), element.returnY());
 		hashmap.replace(locate, element);
-		//저장된 걸 그려주는 메소드 만들어서 호출하기
+		
+		//동작 확인
+		System.out.println("해시맵에 요소 set");
 	}
 	
-	//저장된 좌표에 들어있는 element에 따라 해당 객체 그리는 메소드
+	/*
+	//해시맵에 따라 게임 필드 전체를 그리는 메소드
 	public void drawField() {
+		//좌표 키 값을 순차적으로 방문
 		while(iterator.hasNext()) {
+			//방문한 좌표 키 값
 			Locate indexLocate = iterator.next();
+			//방문한 좌표 키 값에 있는 element 객체
 			Element element = hashmap.get(indexLocate);
-			ElementPanel elementPanel = new ElementPanel(element);
 		}
+		//게임 필드 다시 그리기
+		this.revalidate();
+		this.repaint();
+		
+		//동작 확인
+		System.out.println("게임 필드 그리기");
 	}
-	
+	*/
 }
 
+//좌표 키 클래스
 class Locate {
 	
 	/*좌표 클래스 필드*/
 	private int X; //X좌표, Y좌표
 	private int Y;
+	
+	
+	/*좌표 클래스 생성자*/
+	public Locate(int x, int y) {
+		this.X = x;
+		this.Y = y;
+	}
 	
 	/*좌표 클래스 메소드*/
 	public int returnX() {
@@ -85,11 +106,6 @@ class Locate {
 		return this.Y;
 	}
 	
-	/*좌표 클래스 생성자*/
-	public Locate(int x, int y) {
-		this.X = x;
-		this.Y = y;
-	}
 	
 	/*오버라이딩*/
 	//equals 오버라이딩

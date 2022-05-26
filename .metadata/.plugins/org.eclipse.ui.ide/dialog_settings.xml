@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\이상은\dia_ultra\TEAM\java-team\sangeun"/>
 			<item value="D:\dia\team\java-team\sangeun"/>
 			<item value="C:\Users\이상은\dia_ultra\TEAM\java-team\WormGame"/>
 			<item value="C:\Users\이상은\dia_ultra\TEAM\java-team\Test_worm"/>

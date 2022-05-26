@@ -7,32 +7,14 @@ import javax.swing.JPanel;
 
 public class Block extends Element {
 
-	int blockX;
-	int blockY;
+	protected Color color = super.color;
 	
+	/*블록 클래스 생성자*/
 	public Block(int blockX, int blockY) {
-		this.blockX = blockX;
-		this.blockY = blockY;
-		new BlockComponent(blockX, blockY);
-	}
-	
-}
-
-class BlockComponent extends JPanel {
-
-	int elementX;
-	int elementY;
-	
-	public BlockComponent(int elementX, int elementY) {
-		this.elementX = elementX;
-		this.elementY = elementY;
-	}
-
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		g.setColor(Color.MAGENTA);
-		g.fillRect(elementX*20, elementY*20, 20, 20);
+		super(blockX, blockY);
+		
+		//동작 확인
+		System.out.println("블록 만들기");
 	}
 	
 }

@@ -11,13 +11,14 @@ public class GameFrame extends JFrame {
 	public GameFrame() throws HeadlessException {
 		super();
 		
-		//gamefield.returnSize(Width,Height);
 		this.add(GameField.gamefield);
+		this.revalidate();
+		this.repaint();
 		
 		//this.addKeyListener(new InputKey(element));
 		this.requestFocus();
 		
-		setSize(1000, 1000);
+		setSize(GameField.gamefield.returnSize(), GameField.gamefield.returnSize());
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		setResizable(false);
