@@ -4,11 +4,12 @@ import java.util.Iterator;
 import java.util.Random;
 
 public class Gaming implements ElementFunction{
+	
 	private int maxSize = Element.maxSize;
 	private final static int MAXSIZE = 100;
 	private int[][] field = new int[maxSize+1][maxSize+1];
 	private int headX,headY,itemX,itemY,size,score,speed;
-	
+	private static boolean isReverse = false;
 	//[0][]Àº YÁÂÇ¥[1]Àº XÁÂÇ¥
 	private int[][] bodyXY = new int[2][MAXSIZE];
 	private Direction direction;
@@ -17,6 +18,7 @@ public class Gaming implements ElementFunction{
 	public boolean end=false;
 	
 	int teleportBlock1X, teleportBlock1Y, teleportBlock2X, teleportBlock2Y;
+	int confuseItemX, confuseItemY;
 	private ArrayList<Change> obs ;
 	
 	enum Direction{
@@ -33,12 +35,14 @@ public class Gaming implements ElementFunction{
 		this.direction = Direction.RIGHT;
 		this.obs = new ArrayList<>();
 		this.permitRotation = true;
-		this.speed = 200;
+		this.speed = 150;
 		
 		init();
 		makeEat();
 		init();
 		maketp();
+		init();
+		makeConfuse();
 		init();
 	}
 	
@@ -57,6 +61,7 @@ public class Gaming implements ElementFunction{
 		field[itemX][itemY] = 3;
 		field[teleportBlock1Y][teleportBlock1X] = 4;
 		field[teleportBlock2Y][teleportBlock2X] = 5;
+		field[confuseItemY][confuseItemX] = 6;
 		if(isGameOver())makeGameOver();
 	}
 	
@@ -71,6 +76,7 @@ public class Gaming implements ElementFunction{
 			}else if(field[headX][headY-1]==0) {
 				move();
 			}else if(field[headX][headY-1]==3) {
+				isReverse =false;
 				eat();
 			}
 			else if(field[headX][headY-1]==4) {
@@ -80,6 +86,10 @@ public class Gaming implements ElementFunction{
 			else if(field[headX][headY-1]==5) {
 				headX = teleportBlock1Y;
 				headY = teleportBlock1X+1;
+			}
+			else if(field[headX][headY-1]==6) {
+				isReverse =false;
+				confuseEat();
 			}
 			
 			headY-=1;
@@ -91,6 +101,7 @@ public class Gaming implements ElementFunction{
 			}else if(field[headX][headY+1]==0) {
 				move();
 			}else if(field[headX][headY+1]==3) {
+				isReverse =false;
 				eat();
 			}
 			else if(field[headX][headY+1]==4) {
@@ -101,6 +112,10 @@ public class Gaming implements ElementFunction{
 				headX = teleportBlock1Y;
 				headY = teleportBlock1X-1;
 			}
+			else if(field[headX][headY+1]==6) {
+				isReverse =true;
+				confuseEat();
+			}
 			headY+=1;
 			break;
 		case UP:
@@ -110,6 +125,7 @@ public class Gaming implements ElementFunction{
 			}else if(field[headX-1][headY]==0) {
 				move();
 			}else if(field[headX-1][headY]==3) {
+				isReverse =false;
 				eat();
 			}
 			else if(field[headX-1][headY]==4) {
@@ -119,6 +135,10 @@ public class Gaming implements ElementFunction{
 			else if(field[headX-1][headY]==5) {
 				headX = teleportBlock1Y+1;
 				headY = teleportBlock1X;
+			}
+			else if(field[headX-1][headY]==6) {
+				isReverse =true;
+				confuseEat();
 			}
 			
 			headX-=1;
@@ -131,6 +151,7 @@ public class Gaming implements ElementFunction{
 			}else if(field[headX+1][headY]==0) {
 				move();
 			}else if(field[headX+1][headY]==3) {
+				isReverse =false;
 				eat();
 			}
 			else if(field[headX+1][headY]==4) {
@@ -140,6 +161,10 @@ public class Gaming implements ElementFunction{
 			else if(field[headX+1][headY]==5) {
 				headX = teleportBlock1Y;
 				headY = teleportBlock1X;
+			}
+			else if(field[headX+1][headY]==6) {
+				isReverse =true;
+				confuseEat();
 			}
 			headX+=1;
 			break;
@@ -151,6 +176,7 @@ public class Gaming implements ElementFunction{
 		init();
 		updateElment();
 	}
+	
 	//block
 	private void maketp() {
 		Random rand = new Random();
@@ -175,10 +201,23 @@ public class Gaming implements ElementFunction{
 		while((field[itemX][itemY]!=0));
 		System.out.println("eatxt: "+ itemX + ", " +itemY);
 	}
+	
+	private void makeConfuse() {
+		Random rand = new Random();
+		do {
+			this.confuseItemX = rand.nextInt(Element.maxSize-1)+1;
+			this.confuseItemY = rand.nextInt(Element.maxSize-1)+1;
+		}
+		while((field[confuseItemX][confuseItemY]!=0));
+		System.out.println("ÇÏÇÏ");
+		
+	}
+	
 	//worm
 	//¸ÔÀÌ¸¦ ¸Ô¾úÀ» ¶§
 	private void eat() {
 		plusScore(100);
+		setSpeed(speedchange(10));
 		if(size>=MAXSIZE)return;
 		if(size>=1){
 //			bodyXY[0][size] = bodyXY[0][size-1];
@@ -193,6 +232,28 @@ public class Gaming implements ElementFunction{
 		move();
 		makeEat();
 	}
+	
+	//worm
+		//¸ÔÀÌ¸¦ ¸Ô¾úÀ» ¶§
+		private void confuseEat() {
+			
+			plusScore(100);
+			setSpeed(speedchange(10));
+			if(size>=MAXSIZE)return;
+			if(size>=1){
+//				bodyXY[0][size] = bodyXY[0][size-1];
+//				bodyXY[1][size] = bodyXY[1][size-1];
+			}
+			if(score %500==0) {
+				maketp();
+			}
+			
+			size--;
+			changeSpeed();
+			move();
+			makeConfuse();
+		}
+	
 	//worm
 	//±×³É ¿òÁ÷ÀÏ ¶§
 	private void move() {
@@ -207,17 +268,23 @@ public class Gaming implements ElementFunction{
 		bodyXY[1][0] = headY;
 	}
 	
+	public int speedchange(int i) {
+		speed -= i;
+		return speed;
+	}
+	
 	private void changeSpeed() {
-		if(size==2)setSpeed(100);
-		if(size==4)setSpeed(100);
-		if(size==6)setSpeed(100);
-		if(size==12)setSpeed(50);
-		if(size==16)setSpeed(40);
-		if(size==25)setSpeed(30);
-		if(size==30)setSpeed(40);
-		if(size==40)setSpeed(30);
-		if(size==60)setSpeed(20);
-		if(size==70)setSpeed(10);
+		if(size==2)setSpeed(speedchange(10));
+		if(size==4)setSpeed(speedchange(10));
+		if(size==6)setSpeed(speedchange(10));
+		if(size==12)setSpeed(speedchange(10));
+		if(size==16)setSpeed(speedchange(10));
+		if(size==25)setSpeed(speedchange(10));
+		if(size==30)setSpeed(speedchange(10));
+		if(size==40)setSpeed(speedchange(10));
+		if(size==60)setSpeed(speedchange(10));
+		if(size==70)setSpeed(speedchange(10));
+		if(getSpeed() <= 150) return;
 	}
 	
 	private void makeGameOver() {
@@ -294,7 +361,10 @@ public class Gaming implements ElementFunction{
 	}
 
 	public void setSpeed(int speed) {
-		this.speed = speed;
+		if(getSpeed() < 50)
+			this.speed = 50;
+		else
+			this.speed = speed;
 	}
 
 	public boolean isGameOver() {
@@ -325,6 +395,9 @@ public class Gaming implements ElementFunction{
 		}
 	}
 	
+	public boolean getisReverse() {
+		return isReverse;
+	}
 	
 	
 }
