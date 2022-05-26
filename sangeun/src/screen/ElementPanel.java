@@ -13,7 +13,7 @@ public class ElementPanel extends JPanel {
 	//element 객체 저장
 	Element element;
 	//그리기 크기
-	final int drawSize = 15;
+	final int drawSize = 16;
 	
 	/*요소 패널의 생성자*/
 	public ElementPanel(Element element) {
