@@ -12,14 +12,15 @@ public class ElementPanel extends JPanel {
 	
 	//element 객체 저장
 	Element element;
-	
+	//그리기 크기
+	final int drawSize = 15;
 	
 	/*요소 패널의 생성자*/
 	public ElementPanel(Element element) {
 		this.element = element;
 		
 		//요소 패널의 위치와 크기 설정
-		this.setBounds(element.returnX()*20, element.returnY()*20, 20, 20);
+		this.setBounds(element.returnX()*GameField.gamefield.elementSize, element.returnY()*GameField.gamefield.elementSize, GameField.gamefield.elementSize, GameField.gamefield.elementSize);
 				
 		//게임 필드에 배치하기
 		GameField.gamefield.add(this);
@@ -52,16 +53,16 @@ public class ElementPanel extends JPanel {
 	
 		//지렁이 = 원형
 		if(element instanceof Worm) {
-			g.fillOval(0, 0, 15, 15);
+			g.fillOval(0, 0, drawSize, drawSize);
 		}
 		//블록 = 사각형
 		else if(element instanceof Block) {
-			g.fillRect(0, 0, 15, 15);
+			g.fillRect(0, 0, drawSize, drawSize);
 		}
 		//아이템 = 삼각형
 		else if(element instanceof Item) {
-			int x[] = {0, 15, 7};
-			int y[] = {0, 0, 15};
+			int x[] = {0, drawSize, drawSize/2};
+			int y[] = {0, 0, drawSize};
 			g.fillPolygon(x, y, 3);
 		}
 		//아무 것도 해당하지 않으면 그리지 않음

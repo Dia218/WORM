@@ -11,7 +11,8 @@ public class GameField extends JPanel {
 	public static final GameField gamefield = new GameField(); 
 	
 	/*게임 필드 필드*/
-	private int elementNum = 24; //요소의 갯수
+	final int elementNum = 24; //요소의 갯수
+	final int elementSize = 20; //요소의 크기
 	static HashMap<Locate, Element> hashmap = new HashMap<Locate, Element>(); //좌표와 요소를 저장하는 해시맵 
 	static Set<Locate> keys = hashmap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
 	static Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터 
@@ -23,14 +24,14 @@ public class GameField extends JPanel {
 		this.setLayout(null);
 		
 		//게임 필드의 크기와 위치
-		this.setBounds(20*elementNum, 20*elementNum, 0, 0);
+		this.setBounds(elementSize*elementNum, elementSize*elementNum, 0, 0);
 	}
 	
 	
 	/*게임 필드 메소드*/
 	
 	//게임 필드 크기를 리턴해주는 메소드
-	public int returnSize() {
+	public int returnFieldSize() {
 		return this.elementNum*20;
 	}
 	
