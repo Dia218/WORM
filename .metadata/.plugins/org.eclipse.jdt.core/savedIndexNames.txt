@@ -1,13 +1,4 @@
-<<<<<<< HEAD
 INDEX VERSION 1.131+C:\Users\Lee Dongheon\workspace2\.metadata\.plugins\org.eclipse.jdt.core
-3580313223.index
-760091825.index
-=======
-INDEX VERSION 1.131+C:\Users\koreamms\eclipse-workspace\project\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index
-3580313223.index
-<<<<<<< HEAD
-1639448000.index
-=======
->>>>>>> main
->>>>>>> ad975070486cd0a662427d43a164b127f25c25d0
+760091825.index
+2601418695.index

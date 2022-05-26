@@ -1,11 +1,7 @@
 package item;
 
-<<<<<<< HEAD
+//아이템들의 클래스
 public class ItemType {
-
-=======
-//아이템들의 추상 클래스
-public abstract class ItemType {
 	
 	private String type; //아이템 종류
 	private int point;	 //아이템 점수
@@ -20,5 +16,4 @@ public abstract class ItemType {
 	public double returnSpeed() {	//지렁이 속도 변화 수치를 리턴
 		return speedChange;
 	}
->>>>>>> efbc0ef5b9a88e56a899b22345cdd2fd0e07599f
 }
