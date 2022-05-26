@@ -14,13 +14,11 @@ public class CreateElement {
 	
 	/*요소 생성 클래스 필드*/
 	Random rand = new Random();
-	int randX = 0;
-	int randY = 0;
-	
+
 	/*생성 클래스의 생성자*/
 	private CreateElement() {
-		
-		
+		//WormHead wormHead = new WormHead(0, 0);
+		//System.put.println("지렁이 머리 생성");
 	}
 	
 	
@@ -30,15 +28,15 @@ public class CreateElement {
 		
 	}
 	
-	public void BasicBlock() {
+	public void createBasicBlock() {
+		randomLocate();
+	}
+	
+	public void createKillBlock() {
 		
 	}
 	
-	public void KillBlock() {
-		
-	}
-	
-	public void TelpoBlock() {
+	public void createTelpoBlock() {
 		
 	}
 	
@@ -58,18 +56,18 @@ public class CreateElement {
 		
 	}
 	
-	public void check
-	
-	public void randomNum() {
-		this.randX = rand.nextInt(GameField.gamefield.elementNum-1) + 0;
-		this.randY = rand.nextInt(GameField.gamefield.elementNum-1) + 0;
+	//좌표 랜덤 생성 메소드
+	public void randomLocate() {
+		//0부터 (요소 최대 개수-1)까지 숫자 중 랜덤 생성
+		int randX = rand.nextInt(GameField.gamefield.elementNum-1) + 0;
+		int randY = rand.nextInt(GameField.gamefield.elementNum-1) + 0;
 		
 		//해당 좌표에 객체가 없을 경우
 		if(GameField.gamefield.checkLocate(randX, randY)) {
-			
+			//객체 생성
 		}
 	}
-	
+
 }
 /*
  **초기 설정**

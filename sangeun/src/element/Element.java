@@ -3,8 +3,8 @@ package element;
 import java.awt.*;
 import screen.*;
 
-public class Element {
-	
+public abstract class Element {
+		
 	/*요소 클래스 필드*/
 	protected int elementX;
 	protected int elementY;
