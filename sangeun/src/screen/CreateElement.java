@@ -1,17 +1,25 @@
 package screen;
 
 import element.Block;
+import element.block.TelpoBlock;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Random;
+import screen.GameField;
 import element.*;
 
 //element 객체를 생성하는 클래스
 public class CreateElement {
-
+		
 	/*생성 클래스의 생성자*/
 	public CreateElement() {
 		
-
+		
+		TelpoBlock hhg2 = new TelpoBlock(1, 2);	
+		
+		
 	}
-	
 }
 /*
  **초기 설정**

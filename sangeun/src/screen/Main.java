@@ -1,7 +1,8 @@
 package screen;
 
+import element.Worm;
 import element.block.TelpoBlock;
-import element.item.GoodItem;
+import element.item.*;
 
 //메인 클래스
 public class Main {
@@ -9,12 +10,11 @@ public class Main {
 	public static void main(String[] args) {
 		GameFrame gameFrame = new GameFrame();	
 		
-		
 		//임시로 생성!!
 		TelpoBlock hhg = new TelpoBlock(1, 2);	
 		GoodItem gi = new GoodItem(3,2);
-		TelpoBlock block1 = new TelpoBlock(10, 10);
-		TelpoBlock block2 = new TelpoBlock(15, 15);	
+		BadItem block1 = new BadItem(3, 3);
+		ConfuseItem block2 = new ConfuseItem(3, 4);	
 	}
 }
 
