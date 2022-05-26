@@ -3,7 +3,11 @@ package screen;
 import element.Block;
 
 import java.util.Random;
-
+import element.block.TelpoBlock;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Random;
+import screen.GameField;
 import element.*;
 
 //element 객체를 생성하는 클래스

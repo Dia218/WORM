@@ -3,6 +3,7 @@ package screen;
 import java.util.*;
 import javax.swing.JPanel;
 import element.*;
+import element.item.GoodItem;
 
 //게임 필드 패널 클래스
 public class GameField extends JPanel {
@@ -16,13 +17,12 @@ public class GameField extends JPanel {
 	HashMap<Locate, Element> hashmap = new HashMap<Locate, Element>(); //좌표와 요소를 저장하는 해시맵 
 	Set<Locate> keys = hashmap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
 	Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터 
-	
+
 	
 	/*게임 필드 생성자*/
 	private GameField() {
 		//배치 관리자 제거
 		this.setLayout(null);
-		
 		//게임 필드의 크기와 위치
 		this.setBounds(elementSize*elementNum, elementSize*elementNum, 0, 0);
 		
@@ -86,6 +86,9 @@ public class GameField extends JPanel {
 		System.out.println("게임 필드 그리기");
 	}
 	*/
+	
+	
+	
 }
 
 //좌표 키 클래스

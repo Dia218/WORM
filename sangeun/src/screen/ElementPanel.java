@@ -59,11 +59,11 @@ public class ElementPanel extends JPanel {
 		else if(element instanceof Block) {
 			g.fillRect(0, 0, drawSize, drawSize);
 		}
-		//아이템 = 삼각형
+		//아이템 = 마름모
 		else if(element instanceof Item) {
-			int x[] = {0, drawSize, drawSize/2};
-			int y[] = {0, 0, drawSize};
-			g.fillPolygon(x, y, 3);
+			int x[] = {drawSize /2, 0, drawSize / 2 , drawSize};
+			int y[] = {0, drawSize / 2, drawSize, drawSize /2 };
+			g.fillPolygon(x, y, 4);
 		}
 		//아무 것도 해당하지 않으면 그리지 않음
 		else

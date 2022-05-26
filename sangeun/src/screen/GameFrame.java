@@ -4,6 +4,7 @@ import java.awt.HeadlessException;
 import javax.swing.JFrame;
 
 
+
 //게임 프레임 클래스
 public class GameFrame extends JFrame {
 
