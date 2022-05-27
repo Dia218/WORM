@@ -1,6 +1,6 @@
-package screen;
+package operation;
 
-
+//똠치가 제작함
 public class WormEvent extends Thread {
 	tern tern = new tern();
 	public void event() {
