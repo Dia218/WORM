@@ -3,6 +3,7 @@ package screen;
 import element.Worm;
 import element.block.*;
 import element.item.*;
+import operation.*;
 
 //메인 클래스
 public class Main {

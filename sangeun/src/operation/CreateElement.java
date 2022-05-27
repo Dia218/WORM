@@ -1,14 +1,15 @@
-package screen;
+package operation;
 
 import java.util.*;
 import element.*;
 import element.block.*;
 import element.item.*;
+import screen.GameField;
 
 //element 객체를 생성하는 클래스
 public class CreateElement {
 	
-	/*요소 생성 클래스 필드*/
+	/*생성 클래스의 필드*/
 	Random rand = new Random();
 
 	/*생성 클래스의 생성자*/
@@ -95,21 +96,26 @@ public class CreateElement {
 			//좌표 정하기
 			randomLocate(randXY);
 			
+			//맨 끝의 좌표가 게임 필드를 벗어날 경우 바로 do 다시 실행
+			if(randXY[0] + sizeWL[0] - 1 >= GameField.gamefield.elementNum) {
+				continue;
+			}
+			if(randXY[1] + sizeWL[1] - 1 >= GameField.gamefield.elementNum) {
+				continue;
+			}
+			
 			//사이즈 테스트를 통과하면 do-while 반복문 종료
 			if(testSize(randXY, sizeWL) == true) {
 				break;
 			}
 		} while(true);
 		
-		//킬 블록 객체 - 가로 생성
-		for(int addWidth = 0; addWidth < sizeWL[0]; addWidth++) {
-			KillBlock killBlock = new KillBlock(randXY[0]+addWidth, randXY[1]);
-			GameField.gamefield.setElement(killBlock);	
-		}
-		//킬 블록 객체 - 세로 생성
-		for(int addLength = 0; addLength < sizeWL[1]; addLength++) {
-			KillBlock killBlock = new KillBlock(randXY[0], randXY[1]+addLength);
-			GameField.gamefield.setElement(killBlock);
+		//킬 블록 객체 생성
+		for(int x = randXY[0]; x <= randXY[0] + sizeWL[0] - 1; x++) {
+			for(int y = randXY[1]; y <= randXY[1] + sizeWL[1] - 1; y++) {
+				KillBlock killBlock = new KillBlock(x, y);
+				GameField.gamefield.setElement(killBlock);
+			}
 		}
 	}
 	
@@ -127,15 +133,12 @@ public class CreateElement {
 		//사이즈 정하기
 		randomSize(randXY, sizeWL);
 		
-		//기본 블록 객체 - 가로 생성
-		for(int addWidth = 0; addWidth < sizeWL[0]; addWidth++) {
-			BasicBlock basicBlock = new BasicBlock(randXY[0]+addWidth, randXY[1]);
-			GameField.gamefield.setElement(basicBlock);	
-		}
-		//기본 블록 객체 - 세로 생성
-		for(int addLength = 0; addLength < sizeWL[1]; addLength++) {
-			BasicBlock basicBlock = new BasicBlock(randXY[0], randXY[1]+addLength);
-			GameField.gamefield.setElement(basicBlock);
+		//기본 블록 객체 생성
+		for(int x = randXY[0]; x <= randXY[0] + sizeWL[0] - 1; x++) {
+			for(int y = randXY[1]; y <= randXY[1] + sizeWL[1] - 1; y++) {
+				BasicBlock basicBlock = new BasicBlock(x, y);
+				GameField.gamefield.setElement(basicBlock);		
+			}
 		}
 	}
 	
@@ -281,25 +284,3 @@ public class CreateElement {
 
 
 }
-/*
- **초기 설정**
- * 지렁이 머리 생성
- * 블록들 생성
- * 아이템들 생성
- * 
- **게임 중**
- * 좋은 아이템 먹으면 새 좋은 아이템 생성
- * 몸통 길이 추가
- * 일정 시간 후 혼한, 나쁜 아이템 생성 및 삭제 반복
- * */
-
-/*
- ****관리 
- * 
- * 
- **생성
- * 
- *
- **삭제
- *
- * */

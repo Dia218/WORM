@@ -13,12 +13,12 @@ public class GameField extends JPanel {
 	public static final GameField gamefield = new GameField(); 
 	
 	/*게임 필드 필드*/
-	final int elementNum = 24; //요소의 갯수
-	final int elementSize = 20; //요소의 크기
+	public final int elementNum = 24; //요소의 갯수
+	public final int elementSize = 20; //요소의 크기
 	
 	private HashMap<Locate, Element> elementMap = new HashMap<>(); //좌표와 요소를 저장하는 해시맵 
-	private Set<Locate> keys = elementMap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
-	private Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터
+	//private Set<Locate> keys = elementMap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
+	//private Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터
 	
 	private HashMap<Locate, ElementPanel> panelMap = new HashMap<>(); //좌표와 요소패널을 저장하는 해시맵 
 
@@ -68,9 +68,11 @@ public class GameField extends JPanel {
 		return elementMap.get(new Locate(checkX, checkY));
 	}
 	
-	//생성된 element를 받아서 해당 좌표 키의 요소맵에 저장하는 메소드
+	//생성된 element를 받아서 해시맵에 저장하는 메소드
 	public void setElement(Element element) {		
 		Locate locate = new Locate(element.returnX(), element.returnY());
+		
+		//요소맵에 요소 집어넣기
 		elementMap.replace(locate, element);
 		
 		//패널 설정 호출
@@ -80,8 +82,19 @@ public class GameField extends JPanel {
 		System.out.println("해시맵에 요소 set");
 	}
 	
-	//element 삭제
-	
+	//element 삭제 메소드
+	public void removeElement(int elementX, int elementY) {
+		Locate locate = new Locate(elementX, elementY);
+		
+		//요소맵에 null 넣기
+		elementMap.replace(locate, null);
+
+		//패널 설정 호출 - null
+		setPanel(locate, null);
+		
+		//동작 확인
+		System.out.println("element 삭제");
+	}
 	
 	//해당 좌표에 들어있는 panel을 리턴해주는 메소드 -> 필요한가?
 	public ElementPanel checkPanel(int checkX, int checkY) {
