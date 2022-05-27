@@ -1,19 +1,10 @@
 package screen;
 import java.awt.*;
-
 import javax.swing.*;
-
-<<<<<<< HEAD
-//게임 오버 패널 클래스
-public class GameOver extends JPanel {
-
-	public GameOver() {
-		
-		
-=======
 import screen.*;
 import element.*;
 import element.block.TelpoBlock;
+
 //게임 오버 패널 클래스
 public class GameOver extends JPanel {
 	
@@ -28,7 +19,6 @@ public class GameOver extends JPanel {
 			g.setFont(new Font("",Font.BOLD,30));
 			g.drawString("GAME OVER!", 13*11, 20*11);
 		}
->>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
 		
 	}
 	

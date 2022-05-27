@@ -28,14 +28,6 @@ public class ElementPanel extends JPanel {
 		//게임 필드에 배치하기
 		GameField.gamefield.add(this);
 		
-<<<<<<< HEAD
-=======
-		//게임 필드 다시 그리기 
-		
-		GameField.gamefield.revalidate();
-		GameField.gamefield.repaint();
-		
->>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
 		//동작 확인
 		System.out.println("요소 패널 생성 및 배치 : " + panelX + ", " + panelY);
 	}
@@ -55,7 +47,6 @@ public class ElementPanel extends JPanel {
 	//요소 그리기
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-<<<<<<< HEAD
 		
 		//element가 없을 때
 		if(element == null) {
@@ -70,16 +61,6 @@ public class ElementPanel extends JPanel {
 			//도형 그리기 메소드 호출
 			drawFigure(g);
 		}
-=======
-		//element 객체로 부터 색깔 받아오기
-		g.setColor(element.returnColor());
-		//도형 그리기 메소드 호출
-		drawFigure(g);
-		
-		//게임 필드에 요소 패널 부착
-		GameField.gamefield.add(this);
-		
->>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
 	}
 	
 	//element 종류에 따라 그리는 도형
@@ -102,7 +83,6 @@ public class ElementPanel extends JPanel {
 		//아무 것도 해당하지 않으면 그리지 않음
 		else
 			;
-		
 		
 	}
 	

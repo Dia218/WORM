@@ -2,24 +2,18 @@ package screen;
 
 import java.util.*;
 import element.*;
-import element.block.*;
-<<<<<<< HEAD
-import element.item.*;
 import operation.*;
 import element.block.*;
 import element.item.*;
-
-=======
 import element.worm.*;
-import element.Worm;
 import screen.*;
->>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
+
 //메인 클래스
 public class Main {
 		
 	
 	public static void main(String[] args) {
-<<<<<<< HEAD
+
 		System.out.println("*******************");
 		System.out.println("프로그램 실행");
 		System.out.println("*******************");
@@ -30,15 +24,9 @@ public class Main {
 		CreateElement createElement = new CreateElement();
 		createElement.initElement();
 		
-=======
-		GameFrame gameFrame = new GameFrame();	
-	
->>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
-		
 		
 		/*
 		//임시로 생성!!
-<<<<<<< HEAD
 		GoodItem gi = new GoodItem(3,2);
 		BadItem block3 = new BadItem(3, 3);
 		ConfuseItem block4 = new ConfuseItem(3, 4);		
@@ -66,12 +54,6 @@ public class Main {
 		});
 		th.start();
 		*/
-=======
-		
-		
-		
-
->>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
 	}
 }
 
