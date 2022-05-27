@@ -8,7 +8,7 @@ public class ConfuseItem extends Item {
 
 	public ConfuseItem(int elementX, int elementY) {
 		super(elementX, elementY);
-		super.color = Color.ORANGE;
+		super.color = Color.YELLOW;
 		// TODO Auto-generated constructor stub
 	}
 

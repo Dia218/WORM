@@ -1,5 +1,6 @@
 package screen;
 
+import java.awt.Color;
 import java.util.*;
 import javax.swing.JPanel;
 import element.*;
@@ -14,20 +15,21 @@ public class GameField extends JPanel {
 	/*게임 필드 필드*/
 	final int elementNum = 24; //요소의 갯수
 	final int elementSize = 20; //요소의 크기
-	private HashMap<Locate, Element> hashmap = new HashMap<Locate, Element>(); //좌표와 요소를 저장하는 해시맵 
-	private Set<Locate> keys = hashmap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
-	private Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터 
+	
+	private HashMap<Locate, Element> elementMap = new HashMap<>(); //좌표와 요소를 저장하는 해시맵 
+	private Set<Locate> keys = elementMap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
+	private Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터
+	
+	private HashMap<Locate, ElementPanel> panelMap = new HashMap<>(); //좌표와 요소패널을 저장하는 해시맵 
 
 	
 	/*게임 필드 생성자*/
 	private GameField() {
 		//배치 관리자 제거
 		this.setLayout(null);
-		//게임 필드의 크기와 위치
-		this.setBounds(elementSize*elementNum, elementSize*elementNum, 0, 0);
 		
-		//해시맵 초기화 호출
-		initElement();
+		//게임 필드의 크기와 위치
+		this.setBounds(returnFieldSize(), returnFieldSize(), 0, 0);
 		
 		//동작 확인
 		System.out.println("gamefield 객체 생성");
@@ -38,67 +40,59 @@ public class GameField extends JPanel {
 	
 	//게임 필드 크기를 리턴해주는 메소드
 	public int returnFieldSize() {
-		return this.elementNum*20;
+		return this.elementNum*elementSize;
 	}
 	
-	//해시맵을 초기화하는 메소드
-	private void initElement() {
+	//필드를 초기화하는 메소드
+	public void initField() {
 		//좌표 : (0~23, 0~23)
 		for(int x = 0; x < elementNum; x++) {
 			for(int y = 0; y < elementNum; y++) {
 				//해시맵 키: Locate(좌표) 객체 순차적으로 생성 후 삽입 
-				//해시맵 값: null
-				hashmap.put(new Locate(x, y), null);
+				elementMap.put(new Locate(x, y), null); //요소맵 값: null
+				panelMap.put(new Locate(x, y), new ElementPanel(x, y)); //패널맵 값: 빈 패널
 			}
 		}
-	}
-	
-	/*삭제 예정*/
-	//해당 좌표에 element가 들어있는 지 확인하는 메소드
-	public boolean checkLocate(int checkX, int checkY) {
-		//해당 좌표와 일치하는 좌표 값에 들어있는 element가 null이면 true
-		if (null == hashmap.get(new Locate(checkX, checkY)))
-			return true;
-		else
-			return false;
+		
+		//게임 필드 다시 그리기
+		GameField.gamefield.revalidate();
+		GameField.gamefield.repaint();
+		
+		//배경색 설정 - 검정
+		setBackground(Color.BLACK);
 	}
 	
 	//해당 좌표에 들어있는 element를 리턴해주는 메소드
 	public Element checkElement(int checkX, int checkY) {
 		//해당 좌표와 일치하는 좌표 키 값에 들어있는 element가 없으면 null 리턴
-		return hashmap.get(new Locate(checkX, checkY));
+		return elementMap.get(new Locate(checkX, checkY));
 	}
 	
-	//생성된 객체를 받아서 해당 좌표 키의 해시맵에 저장하는 메소드
-	public void setHash(Element element) {		
+	//생성된 element를 받아서 해당 좌표 키의 요소맵에 저장하는 메소드
+	public void setElement(Element element) {		
 		Locate locate = new Locate(element.returnX(), element.returnY());
-		hashmap.replace(locate, element);
+		elementMap.replace(locate, element);
+		
+		//패널 설정 호출
+		setPanel(locate, element);
 		
 		//동작 확인
 		System.out.println("해시맵에 요소 set");
 	}
 	
-	/*
-	//해시맵에 따라 게임 필드 전체를 그리는 메소드
-	public void drawField() {
-		//좌표 키 값을 순차적으로 방문
-		while(iterator.hasNext()) {
-			//방문한 좌표 키 값
-			Locate indexLocate = iterator.next();
-			//방문한 좌표 키 값에 있는 element 객체
-			Element element = hashmap.get(indexLocate);
-		}
-		//게임 필드 다시 그리기
-		this.revalidate();
-		this.repaint();
-		
-		//동작 확인
-		System.out.println("게임 필드 그리기");
+	//element 삭제
+	
+	
+	//해당 좌표에 들어있는 panel을 리턴해주는 메소드 -> 필요한가?
+	public ElementPanel checkPanel(int checkX, int checkY) {
+		//해당 좌표와 일치하는 좌표 키 값에 들어있는 panel이 없으면 null 리턴
+		return panelMap.get(new Locate(checkX, checkY));
 	}
-	*/
 	
-	
-	
+	//해당 좌표에 들어있는 panel을 설정하는 메소드 - 요소 삭제 및 저장 시 호출
+	private void setPanel(Locate locate, Element element) {
+		panelMap.get(locate).inputElement(element);
+	}
 }
 
 //좌표 키 클래스

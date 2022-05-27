@@ -1,7 +1,7 @@
 package screen;
 
-import java.awt.HeadlessException;
-import javax.swing.JFrame;
+import java.awt.*;
+import javax.swing.*;
 
 
 
@@ -12,18 +12,19 @@ public class GameFrame extends JFrame {
 	public GameFrame() throws HeadlessException {
 		super();
 		
+		//필드 초기화 호출
+		GameField.gamefield.initField();
 		this.add(GameField.gamefield);
 		this.revalidate();
 		this.repaint();
 		
 		//this.addKeyListener(new InputKey(element));
 		this.requestFocus();
-		
-		setSize(GameField.gamefield.returnFieldSize(), GameField.gamefield.returnFieldSize());
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
-		setResizable(false);
-		setVisible(true);
+				
+		setSize(GameField.gamefield.returnFieldSize()+50, GameField.gamefield.returnFieldSize()+50); //사이즈 설정
+		setLocationRelativeTo(null); //화면 중앙 배치
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//창 닫으면 종료
+		setResizable(false); //창 크기 조절 불가
+		setVisible(true); //창을 보이게 설정
 	}
-	
 }
