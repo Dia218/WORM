@@ -62,6 +62,7 @@ public class Gaming implements ElementFunction{
 		field[teleportBlock1Y][teleportBlock1X] = 4;
 		field[teleportBlock2Y][teleportBlock2X] = 5;
 		field[confuseItemY][confuseItemX] = 6;
+		field[3][3]=7;
 		if(isGameOver())makeGameOver();
 	}
 	
@@ -90,6 +91,9 @@ public class Gaming implements ElementFunction{
 			else if(field[headX][headY-1]==6) {
 				isReverse =false;
 				confuseEat();
+			}
+			else if(field[headX][headY-1]==7) {
+				break;
 			}
 			
 			headY-=1;
@@ -388,8 +392,11 @@ public class Gaming implements ElementFunction{
 
 	@Override
 	public void updateElment() {
-		if(obs==null)return;
-		Iterator<Change> its = obs.iterator();
+		if(obs==null) {
+			return;
+			
+		}
+			Iterator<Change> its = obs.iterator();
 		while(its.hasNext()) {
 			its.next().update();
 		}

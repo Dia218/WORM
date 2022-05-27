@@ -13,9 +13,7 @@ public class Main {
 	
 		
 		//임시로 생성!!
-		
-		
-		
+
 
 	}
 }

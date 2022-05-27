@@ -25,7 +25,7 @@ public class Element extends JPanel implements InputKey.InputMethod, Change{
 						Thread.sleep(gaming.getSpeed());
 						
 							gaming.tern();
-							
+							repaint();
 
 					}
 				} catch (InterruptedException e) {
