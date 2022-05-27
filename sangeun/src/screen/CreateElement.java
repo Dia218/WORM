@@ -95,23 +95,10 @@ public class CreateElement {
 			//좌표 정하기
 			randomLocate(randXY);
 			
-			//검사 다시 수정
-		
-			//(x+1) 좌표 검사
-			if (null != GameField.gamefield.checkElement(randXY[0]+1, randXY[1])) {
-				//비어있지 않으면 바로 do 반복
-				continue;
+			//사이즈 테스트를 통과하면 do-while 반복문 종료
+			if(testSize(randXY, sizeWL) == true) {
+				break;
 			}
-		
-			//(y+1) 좌표 검사
-			if (null != GameField.gamefield.checkElement(randXY[0], randXY[1]+1)) {
-				//비어있지 않으면 바로 do 반복
-				continue;
-			}
-			
-			//검사를 다하면 do 반복문 종료
-			break;
-			
 		} while(true);
 		
 		//킬 블록 객체 - 가로 생성
@@ -150,14 +137,6 @@ public class CreateElement {
 			BasicBlock basicBlock = new BasicBlock(randXY[0], randXY[1]+addLength);
 			GameField.gamefield.setElement(basicBlock);
 		}
-		
-		
-		/*
-		 **오류가 나는 이유 추측
-		 *
-		 * 블록 사이즈가 필드를 넘어갈 수 있는데 그걸 체크하는 게 없다 
-		 *
-		 * */
 	}
 	
 	
@@ -241,70 +220,59 @@ public class CreateElement {
 		}
 	}
 	
-	/*
 	//사이즈 랜덤 생성 메소드
 	private void randomSize(int randXY[], int sizeWL[]) {
 		//동작 확인
 		System.out.println("블록 사이즈 랜덤 생성 호출");
-		
-		//사이즈 : 1부터 4까지의 숫자 중 랜덤 생성
-		
-		////Width 넓이 정하기////
-		int addWidth = 0;
-		do {
-			//Width 넓이를 랜덤으로 생성 : sizeWL[0] <- 1 to 4 
-			sizeWL[0] = rand.nextInt((4-1) + 1) + 1;
-			
-			//(x+1)부터 (넓이)까지 좌표 검사 : index <- 0+1 to 2+1
-			while(addWidth < sizeWL[0]-1) {
-				addWidth++;
-				//null 값이 아닐 경우 안쪽 while 종료 -> do 반복
-				if (null != GameField.gamefield.checkElement(randXY[0]+addWidth, randXY[1])) {
-					addWidth = 0;
-					break;
-				}
-			}
-			
-		//안쪽 while에서 끝까지 검사하면 do 종료
-		} while(addWidth != sizeWL[0]-1);
-		
-		
-		////Length 길이 정하기////
-		int addLength = 0;
-		do {
-			//Length 길이를 랜덤으로 생성 : sizeWL[1] <- 1 to 4
-			sizeWL[1] = rand.nextInt((4-1) + 1) + 1;
-			
-			//(y+1)부터 (길이)까지 좌표 검사 : addLength <- 0+1 to 2+1
-			while(addLength < sizeWL[1]-1) {
-				addLength++;
-				//null 값이 아닐 경우 안쪽 while 종료 -> do 반복
-				if (null != GameField.gamefield.checkElement(randXY[0], randXY[1]+addLength)) {
-					addLength = 0;
-					break;
-				}
-			}
-			
-		//안쪽 while에서 끝까지 검사하면 do 종료
-		} while(addLength != sizeWL[1]-1);
-	} */
-	
-	//사이즈 랜덤 생성 메소드
-	private void randomSize(int randXY[], int sizeWL[]) {
-		//동작 확인
-		System.out.println("블록 사이즈 랜덤 생성 호출");
-		
-		//사이즈 : 1부터 4까지의 숫자 중 랜덤 생성
 
-		
-		/*
-		 * 
-		 *
-		 * 
-		 * */
+		do {
+			//사이즈 : 1부터 4까지의 숫자 중 랜덤 생성
+			sizeWL[0] = rand.nextInt((4-1) + 1) + 1;
+			sizeWL[1] = rand.nextInt((4-1) + 1) + 1;
+
+			//맨 끝의 좌표가 게임 필드를 벗어날 경우 바로 do 다시 실행
+			if(randXY[0] + sizeWL[0] - 1 >= GameField.gamefield.elementNum) {
+				continue;
+			}
+			if(randXY[1] + sizeWL[1] - 1 >= GameField.gamefield.elementNum) {
+				continue;
+			}
+			
+			//사이즈 테스트를 통과하면 do-while 반복문 종료
+			if(testSize(randXY, sizeWL) == true) {
+				break;
+			}
+			
+		} while(true);
 	}
 	
-
+	//생성된 사이즈가 올바른지 테스트 하는 메소드
+	private Boolean testSize(int randXY[], int sizeWL[]) {
+		//동작 확인
+		System.out.println("블록 사이즈 테스트 호출");
+		
+		//좌표를 돌아가면서 검사
+		int x = randXY[0]+1; int y = randXY[1]+1;
+		while(x <= randXY[0]+sizeWL[0]-1) {
+			while(y <= randXY[1]+sizeWL[1]-1) {
+				//해당 좌표에 element가 있을 경우
+				if(null != GameField.gamefield.checkElement(x, y)) {
+					x = 100; y = 100; //반복문 빠져나가기
+				}
+				y++;
+			}
+			x++;
+		}
+		
+		//끝까지 검사했다면 true
+		if(x == randXY[0]+sizeWL[0] && y == randXY[1]+sizeWL[1]) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	
 	public void createWormBody(/*앞 부분의 객체 레퍼런스를 받아와야할 것 같다*/) {
 		
