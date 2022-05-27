@@ -3,8 +3,8 @@ package element;
 import java.awt.*;
 import screen.*;
 
-public abstract class Element {
-		
+public class Element {
+	
 	/*요소 클래스 필드*/
 	protected int elementX;
 	protected int elementY;
@@ -15,8 +15,11 @@ public abstract class Element {
 		this.elementX = elementX;
 		this.elementY = elementY;
 		
+		//요소의 패널 객체 생성
+		ElementPanel elementPanel = new ElementPanel(this);
+		
 		//동작 확인
-		System.out.println("element 생성자 작동");
+		System.out.println("요소 만들기");
 	}
 	
 	//내가추가

@@ -28,12 +28,17 @@ public class GameField extends JPanel {
 		this.setLayout(null);
 		
 		//게임 필드의 크기와 위치
+<<<<<<< HEAD
 		this.setBounds(returnFieldSize(), returnFieldSize(), 0, 0);
 		
 		//동작 확인
 		System.out.println("gamefield 객체 생성");
+=======
+		//this.setBounds(elementSize*elementNum, elementSize*elementNum, 0, 0);
+		this.setBounds(elementSize*elementNum, elementSize*elementNum, 0, 0);
+		
+>>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
 	}
-	
 	
 	/*게임 필드 메소드*/
 	
@@ -132,6 +137,7 @@ class Locate {
 	@Override
 	public boolean equals(Object object) {
 		Locate locateObject = (Locate) object;
+		System.out.print(locateObject);
 		if (this.X == locateObject.X && this.Y == locateObject.Y)
 			return true;
 		else

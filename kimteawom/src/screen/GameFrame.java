@@ -1,41 +1,51 @@
 package screen;
 
-import java.awt.*;
-import javax.swing.*;
-
+import java.awt.Color;
+import java.awt.HeadlessException;
+import javax.swing.JFrame;
 
 
 //게임 프레임 클래스
 public class GameFrame extends JFrame {
 
-	GameOver gameover = new GameOver();
+	
 	public GameFrame() throws HeadlessException {
 		super();
-		
-		//필드 초기화 호출
-		GameField.gamefield.initField();
+		GameOver gameover = new GameOver();
 		this.add(GameField.gamefield);
 		this.revalidate();
 		this.repaint();
 		this.add(gameover);
+	
+		
 
-
+//		try {
+//			for(int i =0; i<24;i++) {
+//				Thread.sleep(1);
+//				this.add(new GameOver(i));
+//				
+//			}
+//			
+//		} catch (InterruptedException e) {
+//			// TODO 자동 생성된 catch 블록
+//			e.printStackTrace();
+//		}
+		
+		
+		
+		
 		//this.addKeyListener(new InputKey(element));
 		this.requestFocus();
-<<<<<<< HEAD
-				
-		setSize(GameField.gamefield.returnFieldSize()+50, GameField.gamefield.returnFieldSize()+50); //사이즈 설정
-		setLocationRelativeTo(null); //화면 중앙 배치
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	//창 닫으면 종료
-		setResizable(false); //창 크기 조절 불가
-		setVisible(true); //창을 보이게 설정
-=======
+		setTitle("지렁이 게임");
 		setSize(GameField.gamefield.returnFieldSize(), GameField.gamefield.returnFieldSize());
+		
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 		setResizable(false);
 		setVisible(true);
 	
->>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
 	}
+	
+	
+
 }

@@ -3,10 +3,20 @@
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.awt.Graphics"/>
-    <fullyQualifiedTypeName name="element.Element"/>
     <fullyQualifiedTypeName name="element.Block"/>
     <fullyQualifiedTypeName name="java.awt.Color"/>
-    <fullyQualifiedTypeName name="element.block.TelpoBlock"/>
     <fullyQualifiedTypeName name="screen.ElementPanel"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="element.Item"/>
+=======
+    <fullyQualifiedTypeName name="element.Worm"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="element.block.TelpoBlock"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="screen.GameOver"/>
+    <fullyQualifiedTypeName name="element.Element"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="java.lang.Thread.State"/>
+    <fullyQualifiedTypeName name="screen.GameOverThr"/>
+>>>>>>> 08f34e561433682ed532088e8ac074e6c9521532
 </qualifiedTypeNameHistroy>
