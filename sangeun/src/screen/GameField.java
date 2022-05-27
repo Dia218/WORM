@@ -82,6 +82,7 @@ public class GameField extends JPanel {
 		System.out.println("해시맵에 요소 set");
 	}
 	
+<<<<<<< HEAD
 	//element 삭제 메소드
 	public void removeElement(int elementX, int elementY) {
 		Locate locate = new Locate(elementX, elementY);
@@ -91,6 +92,24 @@ public class GameField extends JPanel {
 
 		//패널 설정 호출 - null
 		setPanel(locate, null);
+=======
+
+	
+	
+	/*
+	//해시맵에 따라 게임 필드 전체를 그리는 메소드
+	public void drawField() {
+		//좌표 키 값을 순차적으로 방문
+		while(iterator.hasNext()) {
+			//방문한 좌표 키 값
+			Locate indexLocate = iterator.next();
+			//방문한 좌표 키 값에 있는 element 객체
+			Element element = hashmap.get(indexLocate);
+		}
+		//게임 필드 다시 그리기
+		this.revalidate();
+		this.repaint();
+>>>>>>> d69ce17b51fc4208b7997c14e7de51a2b6fc6cfd
 		
 		//동작 확인
 		System.out.println("element 삭제");
