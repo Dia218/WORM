@@ -11,7 +11,7 @@ public class Block extends Element {
 		super(blockX, blockY);
 		
 		//동작 확인
-		System.out.println("블록 만들기");
+		System.out.println("블록 생성자 호출");
 	}
 	
 }

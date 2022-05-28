@@ -12,9 +12,8 @@ public class GameFrame extends JFrame {
 		super();
 		
 		Element element = new Element();
-		element.setSize(Width,Height);
+//		element.setSize(Width,Height);
 		add(element);
-		
 		this.addKeyListener(new InputKey(element));
 		this.requestFocus();
 		

@@ -6,12 +6,19 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="C:\Users\Lee Dongheon\workspace2"/>
-			<item value="C:\Users\이상은\dia_ultra\TEAM\java-team\sangeun"/>
-			<item value="D:\dia\team\java-team\sangeun"/>
-			<item value="C:\Users\이상은\dia_ultra\TEAM\java-team\WormGame"/>
-			<item value="C:\Users\이상은\dia_ultra\TEAM\java-team\Test_worm"/>
-			<item value="D:\dia\team\java-team\WormGame"/>
+			<item value="D:\dia\TEAM\java-team\sangeun"/>
+			<item value="C:\Users\koreamms\eclipse-workspace\project\kimteawom"/>
+			<item value="C:\Users\koreamms\eclipse-workspace\project\sangeun"/>
+			<item value="C:\Users\koreamms\eclipse-workspace\project\Test_worm"/>
+			<item value="C:\Users\koreamms\eclipse-workspace\project\WormGame"/>
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="356"/>
+		<item key="DIALOG_Y_ORIGIN" value="236"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
 		</list>
 	</section>
 </section>
