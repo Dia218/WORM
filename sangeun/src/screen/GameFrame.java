@@ -11,7 +11,7 @@ public class GameFrame extends JFrame {
 		super();		
 				
 		//this.addKeyListener(new InputKey(element));
-		this.requestFocus();
+		requestFocus(); //포커스 설정
 				
 		setSize(GameField.gamefield.returnFieldSize()+50, GameField.gamefield.returnFieldSize()+50); //사이즈 설정
 		setLocationRelativeTo(null); //화면 중앙에 창 배치

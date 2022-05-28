@@ -22,6 +22,4 @@ public class Worm extends Element {
 		this.bodyXY = a;
 	}
 	
-	
-	
 }

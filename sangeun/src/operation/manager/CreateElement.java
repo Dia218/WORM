@@ -67,13 +67,10 @@ public interface CreateElement {
 		randomLocate(telpoBrandXY);
 		
 		//텔레포트 블록 객체 생성 - A, B
-		TelpoBlock telpoBlockA = new TelpoBlock(telpoArandXY[0], telpoArandXY[1]);
-		TelpoBlock telpoBlockB = new TelpoBlock(telpoBrandXY[0], telpoBrandXY[1]);
+		TelpoBlock telpoBlockA = new TelpoBlock(telpoArandXY[0], telpoArandXY[1], telpoBrandXY);
+		TelpoBlock telpoBlockB = new TelpoBlock(telpoBrandXY[0], telpoBrandXY[1], telpoArandXY);
 		GameField.gamefield.setElement(telpoBlockA);
-		GameField.gamefield.setElement(telpoBlockB);
-
-		//텔레포트 블록 객체 서로 연결?
-		
+		GameField.gamefield.setElement(telpoBlockB);		
 	}
 	
 	//킬 블록 생성 메소드
