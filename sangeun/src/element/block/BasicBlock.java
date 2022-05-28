@@ -13,4 +13,13 @@ public class BasicBlock extends Block {
 		System.out.println("기본 블록 생성자 호출");
 	}
 
+	@Override
+	public void executeBlock() {
+		// TODO Auto-generated method stub
+		
+	}
+	private void executeBasicBlock() {
+		//지렁이 머리가 해당 좌표를 못지나가게 한다
+		
+	}
 }

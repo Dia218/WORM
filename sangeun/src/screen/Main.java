@@ -20,9 +20,12 @@ public class Main {
 		
 		GameFrame gameFrame = new GameFrame(); //게임 프레임 생성
 		gameFrame.setContentPane(GameField.gamefield); //게임 프레임에 게임 필드 배치
+
 		/*위치 바꿀 예정*/
 		ManageElement.elementManager.initElement();
 		
+		/*테스트 한 것*/
+		//GameOver gameover = new GameOver();
 		
 		//김태완이 테스트
 		Thread thread = new Thread(new Runnable() {
@@ -33,13 +36,14 @@ public class Main {
 				// TODO 자동 생성된 메소드 스텁
 			try {
 				Thread.sleep(1000);
+				new GameOver();
 				
 			} catch (InterruptedException e) {
 				// TODO 자동 생성된 catch 블록
 				e.printStackTrace();
 			}
 			finally {
-				new GameOver();
+			
 				
 			}
 			
