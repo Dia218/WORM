@@ -8,14 +8,19 @@ import javax.swing.JFrame;
 //게임 프레임 클래스
 public class GameFrame extends JFrame {
 
-	
+
 	public GameFrame() throws HeadlessException {
 		super();
-		GameOver gameover = new GameOver();
-		this.add(GameField.gamefield);
-		this.revalidate();
-		this.repaint();
-		this.add(gameover);
+		try {
+			this.add(GameField.gamefield);
+			this.revalidate();
+			this.repaint();
+		
+		}
+		finally {
+			new GameOver();
+		}
+			
 	
 		
 

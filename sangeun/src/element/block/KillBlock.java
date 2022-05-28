@@ -10,7 +10,7 @@ public class KillBlock extends Block {
 		// TODO Auto-generated constructor stub
 		
 		//동작 확인
-		System.out.println("킬 블록 만들기");
+		System.out.println("킬 블록 생성자 호출");
 	}
 
 }

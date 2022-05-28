@@ -10,7 +10,7 @@ public class BasicBlock extends Block {
 		// TODO Auto-generated constructor stub
 		
 		//동작 확인
-		System.out.println("베이직 블록 만들기");
+		System.out.println("기본 블록 생성자 호출");
 	}
 
 }
