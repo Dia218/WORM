@@ -44,7 +44,11 @@ public class Worm extends Element {
 		//여기까지
 	
 	}
+
+
+	public static void wormInc(Element wormBody,int Worm.size) {
+		
+	}
+}	
 	
-	
-	
-}
+
