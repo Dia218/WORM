@@ -1,4 +1,4 @@
-package operation;
+package operation.manager;
 
 import java.util.*;
 import element.*;
@@ -6,23 +6,20 @@ import element.block.*;
 import element.item.*;
 import screen.GameField;
 
-//element 객체를 생성하는 클래스
-public class CreateElement {
+//element 객체 생성 기능 인터페이스
+public interface CreateElement {
 	
 	/*생성 클래스의 필드*/
 	Random rand = new Random();
 
-	/*생성 클래스의 생성자*/
-	public CreateElement() {
-		//동작 확인
-		System.out.println("createElement 객체 생성");
-	}
-	
 	
 	/*생성 클래스의 메소드*/
-	public void initElement() {
+	default void initElement() {
 		//동작 확인
 		System.out.println("요소 init 실행");
+		
+		//필드 초기화 호출
+		GameField.gamefield.initField();
 		
 		//지렁이 머리 생성
 		//WormHead wormHead = new WormHead(0, 0);
@@ -58,7 +55,7 @@ public class CreateElement {
 	}
 	
 	//텔레포트 블록 생성 메소드
-	public void createTelpoBlock() {
+	default void createTelpoBlock() {
 		//동작 확인
 		System.out.println("텔레포트 블록 생성 호출");
 		
@@ -80,7 +77,7 @@ public class CreateElement {
 	}
 	
 	//킬 블록 생성 메소드
-	public void createKillBlock() {
+	default void createKillBlock() {
 		//동작 확인
 		System.out.println("킬 블록 생성 호출");
 		
@@ -120,7 +117,7 @@ public class CreateElement {
 	}
 	
 	//기본 블록 생성 메소드
-	public void createBasicBlock() {
+	default void createBasicBlock() {
 		//동작 확인
 		System.out.println("기본 블록 생성 호출");
 		
@@ -161,7 +158,7 @@ public class CreateElement {
 	}
 	
 	//좋은 아이템 생성 메소드
-	public void createGoodItem() {
+	default void createGoodItem() {
 		//동작 확인
 		System.out.println("좋은 아이템 생성 호출");
 		
@@ -176,7 +173,7 @@ public class CreateElement {
 	}
 	
 	//나쁜 아이템 생성 메소드
-	public void createBadItem() {
+	default void createBadItem() {
 		//동작 확인
 		System.out.println("나쁜 아이템 생성 호출");
 		
@@ -191,7 +188,7 @@ public class CreateElement {
 	}
 	
 	//혼란 아이템 생성 메소드
-	public void createConfuseItem() {
+	default void createConfuseItem() {
 		//동작 확인
 		System.out.println("혼란 아이템 생성 호출");
 		
@@ -275,12 +272,4 @@ public class CreateElement {
 			return false;
 		}
 	}
-	
-	
-	public void createWormBody(/*앞 부분의 객체 레퍼런스를 받아와야할 것 같다*/) {
-		
-	}
-	
-
-
 }

@@ -9,7 +9,7 @@ import element.item.GoodItem;
 //게임 필드 패널 클래스
 public class GameField extends JPanel {
 	
-	//게임 필드 객체는 한 번만 생성된다
+	//프로그램 실행 시 게임 필드 객체 생성, 이후 추가 생성 불가 
 	public static final GameField gamefield = new GameField(); 
 	
 	/*게임 필드 필드*/
@@ -17,8 +17,6 @@ public class GameField extends JPanel {
 	public final int elementSize = 20; //요소의 크기
 	
 	private HashMap<Locate, Element> elementMap = new HashMap<>(); //좌표와 요소를 저장하는 해시맵 
-	//private Set<Locate> keys = elementMap.keySet(); //좌료 객체 키를 저장하는 set 컬렉션 
-	//private Iterator<Locate> iterator = keys.iterator(); //좌표 객체를 저장하는 이터레이터
 	private HashMap<Locate, ElementPanel> panelMap = new HashMap<>(); //좌표와 요소패널을 저장하는 해시맵 
 
 	
@@ -38,7 +36,7 @@ public class GameField extends JPanel {
 	
 	//게임 필드 크기를 리턴해주는 메소드
 	public int returnFieldSize() {
-		return this.elementNum*elementSize;
+		return elementNum*elementSize;
 	}
 	
 	//필드를 초기화하는 메소드
@@ -53,8 +51,8 @@ public class GameField extends JPanel {
 		}
 		
 		//게임 필드 다시 그리기
-		GameField.gamefield.revalidate();
-		GameField.gamefield.repaint();
+		revalidate();
+		repaint();
 		
 		//배경색 설정 - 검정
 		setBackground(Color.BLACK);

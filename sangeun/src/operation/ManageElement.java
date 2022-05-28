@@ -1,7 +1,17 @@
 package operation;
 
-public class ManageElement {
+import operation.manager.*;
 
+//element 관리 클래스
+public class ManageElement implements CreateElement, DeleteElement {
+	
+	//프로그램 실행 시 elementManager 객체 생성, 이후 추가 생성 불가 
+	public static final ManageElement elementManager = new ManageElement();
+	
+	private ManageElement() {
+		//동작 확인
+		System.out.println("요소 매니저 객체 생성");
+	}
 }
 /*
  **초기 설정**
@@ -13,15 +23,4 @@ public class ManageElement {
  * 좋은 아이템 먹으면 새 좋은 아이템 생성
  * 몸통 길이 추가
  * 일정 시간 후 혼한, 나쁜 아이템 생성 및 삭제 반복
- * */
-
-/*
- ****관리 
- * 
- * 
- **생성
- * 
- *
- **삭제
- *
  * */

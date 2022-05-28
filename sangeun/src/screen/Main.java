@@ -3,6 +3,7 @@ package screen;
 import java.util.*;
 import element.*;
 import operation.*;
+import operation.manager.CreateElement;
 import element.block.*;
 import element.item.*;
 import element.worm.*;
@@ -10,7 +11,6 @@ import screen.*;
 
 //메인 클래스
 public class Main {
-		
 	
 	public static void main(String[] args) {
 
@@ -18,18 +18,20 @@ public class Main {
 		System.out.println("프로그램 실행");
 		System.out.println("*******************");
 		
-		GameFrame gameFrame = new GameFrame();
-		
+		GameFrame gameFrame = new GameFrame(); //게임 프레임 생성
+		gameFrame.setContentPane(GameField.gamefield); //게임 프레임에 게임 필드 배치
+
 		/*위치 바꿀 예정*/
-		CreateElement createElement = new CreateElement();
-		createElement.initElement();
+		ManageElement.elementManager.initElement();
 		
+		/*테스트 한 것*/
+		GameOver gameover = new GameOver();
 		
 		/*
 		//임시로 생성!!
 		GoodItem gi = new GoodItem(3,2);
 		BadItem block3 = new BadItem(3, 3);
-		ConfuseItem block4 = new ConfuseItem(3, 4);		
+		ConfuseItem block4 = new ConfuseItem(3, 4);	
 		
 		GameField.gamefield.setHash(new GoodItem(2,3));
 		for(int i = 0; i< 10; i++)
@@ -55,6 +57,9 @@ public class Main {
 		th.start();
 		*/
 	}
+	
+	
+
 }
 
 /*
