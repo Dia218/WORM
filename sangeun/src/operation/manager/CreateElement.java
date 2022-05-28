@@ -4,6 +4,7 @@ import java.util.*;
 import element.*;
 import element.block.*;
 import element.item.*;
+import element.worm.*;
 import screen.GameField;
 
 //element 객체 생성 기능 인터페이스
@@ -22,8 +23,53 @@ public interface CreateElement {
 		GameField.gamefield.initField();
 		
 		//지렁이 머리 생성
-		//WormHead wormHead = new WormHead(0, 0);
-		//System.put.println("지렁이 머리 생성");
+		WormHead wormHead = new WormHead(6,6);
+		WormBody wormBody = new WormBody(wormHead.returnX(),wormHead.returnY());
+		GameField.gamefield.setElement(wormBody);
+		for(int i=0;i<4;i++) {
+			new WormBody(Worm.bodyXY[0][i]+1,Worm.bodyXY[1][i]);
+			wormBody.setdo(Worm.bodyXY[0][i]+1,Worm.bodyXY[1][i] );
+			GameField.gamefield.setElement(wormBody);
+				
+		}
+		
+//		//지렁이 움직이는 알고리즘
+//		if(Worm.size>=1){
+//			GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1],Worm.bodyXY[1][Worm.size-1]);
+//			for(int i=Worm.size-1;i>0;i--) {
+//				Worm.bodyXY[0][i] = Worm.bodyXY[0][i-1];
+//				Worm.bodyXY[1][i] = Worm.bodyXY[1][i-1];
+//				wormBody.setdo(Worm.bodyXY[0][i], Worm.bodyXY[1][i]);
+//				GameField.gamefield.setElement(wormBody);
+//				
+//			}
+//		}
+//		wormHead.setdo(wormHead.returnX()-1, wormHead.returnY()-1);
+//		Worm.bodyXY[0][0] = wormHead.returnX();
+//		Worm.bodyXY[1][0] = wormHead.returnY();
+//		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
+//		GameField.gamefield.setElement(wormBody);
+//		//여기까지
+		Thread thread = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO 자동 생성된 메소드 스텁
+				try {
+					for(int i = 0;i<10;i++) {
+						Thread.sleep(100);
+						Worm.wormMove(wormHead, wormBody);
+							
+					}
+					
+				} catch (InterruptedException e) {
+					// TODO 자동 생성된 catch 블록
+					e.printStackTrace();
+				}
+			}
+		
+		});
+		thread.start();
 		
 		//블록 이닛 호출
 		initBlock();
@@ -67,13 +113,10 @@ public interface CreateElement {
 		randomLocate(telpoBrandXY);
 		
 		//텔레포트 블록 객체 생성 - A, B
-		TelpoBlock telpoBlockA = new TelpoBlock(telpoArandXY[0], telpoArandXY[1]);
-		TelpoBlock telpoBlockB = new TelpoBlock(telpoBrandXY[0], telpoBrandXY[1]);
+		TelpoBlock telpoBlockA = new TelpoBlock(telpoArandXY[0], telpoArandXY[1], telpoBrandXY);
+		TelpoBlock telpoBlockB = new TelpoBlock(telpoBrandXY[0], telpoBrandXY[1], telpoArandXY);
 		GameField.gamefield.setElement(telpoBlockA);
-		GameField.gamefield.setElement(telpoBlockB);
-
-		//텔레포트 블록 객체 서로 연결?
-		
+		GameField.gamefield.setElement(telpoBlockB);		
 	}
 	
 	//킬 블록 생성 메소드
