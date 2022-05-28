@@ -30,6 +30,7 @@ public class ElementPanel extends JPanel {
 		
 		//동작 확인
 		System.out.println("요소 패널 생성 및 배치 : " + panelX + ", " + panelY);
+
 	}
 
 	
@@ -85,6 +86,7 @@ public class ElementPanel extends JPanel {
 			;
 		
 	}
+	
 	
 	
 	

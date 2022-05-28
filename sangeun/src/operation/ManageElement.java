@@ -1,6 +1,9 @@
 package operation;
 
 import operation.manager.*;
+import element.worm.WormHead;
+import operation.manager.*;
+import screen.GameField;
 
 //element 관리 클래스
 public class ManageElement implements CreateElement, DeleteElement {
@@ -11,6 +14,7 @@ public class ManageElement implements CreateElement, DeleteElement {
 	private ManageElement() {
 		//동작 확인
 		System.out.println("요소 매니저 객체 생성");
+
 	}
 }
 /*

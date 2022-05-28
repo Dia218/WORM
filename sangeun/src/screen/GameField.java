@@ -24,12 +24,13 @@ public class GameField extends JPanel {
 	private GameField() {
 		//배치 관리자 제거
 		this.setLayout(null);
-		
 		//게임 필드의 크기와 위치
 		this.setBounds(returnFieldSize(), returnFieldSize(), 0, 0);
-		
 		//동작 확인
 		System.out.println("gamefield 객체 생성");
+		
+		
+		
 	}
 	
 	/*게임 필드 메소드*/
