@@ -12,7 +12,7 @@ import screen.*;
 //메인 클래스
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		System.out.println("*******************");
 		System.out.println("프로그램 실행");
@@ -25,9 +25,41 @@ public class Main {
 		ManageElement.elementManager.initElement();
 		
 		/*테스트 한 것*/
-		GameOver gameover = new GameOver();
+		//GameOver gameover = new GameOver();
 		
-		/*
+		//김태완이 테스트
+		Thread thread = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				
+				// TODO 자동 생성된 메소드 스텁
+			try {
+				Thread.sleep(1000);
+				
+			} catch (InterruptedException e) {
+				// TODO 자동 생성된 catch 블록
+				e.printStackTrace();
+			}
+			finally {
+				new GameOver();
+				
+			}
+			
+		}
+	
+		
+	});
+	thread.start();
+
+
+
+	
+		
+		/*테스트 한 것*/
+
+		
+		/*1
 		//임시로 생성!!
 		GoodItem gi = new GoodItem(3,2);
 		BadItem block3 = new BadItem(3, 3);

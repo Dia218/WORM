@@ -5,6 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 import element.*;
+import element.block.CliffBlock;
 
 public class ElementPanel extends JPanel {
 
@@ -30,6 +31,7 @@ public class ElementPanel extends JPanel {
 		
 		//동작 확인
 		System.out.println("요소 패널 생성 및 배치 : " + panelX + ", " + panelY);
+
 	}
 
 	
@@ -52,7 +54,6 @@ public class ElementPanel extends JPanel {
 		if(element == null) {
 			;
 		}
-		
 		//element가 있을 때
 		else {
 			//element 객체로 부터 색깔 받아오기
@@ -70,6 +71,11 @@ public class ElementPanel extends JPanel {
 		if(element instanceof Worm) {
 			g.fillOval(0, 0, drawSize, drawSize);
 		}
+		//element가 절벽블록일 때
+		else if(element instanceof CliffBlock) {
+			//절벽 그리기 호출
+			drawCliff(g);
+		}
 		//블록 = 사각형
 		else if(element instanceof Block) {
 			g.fillRect(0, 0, drawSize, drawSize);
@@ -86,6 +92,40 @@ public class ElementPanel extends JPanel {
 		
 	}
 	
+	//절벽 그리기
+	public void drawCliff(Graphics g) {
 	
-	
+		//왼쪽 상단
+		if(element.returnX() == 0 && element.returnY() == 0) {
+			g.fillRect(0, 0, drawSize, drawSize);
+		}
+		//오른쪽 하단
+		else if(element.returnX() == GameField.gamefield.elementNum-1 && element.returnY() == GameField.gamefield.elementNum-1) {
+			g.fillRect(GameField.gamefield.elementSize-drawSize, GameField.gamefield.elementSize-drawSize, drawSize, drawSize);
+		}
+		//왼쪽 하단
+		else if(element.returnX() == 0 && element.returnY() == GameField.gamefield.elementNum-1) {
+			g.fillRect(0, GameField.gamefield.elementSize-drawSize, drawSize, drawSize);
+		}
+		//오른쪽 상단
+		else if(element.returnX() == GameField.gamefield.elementNum-1 && element.returnY() == 0) {
+			g.fillRect(GameField.gamefield.elementSize-drawSize, 0, drawSize, drawSize);
+		}
+		//상단
+		else if(element.returnY() == 0) {
+			g.fillRect(0, 0, GameField.gamefield.elementSize, drawSize);
+		}
+		//하단
+		else if(element.returnY() == GameField.gamefield.elementNum-1) {
+			g.fillRect(0, GameField.gamefield.elementSize-drawSize, GameField.gamefield.elementSize, drawSize);
+		}
+		//좌측
+		else if(element.returnX() == 0) {
+			g.fillRect(0, 0, drawSize, GameField.gamefield.elementSize);
+		}
+		//우측
+		else if(element.returnX() == GameField.gamefield.elementNum-1) {
+			g.fillRect(GameField.gamefield.elementSize-drawSize, 0, drawSize, GameField.gamefield.elementSize);
+		}	
+	}
 }

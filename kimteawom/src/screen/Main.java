@@ -10,7 +10,6 @@ public class Main {
 		
 	public static void main(String[] args) {
 		GameFrame gameFrame = new GameFrame();	
-	
 		
 		//임시로 생성!!
 

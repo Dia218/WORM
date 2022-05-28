@@ -1,16 +1,24 @@
 package operation;
 
 import operation.manager.*;
+import element.worm.WormHead;
+import operation.manager.*;
+import screen.GameField;
 
 //element 관리 클래스
 public class ManageElement implements CreateElement, DeleteElement {
 	
+	/*관리 클래스의 필드*/
 	//프로그램 실행 시 elementManager 객체 생성, 이후 추가 생성 불가 
 	public static final ManageElement elementManager = new ManageElement();
-	
+	//게임 필드의 레퍼런스 저장
+	GameField gamefield;
+
+	/*관리 클래스의 생성자*/
 	private ManageElement() {
 		//동작 확인
 		System.out.println("요소 매니저 객체 생성");
+
 	}
 }
 /*

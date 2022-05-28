@@ -22,11 +22,10 @@ public class GameField extends JPanel {
 	private GameField() {
 		//배치 관리자 제거
 		this.setLayout(null);
-		
 		//게임 필드의 크기와 위치
 		//this.setBounds(elementSize*elementNum, elementSize*elementNum, 0, 0);
 		this.setBounds(elementSize*elementNum, elementSize*elementNum, 0, 0);
-		
+
 	}
 	
 	/*게임 필드 메소드*/
