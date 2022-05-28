@@ -37,18 +37,20 @@ public class Worm extends Element {
 			}
 		}
 		wormHead.setdo(wormHead.returnX()-1, wormHead.returnY());
+		//이 아래 것을 추가하고 
+		//GameField.gamefield.setElement(wormHead); 
+		
 		Worm.bodyXY[0][0] = wormHead.returnX();
 		Worm.bodyXY[1][0] = wormHead.returnY();
 		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
-		GameField.gamefield.setElement(wormBody);
+		//이 아래 것을 삭제
+		GameField.gamefield.setElement(wormBody); 
 		//여기까지
 	
 	}
 
 
-	public static void wormInc(Element wormBody,int Worm.size) {
-		
-	}
+	
 }	
 	
 
