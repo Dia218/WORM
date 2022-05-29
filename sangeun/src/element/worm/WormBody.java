@@ -4,6 +4,12 @@ import java.awt.Color;
 import element.Worm;
 public class WormBody extends Worm {
 	
+	public WormBody() {
+		super(1,1);
+		super.color = Color.green;
+
+		System.out.println("지렁이바디 만들기");
+	}
 	public WormBody(int wormX, int wormY) {
 		super(wormX,wormY);
 		int [][] a = super.getBody();
@@ -19,6 +25,6 @@ public class WormBody extends Worm {
 	
 		
 		//동작 확인
-		System.out.println("텔레포트 블록 만들기");
+		System.out.println("지렁이바디 만들기");
 	}
 }

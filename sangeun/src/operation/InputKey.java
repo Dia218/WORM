@@ -2,8 +2,8 @@ package operation;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
 import operation.WormDirection.Direction;
+
 
 
 public class InputKey extends KeyAdapter {
@@ -25,9 +25,9 @@ public class InputKey extends KeyAdapter {
 	private void Log(String str) {
 		System.out.println(str);
 	}
-	
 
 	WormDirection t = new WormDirection();
+
 	
 	//키를 눌렀을 때 호출되는 메소드
 	@Override

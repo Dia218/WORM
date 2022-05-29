@@ -1,5 +1,6 @@
 package operation;
 
+import element.Worm;
 import element.block.*;
 import element.item.*;
 import screen.GameField;
@@ -10,6 +11,8 @@ public class WormDirection {
 	//지렁이 움직이는 위치
 	public Direction direction;
 	public boolean isReverse = false;
+	
+	//없어도 될것
 	private boolean gameOver = false;
 
 	private int headX,headY,itemX,itemY,size,score,speed;
@@ -27,86 +30,16 @@ public class WormDirection {
 		this.headY=12;
 		this.size=0;
 		this.score = 0;
+		
+		//없어도 될것
 		this.gameOver = false;
 		this.direction = Direction.NONE;
 		this.permitRotation = true;
 		this.speed = 150;
 		
-		System.out.println("tern 실tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행행");
+		//동작 확인
+		System.out.println("방향 전환 실행");
 		
-		/*
-
-		switch(direction) {
-		case RIGHT:
-			if (GameField.gamefield.checkElement((headX+1),(headY)) instanceof KillBlock)
-				gameOver = true;
-			else if(GameField.gamefield.checkElement((headX+1),(headY)) instanceof BasicBlock)
-				break;
-			else if(GameField.gamefield.checkElement((headX+1),(headY)) == null)
-				move();
-			else if(GameField.gamefield.checkElement((headX+1),(headY)) instanceof TelpoBlock)
-				//?
-				break;
-			else if(GameField.gamefield.checkElement((headX+1),(headY)) instanceof BadItem)
-				eatBI();
-			else if(GameField.gamefield.checkElement((headX+1),(headY)) instanceof ConfuseItem)
-				confuseEat();
-			else if(GameField.gamefield.checkElement((headX+1),(headY)) instanceof GoodItem)
-				eat();
-			break;
-		case LEFT:
-			if (GameField.gamefield.checkElement((headX-1),(headY)) instanceof KillBlock)
-				gameOver = true;
-			else if(GameField.gamefield.checkElement((headX-1),(headY)) instanceof BasicBlock)
-				break;
-			else if(GameField.gamefield.checkElement((headX-1),(headY)) == null)
-				move();
-			else if(GameField.gamefield.checkElement((headX-1),(headY)) instanceof TelpoBlock)
-				//?
-				break;
-			else if(GameField.gamefield.checkElement((headX-1),(headY)) instanceof BadItem)
-				eatBI();
-			else if(GameField.gamefield.checkElement((headX-1),(headY)) instanceof ConfuseItem)
-				confuseEat();
-			else if(GameField.gamefield.checkElement((headX-1),(headY)) instanceof GoodItem)
-				eat();
-			break;
-		case UP:
-			if (GameField.gamefield.checkElement((headX),(headY-1)) instanceof KillBlock)
-				gameOver = true;
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof BasicBlock)
-				break;
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) == null)
-				move();
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof TelpoBlock)
-				//?
-				break;
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof BadItem)
-				eatBI();
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof ConfuseItem)
-				confuseEat();
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof GoodItem)
-				eat();
-			break;
-		case DOWN:
-			if (GameField.gamefield.checkElement((headX),(headY+1)) instanceof KillBlock)
-				gameOver = true;
-			else if(GameField.gamefield.checkElement((headX),(headY+1)) instanceof BasicBlock)
-				break;
-			else if(GameField.gamefield.checkElement((headX),(headY+1)) == null)
-				move();
-			else if(GameField.gamefield.checkElement((headX),(headY+1)) instanceof TelpoBlock)
-				//?
-				break;
-			else if(GameField.gamefield.checkElement((headX),(headY+1)) instanceof BadItem)
-				badEat();
-			else if(GameField.gamefield.checkElement((headX),(headY+1)) instanceof ConfuseItem)
-				confuseEat();
-			else if(GameField.gamefield.checkElement((headX),(headY+1)) instanceof GoodItem)
-				eat();
-			break;
-		}
-		*/
 	}
 
 	//위치 return
