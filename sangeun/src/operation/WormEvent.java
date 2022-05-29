@@ -1,5 +1,7 @@
 package operation;
 
+import javax.swing.event.*;
+
 //똠치가 제작함
 public class WormEvent extends Thread {
 	tern tern = new tern();
@@ -57,42 +59,6 @@ public class WormEvent extends Thread {
 	}
 	
 
-	@Override
-	public void LeftKeyPressed() {
 	
-			if(tern.getDirection().equals(tern.Direction.RIGHT))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.LEFT);
-		
-		
-	}
-
-	@Override
-	public void RightKeyPressed() {
-		if(tern.getDirection().equals(tern.Direction.LEFT))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.RIGHT);
-		
-			
-	}
-
-	@Override
-	public void UpKeyPressed() {
-
-			if(tern.getDirection().equals(tern.Direction.DOWN))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.UP);
-
-	}
-
-	@Override
-	public void DownKeyPressed() {
-			if(tern.getDirection().equals(tern.Direction.UP))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.DOWN);
-		
-			
-		
-	}
 }
 

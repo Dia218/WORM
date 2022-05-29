@@ -24,8 +24,6 @@ public class Worm extends Element {
 		this.bodyXY = a;
 	}
 	
-<<<<<<< HEAD
-=======
 	public static void wormMove(Element wormHead, Element wormBody) {
 		//지렁이 움직이는 알고리즘
 		if(Worm.size>=1){
@@ -49,5 +47,4 @@ public class Worm extends Element {
 	
 	
 	
->>>>>>> worm
 }
