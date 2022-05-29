@@ -4,6 +4,12 @@ import java.awt.Color;
 import element.Worm;
 public class WormBody extends Worm {
 	
+	public WormBody() {
+		super(1,1);
+		super.color = Color.green;
+
+		System.out.println("지렁이바디 만들기");
+	}
 	public WormBody(int wormX, int wormY) {
 		super(wormX,wormY);
 		int [][] a = super.getBody();
@@ -11,7 +17,7 @@ public class WormBody extends Worm {
 		a[1][super.size++]= wormY;
 		super.setBody(a);
 
-		System.out.print(super.size+""+super.bodyXY[0][super.size-1]);
+		System.out.print(super.bodyXY[0][super.size-1]);
 		System.out.print(super.bodyXY[1][super.size-1]);
 		super.color = Color.GREEN;
 		// TODO Auto-generated constructor stub
@@ -19,11 +25,6 @@ public class WormBody extends Worm {
 	
 		
 		//동작 확인
-		System.out.println("지렁이 몸 만들기");
-	}
-
-	public void setdo(int i, int j) {
-		// TODO 자동 생성된 메소드 스텁
-		
+		System.out.println("지렁이바디 만들기");
 	}
 }

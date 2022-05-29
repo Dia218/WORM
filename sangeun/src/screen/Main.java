@@ -28,30 +28,29 @@ public class Main {
 		//GameOver gameover = new GameOver();
 		
 		//김태완이 테스트
-		Thread thread = new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				
-				// TODO 자동 생성된 메소드 스텁
-			try {
-				Thread.sleep(1000);
-				new GameOver();
-				
-			} catch (InterruptedException e) {
-				// TODO 자동 생성된 catch 블록
-				e.printStackTrace();
-			}
-			finally {
-			
-				
-			}
-			
-		}
-	
-		
-	});
-	thread.start();
+//		Thread thread = new Thread(new Runnable() {
+//
+//			@Override
+//			public void run() {
+//				
+//				// TODO 자동 생성된 메소드 스텁
+//			try {
+//				Thread.sleep(1000);
+//				new GameOver();
+//			} catch (InterruptedException e) {
+//				// TODO 자동 생성된 catch 블록
+//				e.printStackTrace();
+//			}
+//			finally {
+//				
+//				
+//			}
+//			
+//		}
+//	
+//		
+//	});
+//	thread.start();
 
 
 

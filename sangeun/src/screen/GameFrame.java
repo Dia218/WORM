@@ -3,6 +3,8 @@ package screen;
 import java.awt.*;
 import javax.swing.*;
 
+import operation.InputKey;
+
 //게임 프레임 클래스
 public class GameFrame extends JFrame {
 	
@@ -10,7 +12,8 @@ public class GameFrame extends JFrame {
 	public GameFrame() throws HeadlessException {
 		super();		
 				
-		//this.addKeyListener(new InputKey(element));
+		this.addKeyListener(new InputKey());
+		this.setFocusable(true);//프레임이 포커스를 받을 수 있도록 설정
 		requestFocus(); //포커스 설정
 	
 		setSize(GameField.gamefield.returnFieldSize()+50, GameField.gamefield.returnFieldSize()+50); //사이즈 설정

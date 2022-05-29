@@ -2,6 +2,9 @@ package element;
 
 import java.awt.Color;
 
+import element.worm.WormBody;
+import element.worm.WormHead;
+//import element.worm.*;
 import screen.GameField;
 
 public class Worm extends Element {
@@ -24,35 +27,42 @@ public class Worm extends Element {
 		this.bodyXY = a;
 	}
 	
-
-	public static void wormMove(Element wormHead, Element wormBody) {
-		//지렁이 움직이는 알고리즘
-		if(Worm.size>=1){
-			GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1],Worm.bodyXY[1][Worm.size-1]);
-			for(int i=Worm.size-1;i>0;i--) {
-				Worm.bodyXY[0][i] = Worm.bodyXY[0][i-1];
-				Worm.bodyXY[1][i] = Worm.bodyXY[1][i-1];
-				wormBody.setdo(Worm.bodyXY[0][i], Worm.bodyXY[1][i]);
-				GameField.gamefield.setElement(wormBody);
-				
-			}
-		}
-		//tern에서 할일
-		wormHead.setdo(wormHead.returnX()+1, wormHead.returnY());
-		
-		//이 아래 것을 추가하고 
-		GameField.gamefield.setElement(wormHead); 
-		
-		Worm.bodyXY[0][0] = wormHead.returnX();
-		Worm.bodyXY[1][0] = wormHead.returnY();
-		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
-		//이 아래 것을 삭제
-		//GameField.gamefield.setElement(wormBody); 
-		//여기까지
+//	public static void wormMove() {
+//		System.out.println("지렁이 무브");
+//		//지렁이 움직이는 알고리즘
+//		WormHead wormHead = new WormHead(Worm.bodyXY[0][0],Worm.bodyXY[1][0]);
+//		WormBody wormBody = new WormBody();
+//		
+//		//맨 뒤칸 삭제
+//		GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1],Worm.bodyXY[1][Worm.size-1]);
+//		
+//		
+//		if(Worm.size>=1){
+//			for(int i=Worm.size-1;i>0;i--) {
+//				Worm.bodyXY[0][i] = Worm.bodyXY[0][i-1];
+//				Worm.bodyXY[1][i] = Worm.bodyXY[1][i-1];
+//				wormBody.setdo(Worm.bodyXY[0][i], Worm.bodyXY[1][i]);
+//				GameField.gamefield.setElement(wormBody);
+//				
+//			}
+//		}
+//		else {
+//			return;
+//		}
+////		
+//		//GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1],Worm.bodyXY[1][Worm.size-1]);
+//		wormHead.setdo(wormHead.returnX()-1, wormHead.returnY());
+//		
+//		Worm.bodyXY[0][0] = wormHead.returnX();
+//		Worm.bodyXY[1][0] = wormHead.returnY();
+//		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
+//		GameField.gamefield.setElement(wormHead);
+//		//여기까지
+//	
+//	}
+//	
+//	public static void eat() {
+//		new WormBody(Worm.bodyXY[0][Worm.size-1]+1,Worm.bodyXY[1][Worm.size-1]);
+//	}
 	
-	}
 }
-
-
-
-

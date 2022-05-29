@@ -22,96 +22,49 @@ public class GameOver extends JPanel {
 		((JFrame) GameField.gamefield.getTopLevelAncestor()).setContentPane(this);
 		
 		//게임 오버 그리기
-		repaint();
+		getParent().revalidate();
+		getParent().repaint();
+		
+		//안쪽 내용 채우기
 		Thread thread = new Thread(new Runnable() {
 
 			@Override
 			public void run() {
-				
 				// TODO 자동 생성된 메소드 스텁
-			try {
-				
-				for(int i=0;i<22;i++) {
-					Thread.sleep(100);
-					x++;
-					isGameOver= true;
-					revalidate();
-					repaint();
-						
+				// TODO 자동 생성된 메소드 스텁
+				try {
+					
+					for(int i=0;i<22;i++) {
+						Thread.sleep(100);
+						x++;
+						isGameOver= true;
+						revalidate();
+						repaint();
+							
+					}
+				} catch (InterruptedException e) {
+					// TODO 자동 생성된 catch 블록
+					e.printStackTrace();
 				}
-			} catch (InterruptedException e) {
-				// TODO 자동 생성된 catch 블록
-				e.printStackTrace();
-			}
-			finally {
-				isEnd =true;
-				repaint();
-			}
+				finally {
+					isEnd =true;
+					repaint();
+				};
 
-		
 			}
+		
 		});
 		thread.start();
-
 	}
 	
 
 	
 	/*게임 오버 패널 메소드*/
-	
-//	@Override
-//	public void paintComponent(Graphics g) {
-//		//동작 확인
-//		System.out.println("게임오버 페인트컴포넌트 실행");
-//		
-//		//사각형 그리기
-//		g.setColor(Color.black);
-//		for(int i = 0; i <= GameField.gamefield.elementNum; i++) {
-//			for(int j = 0; j <= GameField.gamefield.elementNum; j++) {
-//				if(i==0||j==0||i==GameField.gamefield.elementNum||j==GameField.gamefield.elementNum)
-//				g.fillRect(i*GameField.gamefield.elementSize, j*GameField.gamefield.elementSize, 15, 15);
-//			}
-//			//글씨 그리기
-//
-//		Thread thread = new Thread(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//				
-//				// TODO 자동 생성된 메소드 스텁
-//			try {
-//				
-//				for(int i=0;i<GameField.gamefield.elementNum;i++) {
-//					Thread.sleep(100);
-//					x++;
-//					isGameOver= true;
-//					revalidate();
-//					repaint();
-//						
-//				}
-//			} catch (InterruptedException e) {
-//				// TODO 자동 생성된 catch 블록
-//				e.printStackTrace();
-//			}
-//			finally {
-//				isEnd =true;
-//				repaint();
-//			}
-//			
-//		}
-//	
-//		
-//	});
-//	thread.start();
-//	}
-//}
-
-	/*게임 오버 패널 메소드*/
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		//동작 확인
-		System.out.println("게임오버 페인트컴포넌트 실행123");
+		System.out.println("게임오버 페인트컴포넌트 실행");
 		
 		
 		setBackground(Color.black);
@@ -152,8 +105,6 @@ public class GameOver extends JPanel {
 			
 		}
 		
-		//안쪽 내용 채우기
-	
 	
 	}
 }
