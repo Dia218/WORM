@@ -8,8 +8,8 @@ import element.worm.WormHead;
 import screen.GameField;
 
 public class Worm extends Element {
-	public static int bodyXY[][] = new int[2][15];
-	public static int size = 0;
+	public static int wormXY[][] = new int[2][15];
+	public static int wormSize = 0;
 	
 	public Worm(int elementX, int elementY) {
 		super(elementX, elementY);
@@ -21,10 +21,10 @@ public class Worm extends Element {
 	}
 	
 	public int[][] getBody(){
-		return bodyXY;
+		return wormXY;
 	}
 	public void setBody(int[][] a){
-		this.bodyXY = a;
+		this.wormXY = a;
 	}
 
 }

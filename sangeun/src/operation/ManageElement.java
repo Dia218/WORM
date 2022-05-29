@@ -13,7 +13,7 @@ public class ManageElement implements CreateElement, DeleteElement {
 	public static final ManageElement elementManager = new ManageElement();
 	//게임 필드의 레퍼런스 저장
 	GameField gamefield;
-
+	
 	/*관리 클래스의 생성자*/
 	private ManageElement() {
 		//동작 확인

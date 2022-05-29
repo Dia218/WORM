@@ -12,7 +12,7 @@ public class GoodItem extends Item {
 		// TODO Auto-generated constructor stub
 		
 		//동작 확인
-		System.out.println("아이템 만들기");
+		System.out.println("좋은 아이템 생성자 호출");
 	}
 	
 }

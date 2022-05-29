@@ -10,6 +10,9 @@ public class ConfuseItem extends Item {
 		super(elementX, elementY);
 		super.color = Color.YELLOW;
 		// TODO Auto-generated constructor stub
+		
+		//동작 확인
+		System.out.println("혼란 아이템 생성자 호출");
 	}
 
 }

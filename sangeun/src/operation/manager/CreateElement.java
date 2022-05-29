@@ -24,8 +24,7 @@ public interface CreateElement {
 		GameField.gamefield.initField();
 		
 		//지렁이 머리 생성
-		WormHead wormHead = new WormHead(6,6);
-		WormBody wormBody = new WormBody(wormHead.returnX(),wormHead.returnY());
+		WormHead wormHead = new WormHead(1,1);
 		GameField.gamefield.setElement(wormHead);
 
 		//블록 이닛 호출
@@ -137,7 +136,7 @@ public interface CreateElement {
 		for(int x = randXY[0]; x <= randXY[0] + sizeWL[0] - 1; x++) {
 			for(int y = randXY[1]; y <= randXY[1] + sizeWL[1] - 1; y++) {
 				BasicBlock basicBlock = new BasicBlock(x, y);
-				GameField.gamefield.setElement(basicBlock);		
+				GameField.gamefield.setElement(basicBlock);	
 			}
 		}
 	}
@@ -236,6 +235,12 @@ public interface CreateElement {
 		GameField.gamefield.setElement(ConfuseItem);
 	}
 	
+	//지렁이 몸통 생성 메소드
+	default void createWormBody(int x, int y) {
+		WormBody wormBody = new WormBody(x, y);
+		GameField.gamefield.setElement(wormBody);
+	}
+
 	
 	/*랜덤 생성 메소드*/
 	
@@ -286,16 +291,13 @@ public interface CreateElement {
 		System.out.println("블록 사이즈 테스트 호출");
 		
 		//좌표를 돌아가면서 검사
-		int x = randXY[0]+1; int y = randXY[1]+1;
-		while(x <= randXY[0]+sizeWL[0]-1) {
-			while(y <= randXY[1]+sizeWL[1]-1) {
-				//해당 좌표에 element가 있을 경우
+		int x = 0, y = 0;
+		for(x = randXY[0]; x <= randXY[0]+sizeWL[0]-1; x++) {
+			for(y = randXY[1]; y <= randXY[1]+sizeWL[1]-1; y++) {
 				if(null != GameField.gamefield.checkElement(x, y)) {
 					x = 100; y = 100; //반복문 빠져나가기
 				}
-				y++;
 			}
-			x++;
 		}
 		
 		//끝까지 검사했다면 true
