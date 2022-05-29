@@ -27,6 +27,7 @@ public class Main {
 		/*테스트 한 것*/
 		//GameOver gameover = new GameOver();
 		
+		/*
 		//김태완이 테스트
 		Thread thread = new Thread(new Runnable() {
 
@@ -51,7 +52,7 @@ public class Main {
 		
 	});
 	thread.start();
-
+*/
 
 
 	

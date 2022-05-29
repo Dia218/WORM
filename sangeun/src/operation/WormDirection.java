@@ -5,7 +5,7 @@ import element.item.*;
 import screen.GameField;
 
 //똠치가 제작함
-public class tern {
+public class WormDirection {
 
 	//지렁이 움직이는 위치
 	public Direction direction;
@@ -16,26 +16,25 @@ public class tern {
 
 	private boolean permitRotation;
 	
-	enum Direction{
-			CENTER, RIGHT, LEFT, UP, DOWN
+	public enum Direction{
+			NONE, RIGHT, LEFT, UP, DOWN
 	}
 	
 	//움직일 때
-	public void tern() {
+	public WormDirection() {
 
 		this.headX=12;
 		this.headY=12;
 		this.size=0;
 		this.score = 0;
 		this.gameOver = false;
-		this.direction = Direction.RIGHT;
+		this.direction = Direction.NONE;
 		this.permitRotation = true;
 		this.speed = 150;
 		
-		System.out.print('a');
-		this.direction = Direction.RIGHT;
+		System.out.println("tern 실tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행행");
 		
-		
+		/*
 
 		switch(direction) {
 		case RIGHT:
@@ -107,11 +106,12 @@ public class tern {
 				eat();
 			break;
 		}
+		*/
 	}
 
 	//위치 return
 	public Direction getDirection() {
-		return direction;
+		return this.direction;
 	}
 	
 	//위치 설정 메소드

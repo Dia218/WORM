@@ -23,7 +23,7 @@ public class ManageElement implements CreateElement, DeleteElement {
 }
 /*
  **초기 설정**
- * 지렁이 머리 생성
+ * 지렁이 머리 생성 
  * 블록들 생성
  * 아이템들 생성
  * 

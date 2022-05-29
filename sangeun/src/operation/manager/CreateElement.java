@@ -21,7 +21,7 @@ public interface CreateElement {
 		
 		//필드 초기화 호출
 		GameField.gamefield.initField();
-		
+		/*
 		//지렁이 머리 생성
 		WormHead wormHead = new WormHead(6,6);
 		WormBody wormBody = new WormBody(wormHead.returnX(),wormHead.returnY());
@@ -32,7 +32,7 @@ public interface CreateElement {
 			GameField.gamefield.setElement(wormBody);
 				
 		}
-		
+		*/
 //		//지렁이 움직이는 알고리즘
 //		if(Worm.size>=1){
 //			GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1],Worm.bodyXY[1][Worm.size-1]);
@@ -50,6 +50,7 @@ public interface CreateElement {
 //		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
 //		GameField.gamefield.setElement(wormBody);
 //		//여기까지
+		/*
 		Thread thread = new Thread(new Runnable() {
 
 			@Override
@@ -70,7 +71,7 @@ public interface CreateElement {
 		
 		});
 		thread.start();
-		
+		*/
 		//블록 이닛 호출
 		initBlock();
 		
