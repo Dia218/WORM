@@ -7,119 +7,65 @@ import operation.ManageElement;
 
 public interface MoveElement {
 
-	/*
+	MoveInfo moveInfo = new MoveInfo();
+
 	default void moveWorm() {
+		//지렁이 머리 이동 호출
+		moveWormHead();
+		//지렁이 몸통 이동 호출
+		moveWormBody();
+	}
 
-		//지렁이 몸통 갯수만큼 반복
-		int x = 0, y = 0;
-		for(int index = 0; index < ManageElement.elementManager.wormHead.returnWormSize(); index++) {
-			//index번째 지렁이 객체 받아오기
-			Worm worm = ManageElement.elementManager.wormHead.getWorm(index);
+	private void moveWormHead() {
+		//현재 머리 좌표 저장
+		moveInfo.indexXY[0] = moveInfo.wormHead.returnX();
+		moveInfo.indexXY[1] = moveInfo.wormHead.returnY();
+		
+		//게임 필드에서 삭제
+		ManageElement.elementManager.gamefield.removeElement(moveInfo.wormHead.returnX(), moveInfo.wormHead.returnY());
+		
+		//지렁이 머리의 좌표 설정
+		moveInfo.wormHead.setXY(moveInfo.directXY[0] + moveInfo.moveXY[0], moveInfo.directXY[1] + moveInfo.moveXY[1]);
+		
+		//게임 필드에 지렁이 머리 저장
+		ManageElement.elementManager.gamefield.setElement(moveInfo.wormHead);
+	}
+	
+	private void moveWormBody() {
+		for(int index = 1; index < moveInfo.wormHead.returnWormSize(); index++) {
+			//지렁이 객체 받아오기
+			Worm worm = moveInfo.wormHead.getWorm(index);
 			
-			//지렁이 머리일 경우
-			if(index == 0) {
-				//지렁이 머리 이동 메소드 호출
-				moveWormHead((WormHead)worm);
-
-			}
-			//몸통일 경우
-			else {
-				//지렁이 몸통 이동 메소드 호출 (바로 전 지렁이 객체 좌표 대입)
-				moveWormBody(worm, x, y);
-			}
+			//지렁이 좌표
+			int x = worm.returnX();
+			int y = worm.returnY();
 			
-			//index번째 지렁이 객체의 좌표 저장
-			x = worm.returnX();
-			y = worm.returnY();
+			//게임 필드에서 삭제
+			ManageElement.elementManager.gamefield.removeElement(x, y);
+			
+			//지렁이 몸통의 좌표 설정
+			worm.setXY(moveInfo.indexXY[0], moveInfo.indexXY[1]);
+			
+			//게임 필드에 지렁이 몸통 저장
+			ManageElement.elementManager.gamefield.setElement(worm);
+			
+			//원래 지렁이 몸통이 있었던 자리 저장
+			moveInfo.indexXY[0] = x;
+			moveInfo.indexXY[1] = y;
 		}
 	}
 	
-	private void moveWormHead(WormHead wormHead, int headX, int headY) {
-		
-		//오른쪽 : x+1, y
-		if (ManageElement.elementManager.wormDirection.getDirection().equals(ManageElement.elementManager.wormDirection.direction.RIGHT)) {
-			//이동할 공간 확인
-			checkArea(headX+1, headY);
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(wormHead.returnX(), wormHead.returnY());
-	default void telpoWorm(WormHead wormHead, TelpoBlock telpoBlock) {
-		int headX = wormHead.returnX();
-		int headY = wormHead.returnY();
-		int [] otherTelpoBlock = telpoBlock.telpoOtherReturn();
-		headX = otherTelpoBlock[0];
-		headX = otherTelpoBlock[1];
-		ManageElement.elementManager.wormHead.returnWorm().setXY(headX, headY);
-	}
-	
-	private void moveWormHead(WormHead wormHead) {
-		int headX = wormHead.returnX();
-		int headY = wormHead.returnY();
-		
-		//오른쪽 : x+1, y
-		if (ManageElement.elementManager.wormDirection.getDirection().equals(ManageElement.elementManager.wormDirection.direction.RIGHT)) {
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(headX, headY);
-			//지렁이 머리의 좌표 설정
-			wormHead.setXY(++headX, headY);
-			//게임 필드에 지렁이 머리 저장
-			ManageElement.elementManager.gamefield.setElement(wormHead);
-		}
-		//왼쪽 : x-1, y
-		else if (ManageElement.elementManager.wormDirection.getDirection().equals(ManageElement.elementManager.wormDirection.direction.LEFT)) {
-			//이동할 공간 확인
-			checkArea(headX-1, headY);
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(wormHead.returnX(), wormHead.returnY());
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(headX, headY);
-			//지렁이 머리의 좌표 설정
-			wormHead.setXY(--headX, headY);
-			//게임 필드에 지렁이 머리 저장
-			ManageElement.elementManager.gamefield.setElement(wormHead);
-		}
-		//위쪽 : x, y+1
-		else if (ManageElement.elementManager.wormDirection.getDirection().equals(ManageElement.elementManager.wormDirection.direction.UP)) {
-			//이동할 공간 확인
-			checkArea(headX, headY+1);
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(wormHead.returnX(), wormHead.returnY());
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(headX, headY);
-			//지렁이 머리의 좌표 설정
-			wormHead.setXY(headX, ++headY);
-			//게임 필드에 지렁이 머리 저장
-			ManageElement.elementManager.gamefield.setElement(wormHead);
-
-		//아래쪽 : x, y-1
-		else if (ManageElement.elementManager.wormDirection.getDirection().equals(ManageElement.elementManager.wormDirection.direction.DOWN)) {
-
-			//이동할 공간 확인
-			checkArea(headX, headY-1);
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(wormHead.returnX(), wormHead.returnY());
-
-			//게임 필드에서 삭제
-			ManageElement.elementManager.gamefield.removeElement(headX, headY);
-
-			//지렁이 머리의 좌표 설정
-			wormHead.setXY(headX, --headY);
-			//게임 필드에 지렁이 머리 저장
-			ManageElement.elementManager.gamefield.setElement(wormHead);
-		}
-		//이동없음
-		else
-			;
-	}*/
-	
-	default void moveWorm() {
-		//0 : x좌표 변화 값, 1 : y좌표 변화 값
-		int moveXY[] = new int[2];
+	default void checkMove() {
+		//현재 위치 저장
+		moveInfo.directXY[0] = moveInfo.wormHead.returnX();
+		moveInfo.directXY[1] = moveInfo.wormHead.returnY();
 		
 		//좌표 변화 값 계산
-		calcMove(moveXY);
+		calcMove(moveInfo.moveXY);
 		
+		//공간 확인 및 요소 메소드 실행
+		checkArea(moveInfo.directXY[0] + moveInfo.moveXY[0], moveInfo.directXY[1] + moveInfo.moveXY[1]);
 	}
-	
 	
 	
 	private void calcMove(int moveXY[]) {
@@ -150,16 +96,6 @@ public interface MoveElement {
 		}
 	}
 	
-	
-	private void moveWormBody(Worm worm, int x, int y) {
-		//게임 필드에서 삭제
-		ManageElement.elementManager.gamefield.removeElement(worm.returnX(), worm.returnY());
-		//지렁이 몸통의 좌표 설정
-		worm.setXY(x, y);
-		//게임 필드에 지렁이 몸통 저장
-		ManageElement.elementManager.gamefield.setElement(worm);
-	}
-
 	private void checkArea(int areaX, int areaY) {
 		if(null == ManageElement.elementManager.gamefield.checkElement(areaX, areaY)) {
 			;
@@ -167,6 +103,11 @@ public interface MoveElement {
 		else {
 			//ManageElement.elementManager.gamefield.checkElement(areaX, areaY).executeElement();
 		}
+	}
+	
+	default void telpoWorm(int telpoX, int telpoY) {
+		moveInfo.directXY[0] = telpoX;
+		moveInfo.directXY[1] = telpoY;
 	}
 
 	default void moveTelpo() {
@@ -177,4 +118,19 @@ public interface MoveElement {
 		//새 텔레포트 생성
 		ManageElement.elementManager.createTelpoBlock();
 	}
+}
+
+class MoveInfo {
+	//지렁이 머리 레퍼런스 저장
+	WormHead wormHead = ManageElement.elementManager.wormHead;
+	
+	//0 : x좌표 변화 값, 1 : y좌표 변화 값
+	int moveXY[] = new int[2];
+	
+	//0 : 이동 기준점 x좌표 값, 1 : y좌표 값
+	int directXY[] = new int[2];
+	
+	//0 : 현재 위치 x좌표, 1 : 현재 위치 y좌표
+	int indexXY[] = new int[2];
+	
 }
