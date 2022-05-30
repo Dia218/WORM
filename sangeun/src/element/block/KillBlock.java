@@ -20,6 +20,7 @@ public class KillBlock extends Block {
 	}
 	private void executeKillBlock() {
 		//지렁이를 죽인다 - 지렁이 머리를 없앤다
-		
+		//new GameOver();
+		//IsGameOver = true;
 	}
 }

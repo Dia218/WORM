@@ -2,6 +2,9 @@ package element.block;
 import java.awt.Color;
 
 import element.Block;
+import element.Worm;
+import operation.ManageElement;
+import screen.GameField;
 
 
 public class TelpoBlock extends Block {
@@ -22,7 +25,13 @@ public class TelpoBlock extends Block {
 		this(blockX, blockY);
 		this.telpoOtherXY = telpoOtherXY; 
 	}
-
+	
+	
+	//tp 용
+	public int[] telpoOtherReturn() {
+		return this.telpoOtherXY;
+	}
+	
 	/*텔레포트 블록 메소드*/
 	@Override
 	public void executeBlock() {
@@ -31,7 +40,9 @@ public class TelpoBlock extends Block {
 	}
 	private void executeTelpoBlock() {
 		//다른 블록 좌표로 지렁이 머리를 이동시킨다
-		
+		int telpoXY[] = telpoOtherReturn();
+		ManageElement.elementManager.wormHead.returnWorm().setXY(telpoXY[0], telpoXY[1]);
+		Worm.wormMove();
 	}
 	
 }
