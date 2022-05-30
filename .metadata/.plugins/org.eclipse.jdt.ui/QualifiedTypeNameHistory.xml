@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="element.block.TelpoBlock"/>
-<<<<<<< HEAD
-    <fullyQualifiedTypeName name="java.lang.System"/>
-    <fullyQualifiedTypeName name="element.Element"/>
-    <fullyQualifiedTypeName name="screen.GameOverThr"/>
-    <fullyQualifiedTypeName name="java.awt.Container"/>
-    <fullyQualifiedTypeName name="java.awt.Color"/>
-    <fullyQualifiedTypeName name="screen.ElementPanel"/>
-    <fullyQualifiedTypeName name="element.worm.WormHead"/>
-    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="element.Worm"/>
     <fullyQualifiedTypeName name="element.worm.WormBody"/>
-    <fullyQualifiedTypeName name="operation.WormEvent"/>
-    <fullyQualifiedTypeName name="operation.InputKey"/>
-    <fullyQualifiedTypeName name="operation.tern"/>
-    <fullyQualifiedTypeName name="java.lang.Thread.State"/>
-    <fullyQualifiedTypeName name="screen.GameOver"/>
-    <fullyQualifiedTypeName name="element.Worm"/>
-    <fullyQualifiedTypeName name="screen.GameField"/>
-=======
-    <fullyQualifiedTypeName name="java.util.Vector"/>
-    <fullyQualifiedTypeName name="element.Worm"/>
-    <fullyQualifiedTypeName name="element.worm.WormHead"/>
->>>>>>> 9792229385d67fbd23921367b7154d5cf8b478ff
+    <fullyQualifiedTypeName name="operation.ManageElement"/>
+    <fullyQualifiedTypeName name="element.block.TelpoBlock"/>
 </qualifiedTypeNameHistroy>

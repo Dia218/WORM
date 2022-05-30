@@ -8,7 +8,7 @@ import operation.ManageElement;
 public interface MoveElement {
 
 	default void moveWorm() {
-
+		int[] headXY = ManageElement.elementManager.wormHead.returnWormHead();
 		//지렁이 몸통 갯수만큼 반복
 		int x = 0, y = 0;
 		for(int index = 0; index < ManageElement.elementManager.wormHead.returnWormSize(); index++) {
@@ -33,12 +33,18 @@ public interface MoveElement {
 	}
 	
 	default void telpoWorm(WormHead wormHead, TelpoBlock telpoBlock) {
+		//이거 혹은
 		int headX = wormHead.returnX();
 		int headY = wormHead.returnY();
 		int [] otherTelpoBlock = telpoBlock.telpoOtherReturn();
 		headX = otherTelpoBlock[0];
 		headX = otherTelpoBlock[1];
 		ManageElement.elementManager.wormHead.returnWorm().setXY(headX, headY);
+		
+		//이거
+		int [] otherTelpoBlock = telpoBlock.telpoOtherReturn();
+		ManageElement.elementManager.wormHead.returnWorm().setXY(otherTelpoBlock[0], otherTelpoBlock[1]);
+		
 	}
 	
 	private void moveWormHead(WormHead wormHead) {

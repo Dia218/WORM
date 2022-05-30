@@ -8,7 +8,7 @@ import element.worm.WormBody;
 import element.worm.WormHead;
 import screen.*;
 
-<<<<<<< HEAD
+
 //똠치가 제작함
 public class WormEvent {
 	
