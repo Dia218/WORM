@@ -28,9 +28,6 @@ public class GameField extends JPanel {
 		this.setBounds(0, 0, returnFieldSize(), returnFieldSize());
 		//동작 확인
 		System.out.println("gamefield 객체 생성");
-		
-		
-		
 	}
 	
 	/*게임 필드 메소드*/

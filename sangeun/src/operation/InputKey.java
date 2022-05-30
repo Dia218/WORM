@@ -2,8 +2,7 @@ package operation;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
-import operation.tern.Direction;
+import operation.WormDirection.Direction;
 
 
 public class InputKey extends KeyAdapter {
@@ -25,9 +24,8 @@ public class InputKey extends KeyAdapter {
 	private void Log(String str) {
 		System.out.println(str);
 	}
-	
 
-	tern t = new tern();
+	WormDirection wormDirection = new WormDirection();
 	
 	//키를 눌렀을 때 호출되는 메소드
 	@Override
@@ -45,21 +43,21 @@ public class InputKey extends KeyAdapter {
 		case KeyEvent.VK_LEFT:
 			
 			//반대 방향키나 같은 방향키를 눌렀을 때
-			if(t.getDirection() == Direction.RIGHT || t.getDirection() ==  Direction.LEFT) break;
+			if(wormDirection.getDirection() == Direction.RIGHT || wormDirection.getDirection() ==  Direction.LEFT) break;
 			
 			//혼란 아이템을 먹고 키입력을 반대로 받는 메소드가 true가 될 때
-			else if(t.getisReverse() == true) {
+			else if(wormDirection.getisReverse() == true) {
 				Log("Right Key");
-				t.setDirection(Direction.RIGHT);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.RIGHT);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
 			
 			//일반적인 상황일 때
 			else {
 				Log("Left Key");
-				t.setDirection(Direction.LEFT);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.LEFT);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;
 			}
@@ -68,21 +66,21 @@ public class InputKey extends KeyAdapter {
 		case KeyEvent.VK_UP:
 
 			//반대 방향키나 같은 방향키를 눌렀을 때
-			if(t.getDirection() == Direction.DOWN || t.getDirection() == Direction.UP) break;
+			if(wormDirection.getDirection() == Direction.DOWN || wormDirection.getDirection() == Direction.UP) break;
 			
 			//혼란 아이템을 먹고 키입력을 반대로 받는 메소드가 true가 될 때
-			else if(t.getisReverse() == true) {
+			else if(wormDirection.getisReverse() == true) {
 				Log("DOWN Key");
-				t.setDirection(Direction.DOWN);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.DOWN);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
 
 			//일반적인 상황일 때
 			else {
 				Log("Up Key");
-				t.setDirection(Direction.UP);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.UP);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;
 			}
@@ -91,21 +89,21 @@ public class InputKey extends KeyAdapter {
 		case KeyEvent.VK_RIGHT:
 
 			//반대 방향키나 같은 방향키를 눌렀을 때
-			if(t.getDirection() == Direction.LEFT || t.getDirection() == Direction.RIGHT) break;
+			if(wormDirection.getDirection() == Direction.LEFT || wormDirection.getDirection() == Direction.RIGHT) break;
 			
 			//혼란 아이템을 먹고 키입력을 반대로 받는 메소드가 true가 될 때
-			else if(t.getisReverse() == true) {
+			else if(wormDirection.getisReverse() == true) {
 				Log("LEFT Key");
-				t.setDirection(Direction.LEFT);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.LEFT);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
 
 			//일반적인 상황일 때
 			else {
 				Log("Right Key");
-				t.setDirection(Direction.RIGHT);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.RIGHT);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;
 			}
@@ -114,21 +112,21 @@ public class InputKey extends KeyAdapter {
 		case KeyEvent.VK_DOWN:
 
 			//반대 방향키나 같은 방향키를 눌렀을 때
-			if(t.getDirection() == Direction.UP || t.getDirection() == Direction.DOWN) break;
+			if(wormDirection.getDirection() == Direction.UP || wormDirection.getDirection() == Direction.DOWN) break;
 			
 			//혼란 아이템을 먹고 키입력을 반대로 받는 메소드가 true가 될 때
-			else if(t.getisReverse() == true) {
+			else if(wormDirection.getisReverse() == true) {
 				Log("UP Key");
-				t.setDirection(Direction.UP);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.UP);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
 
 			//일반적인 상황일 때
 			else {
 				Log("Down Key");
-				t.setDirection(Direction.DOWN);
-				System.out.println(t.getDirection());
+				wormDirection.setDirection(Direction.DOWN);
+				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;
 			}

@@ -10,7 +10,16 @@ public class KillBlock extends Block {
 		// TODO Auto-generated constructor stub
 		
 		//동작 확인
-		System.out.println("킬 블록 만들기");
+		System.out.println("킬 블록 생성자 호출");
 	}
 
+	@Override
+	public void executeBlock() {
+		// TODO Auto-generated method stub
+		
+	}
+	private void executeKillBlock() {
+		//지렁이를 죽인다 - 지렁이 머리를 없앤다
+		
+	}
 }

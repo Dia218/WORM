@@ -33,5 +33,9 @@ public abstract class Element {
 	public Color returnColor() {
 		return this.color;
 	}
-
+	//요소의 좌표값을 변경하는 메소드
+	public void setdo(int x, int y) {
+	      this.elementX = x;
+	      this.elementY =y;
+	}
 }

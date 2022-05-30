@@ -4,13 +4,14 @@ import java.awt.*;
 import javax.swing.*;
 import operation.InputKey;
 
+import operation.InputKey;
+
 //게임 프레임 클래스
 public class GameFrame extends JFrame {
 	
 	/*게임 프레임 생성자*/
 	public GameFrame() throws HeadlessException {
-		super();		
-				
+		super();
 		
 		this.addKeyListener(new InputKey());
 		this.setFocusable(true);//프레임이 포커스를 받을 수 있도록 설정

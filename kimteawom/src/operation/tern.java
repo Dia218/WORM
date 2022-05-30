@@ -16,25 +16,26 @@ public class tern {
 
 	private boolean permitRotation;
 	
-	public enum Direction{
-			NONE, RIGHT, LEFT, UP, DOWN
+	enum Direction{
+			CENTER, RIGHT, LEFT, UP, DOWN
 	}
 	
 	//움직일 때
-	public tern() {
+	public void tern() {
 
 		this.headX=12;
 		this.headY=12;
 		this.size=0;
 		this.score = 0;
 		this.gameOver = false;
-		this.direction = Direction.NONE;
+		this.direction = Direction.RIGHT;
 		this.permitRotation = true;
 		this.speed = 150;
 		
-		System.out.println("tern 실tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행tern 실행행");
+		System.out.print('a');
+		this.direction = Direction.RIGHT;
 		
-		/*
+		
 
 		switch(direction) {
 		case RIGHT:
@@ -106,12 +107,11 @@ public class tern {
 				eat();
 			break;
 		}
-		*/
 	}
 
 	//위치 return
 	public Direction getDirection() {
-		return this.direction;
+		return direction;
 	}
 	
 	//위치 설정 메소드

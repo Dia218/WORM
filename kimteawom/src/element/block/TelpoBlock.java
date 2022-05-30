@@ -6,15 +6,32 @@ import element.Block;
 
 public class TelpoBlock extends Block {
 			
-	public TelpoBlock(int blockX, int blockY) {
+	/*텔레포트 블록 필드*/
+	int telpoOtherXY[] = new int[2]; //다른 텔리포트 블록의 위치 저장
+	
+	/*텔레포트 블록 생성자*/
+	private TelpoBlock(int blockX, int blockY) {
 		super(blockX, blockY);
-		super.color = Color.MAGENTA;
-		// TODO Auto-generated constructor stub
-		//내가 추가
-		
+		super.color = Color.BLUE;
+		// TODO Auto-generated constructor stub		
 		
 		//동작 확인
-		System.out.println("텔레포트 블록 만들기");
+		System.out.println("텔레포트 블록 생성자 호출");
+	}
+	public TelpoBlock(int blockX, int blockY, int telpoOtherXY[]) {
+		this(blockX, blockY);
+		this.telpoOtherXY = telpoOtherXY; 
 	}
 
+	/*텔레포트 블록 메소드*/
+	@Override
+	public void executeBlock() {
+		// TODO Auto-generated method stub
+		
+	}
+	private void executeTelpoBlock() {
+		//다른 블록 좌표로 지렁이 머리를 이동시킨다
+		
+	}
+	
 }

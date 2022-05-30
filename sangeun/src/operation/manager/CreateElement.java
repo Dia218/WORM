@@ -5,7 +5,8 @@ import element.*;
 import element.block.*;
 import element.item.*;
 import element.worm.*;
-import screen.GameField;
+import operation.*;
+import screen.*;
 
 //element 객체 생성 기능 인터페이스
 public interface CreateElement {
@@ -21,60 +22,15 @@ public interface CreateElement {
 		
 		//필드 초기화 호출
 		GameField.gamefield.initField();
-		/*
+		
 		//지렁이 머리 생성
 		WormHead wormHead = new WormHead(6,6);
 		WormBody wormBody = new WormBody(wormHead.returnX(),wormHead.returnY());
-		GameField.gamefield.setElement(wormBody);
-		for(int i=0;i<4;i++) {
-			new WormBody(Worm.bodyXY[0][i]+1,Worm.bodyXY[1][i]);
-			wormBody.setdo(Worm.bodyXY[0][i]+1,Worm.bodyXY[1][i] );
-			GameField.gamefield.setElement(wormBody);
-				
-		}
-		*/
-//		//지렁이 움직이는 알고리즘
-//		if(Worm.size>=1){
-//			GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1],Worm.bodyXY[1][Worm.size-1]);
-//			for(int i=Worm.size-1;i>0;i--) {
-//				Worm.bodyXY[0][i] = Worm.bodyXY[0][i-1];
-//				Worm.bodyXY[1][i] = Worm.bodyXY[1][i-1];
-//				wormBody.setdo(Worm.bodyXY[0][i], Worm.bodyXY[1][i]);
-//				GameField.gamefield.setElement(wormBody);
-//				
-//			}
-//		}
-//		wormHead.setdo(wormHead.returnX()-1, wormHead.returnY()-1);
-//		Worm.bodyXY[0][0] = wormHead.returnX();
-//		Worm.bodyXY[1][0] = wormHead.returnY();
-//		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
-//		GameField.gamefield.setElement(wormBody);
-//		//여기까지
-		/*
-		Thread thread = new Thread(new Runnable() {
+		GameField.gamefield.setElement(wormHead);
 
-			@Override
-			public void run() {
-				// TODO 자동 생성된 메소드 스텁
-				try {
-					for(int i = 0;i<10;i++) {
-						Thread.sleep(100);
-						Worm.wormMove(wormHead, wormBody);
-							
-					}
-					
-				} catch (InterruptedException e) {
-					// TODO 자동 생성된 catch 블록
-					e.printStackTrace();
-				}
-			}
-		
-		});
-		thread.start();
-		*/
 		//블록 이닛 호출
 		initBlock();
-		
+
 		//아이템 이닛 호출
 		initItem();
 	}
@@ -86,6 +42,9 @@ public interface CreateElement {
 	private void initBlock() {
 		//동작 확인
 		System.out.println("블록 init 실행");
+		
+		//절벽 블록 생성 호출
+		createCliffBlock();
 		
 		//텔포 블록 생성 호출
 		createTelpoBlock();
@@ -179,6 +138,37 @@ public interface CreateElement {
 			for(int y = randXY[1]; y <= randXY[1] + sizeWL[1] - 1; y++) {
 				BasicBlock basicBlock = new BasicBlock(x, y);
 				GameField.gamefield.setElement(basicBlock);		
+			}
+		}
+	}
+	
+	//절벽 블록 생성 메소드
+	default void createCliffBlock() {
+		//동작 확인
+		System.out.println("절벽 블록 생성 호출");
+		
+		for(int x = 0, y = 0; (x == 0) && (y < GameField.gamefield.elementNum); y++) {
+			if(null == GameField.gamefield.checkElement(x, y)) {
+				CliffBlock cliffBlock = new CliffBlock(x, y); 
+				GameField.gamefield.setElement(cliffBlock);
+			}
+		}
+		for(int x = 0, y = 0; (x < GameField.gamefield.elementNum) && (y == 0); x++) {
+			if(null == GameField.gamefield.checkElement(x, y)) {
+				CliffBlock cliffBlock = new CliffBlock(x, y); 
+				GameField.gamefield.setElement(cliffBlock);
+			}
+		}
+		for(int x = 23, y = 0; (x == 23) && (y < GameField.gamefield.elementNum); y++) {
+			if(null == GameField.gamefield.checkElement(x, y)) {
+				CliffBlock cliffBlock = new CliffBlock(x, y); 
+				GameField.gamefield.setElement(cliffBlock);
+			}
+		}
+		for(int x = 0, y = 23; (x < GameField.gamefield.elementNum) && (y == 23); x++) {
+			if(null == GameField.gamefield.checkElement(x, y)) {
+				CliffBlock cliffBlock = new CliffBlock(x, y); 
+				GameField.gamefield.setElement(cliffBlock);
 			}
 		}
 	}
