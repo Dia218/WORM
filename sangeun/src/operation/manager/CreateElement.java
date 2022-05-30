@@ -29,44 +29,28 @@ public interface CreateElement {
 		//지렁이 머리 생성
 		WormHead wormHead = new WormHead(6,6);
 		WormBody wormBody = new WormBody(wormHead.returnX(),wormHead.returnY());
-		GameField.gamefield.setElement(wormHead);
-//		for(int i=0;i<4;i++) {
-//			new WormBody(Worm.bodyXY[0][i]+1,Worm.bodyXY[1][i]);
-//			wormBody.setdo(Worm.bodyXY[0][i]+1,Worm.bodyXY[1][i]);
-//			GameField.gamefield.setElement(wormBody);
-//				
-//		}
-		
-//		//지렁이 움직이는 알고리즘
-//		if(Worm.size>=1){
-//			GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1],Worm.bodyXY[1][Worm.size-1]);
-//			for(int i=Worm.size-1;i>0;i--) {
-//				Worm.bodyXY[0][i] = Worm.bodyXY[0][i-1];
-//				Worm.bodyXY[1][i] = Worm.bodyXY[1][i-1];
-//				wormBody.setdo(Worm.bodyXY[0][i], Worm.bodyXY[1][i]);
-//				GameField.gamefield.setElement(wormBody);
-//				
-//			}
-//		}
-//		wormHead.setdo(wormHead.returnX()-1, wormHead.returnY()-1);
-//		Worm.bodyXY[0][0] = wormHead.returnX();
-//		Worm.bodyXY[1][0] = wormHead.returnY();
-//		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
-//		GameField.gamefield.setElement(wormBody);
-//		//여기까지
+	//	GameField.gamefield.setElement(wormHead);
+
 		Thread thread = new Thread(new Runnable() {
 		
 			@Override
 			public void run() {
-			
+				
 				// TODO 자동 생성된 메소드 스텁
 				try {
-					for(int i = 0;i<5;i++) {
+					for(int i = 0;i<8;i++) {
 						Thread.sleep(1000);
-						if(i%2==0)
-						WormEvent.goodItemEat();
-						WormEvent.wormMove();
-							
+						System.out.println("지렁이 크기1 : "+Worm.size);						
+						
+						GoodItem.goodItemEat();
+						Worm.bodyXY[1][0]++;
+						for(int j = 0; j<Worm.size;j++) {
+							System.out.println("지렁이[][]: "+Worm.bodyXY[0][j]+","+Worm.bodyXY[1][j]);
+						}
+						System.out.println("지렁이 크기2 : "+Worm.size);
+						
+						
+						
 					}
 					
 				} catch (InterruptedException e) {
@@ -74,6 +58,12 @@ public interface CreateElement {
 					e.printStackTrace();
 				}
 				finally {
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO 자동 생성된 catch 블록
+						e.printStackTrace();
+					}
 					new GameOver();
 				}
 			}
@@ -318,10 +308,10 @@ public interface CreateElement {
 			sizeWL[1] = rand.nextInt((4-1) + 1) + 1;
 
 			//맨 끝의 좌표가 게임 필드를 벗어날 경우 바로 do 다시 실행
-			if(randXY[0] + sizeWL[0] - 1 >= GameField.gamefield.elementNum) {
+			if(randXY[0] + sizeWL[0] -1 >= GameField.gamefield.elementNum) {
 				continue;
 			}
-			if(randXY[1] + sizeWL[1] - 1 >= GameField.gamefield.elementNum) {
+			if(randXY[1] + sizeWL[1]  -1 >= GameField.gamefield.elementNum) {
 				continue;
 			}
 			
@@ -339,8 +329,9 @@ public interface CreateElement {
 		System.out.println("블록 사이즈 테스트 호출");
 		
 		//좌표를 돌아가면서 검사
-		int x = randXY[0]+1; int y = randXY[1]+1;
+		int x = randXY[0];int y =0;
 		while(x <= randXY[0]+sizeWL[0]-1) {
+			y = randXY[1];
 			while(y <= randXY[1]+sizeWL[1]-1) {
 				//해당 좌표에 element가 있을 경우
 				if(null != GameField.gamefield.checkElement(x, y)) {

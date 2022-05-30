@@ -27,7 +27,9 @@ public class InputKey extends KeyAdapter {
 	}
 	
 
-	tern t = new tern();
+
+
+	
 	
 	//키를 눌렀을 때 호출되는 메소드
 	@Override

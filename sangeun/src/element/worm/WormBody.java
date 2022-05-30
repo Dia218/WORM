@@ -18,7 +18,7 @@ public class WormBody extends Worm {
 		super.setBody(a);
 
 		System.out.print(super.bodyXY[0][super.size-1]);
-		System.out.print(super.bodyXY[1][super.size-1]);
+		System.out.println(super.bodyXY[1][super.size-1]);
 		super.color = Color.GREEN;
 		// TODO Auto-generated constructor stub
 		//내가 추가
@@ -26,5 +26,11 @@ public class WormBody extends Worm {
 		
 		//동작 확인
 		System.out.println("지렁이바디 만들기");
+	}
+	private void executeWormBody() {
+		//지렁이가 죽는다.
+		//new GameOver();
+		//IsGameOver = true;
+
 	}
 }

@@ -3,6 +3,7 @@ package element.item;
 import java.awt.Color;
 
 import element.Item;
+import element.Worm;
 
 public class GoodItem extends Item {
 	
@@ -14,5 +15,14 @@ public class GoodItem extends Item {
 		//동작 확인
 		System.out.println("아이템 만들기");
 	}
+	
+	public static void goodItemEat() {
+		if(Worm.size <= 5) {
+			Worm.size++;
+		}
+		Worm.wormMove();
+		
+}
+	
 	
 }

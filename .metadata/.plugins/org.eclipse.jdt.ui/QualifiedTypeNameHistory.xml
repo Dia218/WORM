@@ -9,16 +9,17 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="element.Element"/>
     <fullyQualifiedTypeName name="screen.GameOverThr"/>
-    <fullyQualifiedTypeName name="java.lang.Thread.State"/>
     <fullyQualifiedTypeName name="java.awt.Container"/>
     <fullyQualifiedTypeName name="java.awt.Color"/>
     <fullyQualifiedTypeName name="screen.ElementPanel"/>
     <fullyQualifiedTypeName name="element.worm.WormHead"/>
     <fullyQualifiedTypeName name="java.lang.Thread"/>
-    <fullyQualifiedTypeName name="screen.GameOver"/>
     <fullyQualifiedTypeName name="element.worm.WormBody"/>
     <fullyQualifiedTypeName name="operation.WormEvent"/>
     <fullyQualifiedTypeName name="operation.InputKey"/>
     <fullyQualifiedTypeName name="operation.tern"/>
+    <fullyQualifiedTypeName name="java.lang.Thread.State"/>
+    <fullyQualifiedTypeName name="screen.GameOver"/>
     <fullyQualifiedTypeName name="element.Worm"/>
+    <fullyQualifiedTypeName name="screen.GameField"/>
 </qualifiedTypeNameHistroy>

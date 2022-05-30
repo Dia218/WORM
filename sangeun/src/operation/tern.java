@@ -49,7 +49,7 @@ public class tern {
 				break;
 			else if(GameField.gamefield.checkElement((headX+1),(headY)) == null){
 				Worm.bodyXY[0][0]++;
-				WormEvent.wormMove();
+				Worm.wormMove();
 			}
 			else if(GameField.gamefield.checkElement((headX+1),(headY)) instanceof TelpoBlock)
 				//?
@@ -69,7 +69,7 @@ public class tern {
 				break;
 			else if(GameField.gamefield.checkElement((headX-1),(headY)) == null) {
 				Worm.bodyXY[0][0]--;
-				WormEvent.wormMove();
+				Worm.wormMove();
 			}
 //			else if(GameField.gamefield.checkElement((headX-1),(headY)) instanceof TelpoBlock)
 //				//?
@@ -88,18 +88,18 @@ public class tern {
 				break;
 			else if(GameField.gamefield.checkElement((headX),(headY-1)) == null) {
 				Worm.bodyXY[1][0]--;
-				WormEvent.wormMove();
+				Worm.wormMove();
 			}
 				
 			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof TelpoBlock)
 				//?
 				break;
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof BadItem)
-				eatBI();
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof ConfuseItem)
-				confuseEat();
-			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof GoodItem)
-				eat();
+//			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof BadItem)
+//				eatBI();
+//			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof ConfuseItem)
+//				confuseEat();
+//			else if(GameField.gamefield.checkElement((headX),(headY-1)) instanceof GoodItem)
+//				eat();
 			break;
 		case DOWN:
 			if (GameField.gamefield.checkElement((headX),(headY+1)) instanceof KillBlock)
@@ -108,7 +108,7 @@ public class tern {
 				break;
 			else if(GameField.gamefield.checkElement((headX),(headY+1)) == null){
 				Worm.bodyXY[1][0]++;
-				WormEvent.wormMove();
+				Worm.wormMove();
 			}
 //			else if(GameField.gamefield.checkElement((headX),(headY+1)) instanceof TelpoBlock)
 //				//?
