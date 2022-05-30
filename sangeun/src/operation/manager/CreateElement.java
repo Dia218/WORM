@@ -26,7 +26,13 @@ public interface CreateElement {
 		//지렁이 머리 생성
 		WormHead wormHead = new WormHead(1,1);
 		GameField.gamefield.setElement(wormHead);
-
+		ManageElement.elementManager.addManageWorm(wormHead);
+		
+		//지렁이 작동 생성
+		//WormDirection wormDirection = new WormDirection();
+		//InputKey inputKey = new InputKey(wormDirection);
+		//WormEvent wormEvent = new WormEvent(wormDirection);
+		
 		//블록 이닛 호출
 		initBlock();
 
@@ -75,7 +81,8 @@ public interface CreateElement {
 		TelpoBlock telpoBlockA = new TelpoBlock(telpoArandXY[0], telpoArandXY[1], telpoBrandXY);
 		TelpoBlock telpoBlockB = new TelpoBlock(telpoBrandXY[0], telpoBrandXY[1], telpoArandXY);
 		GameField.gamefield.setElement(telpoBlockA);
-		GameField.gamefield.setElement(telpoBlockB);		
+		GameField.gamefield.setElement(telpoBlockB);
+		ManageElement.elementManager.addManageTelpo(telpoBlockA, telpoBlockB);
 	}
 	
 	//킬 블록 생성 메소드

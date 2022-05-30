@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="element.block.TelpoBlock"/>
+    <fullyQualifiedTypeName name="java.util.Vector"/>
     <fullyQualifiedTypeName name="element.Worm"/>
+    <fullyQualifiedTypeName name="element.worm.WormHead"/>
 </qualifiedTypeNameHistroy>

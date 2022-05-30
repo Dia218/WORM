@@ -1,15 +1,17 @@
 package element;
 
 import java.awt.Color;
-
+import java.util.*;
 import element.worm.WormBody;
 import element.worm.WormHead;
-//import element.worm.*;
 import screen.GameField;
 
 public class Worm extends Element {
-	public static int wormXY[][] = new int[2][15];
+	private static int wormXY[][] = new int[2][15];
 	public static int wormSize = 0;
+	
+	/*이상은 추가 - 벡터*/
+	protected static Vector<Worm> wormVector = new Vector<>(15);
 	
 	public Worm(int elementX, int elementY) {
 		super(elementX, elementY);
@@ -20,11 +22,20 @@ public class Worm extends Element {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int[][] getBody(){
+	public int[][] getWormXY(){
 		return wormXY;
 	}
-	public void setBody(int[][] a){
-		this.wormXY = a;
+	public void setWormXY(int[][] wormXY){
+		this.wormXY = wormXY;
+	}
+	
+	/*이상은 추가 - 벡터*/
+	public int returnWormSize() {
+		int wormSize = wormVector.size();
+		return wormSize;
+	}
+	public Worm getWorm(int index) {
+		return wormVector.get(index);
 	}
 
 }
