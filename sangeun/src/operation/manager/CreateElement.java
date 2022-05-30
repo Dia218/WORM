@@ -243,9 +243,8 @@ public interface CreateElement {
 	}
 	
 	//瘤贩捞 个烹 积己 皋家靛
-	default void createWormBody(int x, int y) {
-		WormBody wormBody = new WormBody(x, y);
-		GameField.gamefield.setElement(wormBody);
+	default void createWormBody() {
+		WormBody wormBody = new WormBody();
 	}
 
 	

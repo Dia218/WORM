@@ -27,6 +27,9 @@ public class ManageElement implements CreateElement, DeleteElement, MoveElement 
 	public TelpoBlock telpoBlockA;
 	public TelpoBlock telpoBlockB;
 	
+	//지렁이 이동 카운트
+	public int moveCount = 0;
+	
 	
 	/*관리 클래스의 생성자*/
 	
