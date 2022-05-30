@@ -21,7 +21,8 @@ public class CliffBlock extends Block {
 	}
 	private void executeCliffBlock() {
 		//Áö··ÀÌ¸¦ Á×ÀÎ´Ù
-		
+		//new GameOver();
+		//IsGameOver = true;
 	}
 
 }

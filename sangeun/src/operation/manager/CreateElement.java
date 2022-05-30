@@ -32,7 +32,7 @@ public interface CreateElement {
 		//WormDirection wormDirection = new WormDirection();
 		//InputKey inputKey = new InputKey(wormDirection);
 		//WormEvent wormEvent = new WormEvent(wormDirection);
-		
+
 		//블록 이닛 호출
 		initBlock();
 
@@ -276,10 +276,10 @@ public interface CreateElement {
 			sizeWL[1] = rand.nextInt((4-1) + 1) + 1;
 
 			//맨 끝의 좌표가 게임 필드를 벗어날 경우 바로 do 다시 실행
-			if(randXY[0] + sizeWL[0] - 1 >= GameField.gamefield.elementNum) {
+			if(randXY[0] + sizeWL[0] -1 >= GameField.gamefield.elementNum) {
 				continue;
 			}
-			if(randXY[1] + sizeWL[1] - 1 >= GameField.gamefield.elementNum) {
+			if(randXY[1] + sizeWL[1]  -1 >= GameField.gamefield.elementNum) {
 				continue;
 			}
 			

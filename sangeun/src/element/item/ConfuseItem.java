@@ -3,6 +3,8 @@ package element.item;
 import java.awt.Color;
 
 import element.Item;
+import element.Worm;
+import screen.GameField;
 
 public class ConfuseItem extends Item {
 
@@ -13,6 +15,11 @@ public class ConfuseItem extends Item {
 		
 		//동작 확인
 		System.out.println("혼란 아이템 생성자 호출");
+	}
+	
+	public static void conpuseEat() {	
+		//어떻게 할까요? -> 시러요 코드 예쁘게 짜줘 엉엉
+		Worm.wormMove();
 	}
 
 }
