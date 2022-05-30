@@ -6,25 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="C:\Users\koreamms\eclipse-workspace\project\test_worm2"/>
 			<item value="D:\dia\TEAM\java-team\sangeun"/>
-			<item value="C:\Users\koreamms\eclipse-workspace\project\kimteawom"/>
-			<item value="C:\Users\koreamms\eclipse-workspace\project\sangeun"/>
-			<item value="C:\Users\koreamms\eclipse-workspace\project\Test_worm"/>
-			<item value="C:\Users\koreamms\eclipse-workspace\project\WormGame"/>
-		</list>
-	</section>
-	<section name="ChooseWorkspaceDialogSettings">
-		<item key="DIALOG_X_ORIGIN" value="356"/>
-		<item key="DIALOG_Y_ORIGIN" value="236"/>
-	</section>
-	<section name="WORKBENCH_SETTINGS">
-		<list key="ENABLED_TRANSFERS">
-		</list>
-	</section>
-	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 		</list>
 	</section>
 </section>

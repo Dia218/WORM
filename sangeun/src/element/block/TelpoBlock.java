@@ -3,6 +3,7 @@ import java.awt.Color;
 
 import element.Block;
 import element.Worm;
+import operation.ManageElement;
 import screen.GameField;
 
 
@@ -40,8 +41,7 @@ public class TelpoBlock extends Block {
 	private void executeTelpoBlock() {
 		//다른 블록 좌표로 지렁이 머리를 이동시킨다
 		int telpoXY[] = telpoOtherReturn();
-		Worm.bodyXY[0][0] = telpoXY[0]; 
-		Worm.bodyXY[1][0] = telpoXY[1];
+		ManageElement.elementManager.wormHead.returnWorm().setXY(telpoXY[0], telpoXY[1]);
 		Worm.wormMove();
 	}
 	
