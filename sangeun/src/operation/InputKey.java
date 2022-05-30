@@ -2,11 +2,18 @@ package operation;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
+import element.Worm;
 import operation.WormDirection.Direction;
 
 
 public class InputKey extends KeyAdapter {
 	
+	public enum Direction{
+		NONE, RIGHT, LEFT, UP, DOWN
+	}
+	
+	Direction direction;
 	
 	interface InputMethod {
 		void LeftKeyPressed();
@@ -18,8 +25,11 @@ public class InputKey extends KeyAdapter {
 	private InputMethod im;
 	
 	public InputKey() {
+		this.direction = Direction.NONE;
 		return;
 	}
+	
+	
 
 	private void Log(String str) {
 		System.out.println(str);
@@ -43,12 +53,12 @@ public class InputKey extends KeyAdapter {
 		case KeyEvent.VK_LEFT:
 			
 			//반대 방향키나 같은 방향키를 눌렀을 때
-			if(wormDirection.getDirection() == Direction.RIGHT || wormDirection.getDirection() ==  Direction.LEFT) break;
+			if(this.direction == Direction.RIGHT || this.direction == Direction.LEFT) break;
 			
 			//혼란 아이템을 먹고 키입력을 반대로 받는 메소드가 true가 될 때
 			else if(wormDirection.getisReverse() == true) {
 				Log("Right Key");
-				wormDirection.setDirection(Direction.RIGHT);
+				this.direction = Direction.RIGHT;
 				System.out.println(wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
@@ -56,8 +66,8 @@ public class InputKey extends KeyAdapter {
 			//일반적인 상황일 때
 			else {
 				Log("Left Key");
-				wormDirection.setDirection(Direction.LEFT);
-				System.out.println(wormDirection.getDirection());
+				this.direction = Direction.LEFT;
+				System.out.println(this.direction);
 				//im.LeftKeyPressed();
 				break;
 			}
@@ -66,7 +76,7 @@ public class InputKey extends KeyAdapter {
 		case KeyEvent.VK_UP:
 
 			//반대 방향키나 같은 방향키를 눌렀을 때
-			if(wormDirection.getDirection() == Direction.DOWN || wormDirection.getDirection() == Direction.UP) break;
+			if(this.direction == Direction.DOWN || wormDirection.getDirection() == Direction.UP) break;
 			
 			//혼란 아이템을 먹고 키입력을 반대로 받는 메소드가 true가 될 때
 			else if(wormDirection.getisReverse() == true) {

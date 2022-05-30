@@ -28,6 +28,7 @@ public interface CreateElement {
 		WormBody wormBody = new WormBody(wormHead.returnX(),wormHead.returnY());
 		GameField.gamefield.setElement(wormHead);
 
+		InputKey inputKey = new InputKey();
 		//블록 이닛 호출
 		initBlock();
 

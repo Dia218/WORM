@@ -19,9 +19,7 @@ public class WormDirection {
 
 	private boolean permitRotation;
 	
-	public enum Direction{
-			NONE, RIGHT, LEFT, UP, DOWN
-	}
+	
 	
 	//움직일 때
 	public WormDirection() {
@@ -33,13 +31,16 @@ public class WormDirection {
 		
 		//없어도 될것
 		this.gameOver = false;
-		this.direction = Direction.NONE;
+		
 		this.permitRotation = true;
 		this.speed = 150;
 		
 		//동작 확인
 		System.out.println("방향 전환 실행");
-		
+
+		Worm worm = new Worm(1, 1);
+		Thread wormevent = new Thread(new WormEvent(worm));
+		wormevent.start();
 	}
 
 	//위치 return

@@ -23,7 +23,6 @@ public class Main {
 
 		/*위치 바꿀 예정*/
 		ManageElement.elementManager.initElement();
-		
 		/*테스트 한 것*/
 		//GameOver gameover = new GameOver();
 	}

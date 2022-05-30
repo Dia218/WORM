@@ -13,15 +13,17 @@ public class WormEvent implements Runnable {
 	//지렁이 이동속도 (1000은 임시)
 	int wormSpeed = 1000;
 	
-	public WormEvent(Worm worm) {
-		WormDirection wormDirection = new WormDirection();
+	
+	public WormEvent() {
+		
+		
 	}
 	
 	@Override
 	public void run() {
+
 		while(true) {
 			try {
-				System.out.println("test입니다.");
 				Thread.sleep(wormSpeed);
 			}
 			catch(InterruptedException e) {return;}
@@ -37,6 +39,7 @@ public class WormEvent implements Runnable {
 	public void setWormSpeed(int i) {
 		wormSpeed += i;
 	}
+	
 }
 
 
