@@ -1,3 +1,4 @@
+
 package operation.manager;
 
 import element.Worm;
@@ -10,9 +11,9 @@ public interface MoveElement {
 	
 	default void moveWorm() {
 	
-		ManageElement.elementManager.gamefield.removeElement(wormHead.returnX(), wormHead.returnY());
-		WormHead wormHead = ManageElement.elementManager.wormHead;
 		
+		WormHead wormHead = ManageElement.elementManager.wormHead;
+		ManageElement.elementManager.gamefield.removeElement(wormHead.returnX(), wormHead.returnY());
 		//임시 머리에 실제머리 좌표 대입.
 		wormHead.setFakeWormHead(wormHead.returnFakeWormHead()[0],wormHead.returnFakeWormHead()[1]);
 		//몸통들 전부 이동

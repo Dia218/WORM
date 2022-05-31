@@ -13,4 +13,8 @@ public abstract class Block extends Element {
 	/*블록 클래스 추상 메소드*/
 	//블록의 기능을 작동 시키는 추상 메소드
 	public abstract void executeBlock();
+	public void executeElement() {
+		executeBlock();
+		
+	}
 }

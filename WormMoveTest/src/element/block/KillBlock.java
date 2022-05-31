@@ -16,7 +16,7 @@ public class KillBlock extends Block {
 	@Override
 	public void executeBlock() {
 		// TODO Auto-generated method stub
-		
+		executeKillBlock();
 	}
 	private void executeKillBlock() {
 		//지렁이를 죽인다 - 지렁이 머리를 없앤다

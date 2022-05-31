@@ -16,7 +16,7 @@ public class BasicBlock extends Block {
 	@Override
 	public void executeBlock() {
 		// TODO Auto-generated method stub
-		
+		executeBasicBlock();
 	}
 	private void executeBasicBlock() {
 		//지렁이 머리가 해당 좌표를 못지나가게 한다

@@ -1,4 +1,4 @@
-package element;
+	package element;
 
 import java.awt.*;
 import screen.*;
@@ -38,4 +38,6 @@ public abstract class Element {
 	      this.elementX = x;
 	      this.elementY =y;
 	}
+	
+	
 }

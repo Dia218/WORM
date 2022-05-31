@@ -20,11 +20,17 @@ public class GoodItem extends Item {
 	
 	public static void goodItemEat() {
 		if(ManageElement.elementManager.wormHead.returnWormSize() < 14) {
-			//ManageElement.elementManager.createWormBody(1, 1);
+			ManageElement.elementManager.createWormBody(100, 100);
 		}
-		Worm.wormMove();
+		
 		
 }
+
+	@Override
+	public void executeItem() {
+		// TODO 자동 생성된 메소드 스텁
+		goodItemEat();
+	}
 	
 	
 }

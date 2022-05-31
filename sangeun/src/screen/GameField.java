@@ -87,11 +87,7 @@ public class GameField extends JPanel {
 		setPanel(locate, null);
 	}
 	
-	//해당 좌표에 들어있는 panel을 리턴해주는 메소드 -> 필요한가?
-	public ElementPanel checkPanel(int checkX, int checkY) {
-		//해당 좌표와 일치하는 좌표 키 값에 들어있는 panel이 없으면 null 리턴
-		return panelMap.get(new Locate(checkX, checkY));
-	}
+	
 	
 	//해당 좌표에 들어있는 panel을 설정하는 메소드 - 요소 삭제 및 저장 시 호출
 	private void setPanel(Locate locate, Element element) {

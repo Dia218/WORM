@@ -15,4 +15,13 @@ public class WormHead extends Worm{
 		//동작 확인
 		System.out.println("지렁이헤드 생성자 호출");
 	}
+
+	@Override
+	public void executeWorm() {
+		
+		executeWormHead();
+	}
+	public void executeWormHead() {
+		
+	}
 }

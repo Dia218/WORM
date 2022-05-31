@@ -1,6 +1,6 @@
 package element;
 
-public class Item extends Element {
+public abstract class Item extends Element {
 
 	/*아이템 클래스 생성자*/
 	public Item(int elementX, int elementY) {
@@ -11,4 +11,10 @@ public class Item extends Element {
 		System.out.println("아이템 생성자 호출");
 	}
 
+	@Override
+	public void executeElement() {
+		// TODO 자동 생성된 메소드 스텁
+		executeItem();
+	}
+	abstract public void executeItem();
 }

@@ -8,10 +8,7 @@ import screen.GameField;
 
 public class Worm extends Element {
 
-	private static int wormXY[][] = new int[2][15];
-	public static int wormSize = 0;
-	
-	protected static int wormHeadXY[] = new int[2]; 
+
 	
 	/*이상은 추가 - 벡터*/
 	protected static Vector<Worm> wormVector = new Vector<>(15);
@@ -26,21 +23,9 @@ public class Worm extends Element {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int[][] getWormXY(){
-		return wormXY;
-	}
-	public void setWormXY(int[][] wormXY){
-		this.wormXY = wormXY;
-	}
 	
 
-	public int returnSize() {
-		return this.wormSize;
-	}
-	public void setSize(int size) {
-		this.wormSize = size;
-	}
-	
+
 	
 
 	/*이상은 추가 - 벡터*/
@@ -63,13 +48,7 @@ public class Worm extends Element {
 		return wormVector.get(wormVector.size()-1);
 	}
 	
-	public int[] returnWormHead() {
-		return wormHeadXY;
-		
-	}
-	public void setWormHead(int[] wormHead) {
-		this.wormHeadXY = wormHead;
-	}
+	
 
 
 }

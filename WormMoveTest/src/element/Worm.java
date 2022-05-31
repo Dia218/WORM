@@ -6,7 +6,7 @@ import element.worm.WormBody;
 import element.worm.WormHead;
 import screen.GameField;
 
-public class Worm extends Element {
+public abstract class Worm extends Element {
 
 	private static int wormXY[][] = new int[2][15];
 	public static int wormSize = 0;
@@ -71,6 +71,14 @@ public class Worm extends Element {
 		this.wormFakeHeadXY[0] = wormHeadX;
 		this.wormFakeHeadXY[1] = wormHeadY;
 	}
+
+	@Override
+	public void executeElement() {
+		// TODO 자동 생성된 메소드 스텁
+		executeWorm();
+	}
+	
+	public abstract void executeWorm();
 
 
 }

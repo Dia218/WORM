@@ -21,6 +21,11 @@ public class BadItem extends Item {
 	public static void badItemEat() {
 		GameField.gamefield.removeElement(ManageElement.elementManager.wormHead.returnLastWormBody().returnX(),ManageElement.elementManager.wormHead.returnLastWormBody().returnY());
 		ManageElement.elementManager.wormHead.returnWormVector().remove(ManageElement.elementManager.wormHead.returnWormSize()-1);
-		Worm.wormMove();
+	}
+
+	@Override
+	public void executeItem() {
+		// TODO 자동 생성된 메소드 스텁
+		badItemEat();
 	}
 }

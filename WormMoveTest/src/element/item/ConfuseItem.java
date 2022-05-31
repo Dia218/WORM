@@ -17,9 +17,14 @@ public class ConfuseItem extends Item {
 		System.out.println("혼란 아이템 생성자 호출");
 	}
 	
-	public static void conpuseEat() {	
-		//어떻게 할까요? -> 시러요 코드 예쁘게 짜줘 엉엉
-		Worm.wormMove();
+	public static void confuseEat() {	
+		//동헌이가 이놈을 어떻게 했으려나.
+	}
+
+	@Override
+	public void executeItem() {
+		confuseEat();
+		
 	}
 
 }

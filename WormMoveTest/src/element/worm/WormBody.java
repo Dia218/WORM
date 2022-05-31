@@ -17,20 +17,10 @@ public class WormBody extends Worm {
 	      a[1][super.wormSize++]= wormY;
 	      super.setWormXY(a);
 
-<<<<<<< HEAD
-
-//		System.out.print(super.bodyXY[0][super.size-1]);
-//		System.out.println(super.bodyXY[1][super.size-1]);
-//
-//		System.out.print(super.getWormXY()[0][super.wormSize-1]);
-//		System.out.print(super.getWormXY()[1][super.wormSize-1]);
 
 		super.color = Color.GREEN;
 		// TODO Auto-generated constructor stub
-=======
-	      super.color = Color.GREEN;
-	      // TODO Auto-generated constructor stub
->>>>>>> main
+
 
 	      /*이상은 추가 - 벡터*/
 	      wormVector.add(this);
@@ -44,4 +34,9 @@ public class WormBody extends Worm {
 	      //IsGameOver = true;
 
 	   }
+	@Override
+	public void executeWorm() {
+		// TODO 자동 생성된 메소드 스텁
+		executeWormBody();
 	}
+}

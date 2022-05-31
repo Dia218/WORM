@@ -36,13 +36,13 @@ public class TelpoBlock extends Block {
 	@Override
 	public void executeBlock() {
 		// TODO Auto-generated method stub
-		
+		executeTelpoBlock();
 	}
 	private void executeTelpoBlock() {
 		//다른 블록 좌표로 지렁이 머리를 이동시킨다
 		int telpoXY[] = telpoOtherReturn();
-		ManageElement.elementManager.wormHead.returnWorm().setXY(telpoXY[0], telpoXY[1]);
-		Worm.wormMove();
+		//기준점을 어찌하지.ManageElement.elementManager.wormHead.returnWorm().setXY(telpoXY[0], telpoXY[1]);
+	
 	}
 	
 }

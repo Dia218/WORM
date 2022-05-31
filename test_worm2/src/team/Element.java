@@ -9,7 +9,7 @@ public class Element extends JPanel implements InputKey.InputMethod, Change{
 	Gaming gaming;
 	int[][] field;
 	int p;
-	public static int maxSize = 21;
+	public static int maxSize = 24;
 	public Element() {
 		super();
 		this.setBackground(Color.black);
@@ -120,6 +120,14 @@ public class Element extends JPanel implements InputKey.InputMethod, Change{
 					}
 					else if(field[i][j]==6) {
 						g.setColor(Color.ORANGE);
+						g.fillRect(j*20, i*20+25, 15, 15);
+					}
+					else if(field[i][j]==7) {
+						g.setColor(Color.CYAN);
+						g.fillRect(j*20, i*20+25, 15, 15);
+					}
+					else if(field[i][j]==8) {
+						g.setColor(Color.WHITE);
 						g.fillRect(j*20, i*20+25, 15, 15);
 					}
 					

@@ -38,4 +38,6 @@ public abstract class Element {
 	      this.elementX = x;
 	      this.elementY =y;
 	}
+	
+	public abstract void executeElement();
 }

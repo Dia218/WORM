@@ -18,7 +18,7 @@ public class Gaming implements ElementFunction{
 	private boolean gameOver,permitRotation;
 	public boolean end=false;
 	
-	int teleportBlock1X, teleportBlock1Y, teleportBlock2X, teleportBlock2Y;
+	int teleportBlock1X, teleportBlock1Y, teleportBlock2X, teleportBlock2Y, basicBlockX,basicBlockY,BadItemX,BadItemY;
 	int confuseItemX, confuseItemY;
 	private ArrayList<Change> obs ;
 	
@@ -36,7 +36,7 @@ public class Gaming implements ElementFunction{
 		this.direction = Direction.UP;
 		this.obs = new ArrayList<>();
 		this.permitRotation = true;
-		this.speed = 500;
+		this.speed = 200;
 		
 		init();
 		makeEat();
@@ -44,6 +44,10 @@ public class Gaming implements ElementFunction{
 		maketp();
 		init();
 		makeConfuse();
+		init();
+		makeBasicBlock();
+		init();
+		makeBadItem();
 		init();
 	}
 	
@@ -63,12 +67,14 @@ public class Gaming implements ElementFunction{
 		field[teleportBlock1Y][teleportBlock1X] = 4;
 		field[teleportBlock2Y][teleportBlock2X] = 5;
 		field[confuseItemY][confuseItemX] = 6;
-		field[3][3]=7;
+		field[basicBlockY][basicBlockY]=7;
+		field[BadItemY][BadItemX]=8;
+		
 		if(isGameOver())makeGameOver();
 	}
 	
 	public void tern() {
-	
+		//1 블럭 2 지렁이 3 일반 아이템 4 텔포1 5 텔포2 6 콘퓨즈아이템 7 basic블럭
 		switch (direction) {
 		
 		case LEFT:
@@ -96,6 +102,9 @@ public class Gaming implements ElementFunction{
 			else if(field[headX][headY-1]==7) {
 				break;
 			}
+			else if(field[headX][headY-1]==8) {
+				badEat();
+			}
 			
 			headY-=1;
 			break;
@@ -121,6 +130,12 @@ public class Gaming implements ElementFunction{
 				isReverse =true;
 				confuseEat();
 			}
+			else if(field[headX][headY+1]==7) {
+				break;
+			}
+			else if(field[headX][headY+1]==8) {
+				badEat();
+			}
 			headY+=1;
 			break;
 		case UP:
@@ -145,7 +160,12 @@ public class Gaming implements ElementFunction{
 				isReverse =true;
 				confuseEat();
 			}
-			
+			else if(field[headX-1][headY]==7) {
+				break;
+			}
+			else if(field[headX-1][headY]==8) {
+				badEat();
+			}
 			headX-=1;
 			break;
 		case DOWN:
@@ -171,6 +191,12 @@ public class Gaming implements ElementFunction{
 				isReverse =true;
 				confuseEat();
 			}
+			else if(field[headX+1][headY]==7) {
+				break;
+			}
+			else if(field[headX+1][headY]==8) {
+				badEat();
+			}
 			headX+=1;
 			break;
 
@@ -195,6 +221,14 @@ public class Gaming implements ElementFunction{
 		System.out.println("eatxt: "+ itemX + ", " +itemY);
 	}
 	
+	private void makeBasicBlock() {
+		Random rand = new Random();
+		do {
+			this.basicBlockX = rand.nextInt(Element.maxSize-1)+1;
+			this.basicBlockY = rand.nextInt(Element.maxSize-1)+1;
+		}while(field[basicBlockY][basicBlockY]!=0);
+	}
+	
 	//item
 	//먹이 만들기
 	private void makeEat() {
@@ -214,8 +248,15 @@ public class Gaming implements ElementFunction{
 			this.confuseItemY = rand.nextInt(Element.maxSize-1)+1;
 		}
 		while((field[confuseItemX][confuseItemY]!=0));
-		System.out.println("하하");
-		
+	}
+	
+	private void makeBadItem() {
+		Random rand = new Random();
+		do {
+			this.BadItemX= rand.nextInt(Element.maxSize-1)+1;
+			this.BadItemY = rand.nextInt(Element.maxSize-1)+1;
+		}
+		while((field[BadItemY][BadItemX]!=0));
 	}
 	
 	//worm
@@ -237,6 +278,16 @@ public class Gaming implements ElementFunction{
 		move();
 		makeEat();
 	}
+	private void badEat() {
+		plusScore(100);
+		setSpeed(speedchange(10));
+		size--;
+		move();
+		makeBadItem();
+		if(size<0) {
+			gameOver = true;
+		}
+	}
 	
 	//worm
 		//먹이를 먹었을 때
@@ -245,10 +296,7 @@ public class Gaming implements ElementFunction{
 			plusScore(100);
 			setSpeed(speedchange(10));
 			if(size>=MAXSIZE)return;
-			if(size>=1){
-//				bodyXY[0][size] = bodyXY[0][size-1];
-//				bodyXY[1][size] = bodyXY[1][size-1];
-			}
+
 			if(score %500==0) {
 				maketp();
 			}
@@ -279,16 +327,16 @@ public class Gaming implements ElementFunction{
 	}
 	
 	private void changeSpeed() {
-//		if(size==2)setSpeed(speedchange(10));
-//		if(size==4)setSpeed(speedchange(10));
-//		if(size==6)setSpeed(speedchange(10));
-//		if(size==12)setSpeed(speedchange(10));
-//		if(size==16)setSpeed(speedchange(10));
-//		if(size==25)setSpeed(speedchange(10));
-//		if(size==30)setSpeed(speedchange(10));
-//		if(size==40)setSpeed(speedchange(10));
-//		if(size==60)setSpeed(speedchange(10));
-//		if(size==70)setSpeed(speedchange(10));
+		if(size==2)setSpeed(speedchange(10));
+		if(size==4)setSpeed(speedchange(10));
+		if(size==6)setSpeed(speedchange(10));
+		if(size==12)setSpeed(speedchange(10));
+		if(size==16)setSpeed(speedchange(10));
+		if(size==25)setSpeed(speedchange(10));
+		if(size==30)setSpeed(speedchange(10));
+		if(size==40)setSpeed(speedchange(10));
+		if(size==60)setSpeed(speedchange(10));
+		if(size==70)setSpeed(speedchange(10));
 		if(getSpeed() <= 150) return;
 	}
 	

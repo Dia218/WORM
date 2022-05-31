@@ -1,2 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="team.Element"/>
+    <fullyQualifiedTypeName name="screen.GameOver"/>
+    <fullyQualifiedTypeName name="operation.WormDirection"/>
+    <fullyQualifiedTypeName name="operation.WormDirection.Direction"/>
+    <fullyQualifiedTypeName name="operation.WormEvent"/>
+    <fullyQualifiedTypeName name="operation.ManageElement"/>
+</qualifiedTypeNameHistroy>
