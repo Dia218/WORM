@@ -12,9 +12,9 @@ public class WormDirection {
 	//지렁이 움직이는 위치
 	public Direction direction;
 	//지렁이 움직임 역방향 변수
-	public boolean isReverse = false;
+	private boolean isReverse = false;
 	//지렁이 움직임 감지 변수
-	public boolean isMove = false;
+	private boolean isMove = true;
 	//키입력 여부 변수
 	public boolean keyPressed = false;
 
@@ -37,6 +37,9 @@ public class WormDirection {
 		
 		//없어도 될것
 		this.permitRotation = true;
+		
+		//방향 초기 설정
+		direction = Direction.RIGHT;
 		
 		//동작 확인
 		System.out.println("방향 전환 실행");

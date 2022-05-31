@@ -55,7 +55,7 @@ public class Worm extends Element {
 	
 	public Vector returnWormVector() {
 		return this.wormVector;
-	}
+	} //벡터 자체를 내보내는건 없는게 나을 것 같아
 	public Worm returnLastWormBody() {
 		return wormVector.get(wormVector.size()-1);
 	}

@@ -15,10 +15,7 @@ public class ManageElement implements CreateElement, DeleteElement, MoveElement 
 	public static final ManageElement elementManager = new ManageElement();
 	
 	//게임 필드의 레퍼런스 저장
-	public GameField gamefield;
-	
-	//지렁이 방향 레퍼런스 저장
-	public WormDirection wormDirection;
+	public GameField gamefield = GameField.gamefield;
 	
 	//지렁이 머리의 레퍼런스 저장
 	public WormHead wormHead;
@@ -27,6 +24,10 @@ public class ManageElement implements CreateElement, DeleteElement, MoveElement 
 	public TelpoBlock telpoBlockA;
 	public TelpoBlock telpoBlockB;
 	
+	//지렁이 방향 레퍼런스 저장
+	public WormDirection wormDirection;
+	
+	//웜이벤트 저장
 	
 	/*관리 클래스의 생성자*/
 	

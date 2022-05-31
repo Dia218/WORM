@@ -1,6 +1,7 @@
 package element.block;
 import java.awt.Color;
 import element.Block;
+import screen.GameOver;
 
 public class KillBlock extends Block {
 

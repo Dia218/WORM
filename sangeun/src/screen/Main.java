@@ -21,10 +21,7 @@ public class Main {
 		GameFrame gameFrame = new GameFrame(); //게임 프레임 생성
 		gameFrame.setContentPane(GameField.gamefield); //게임 프레임에 게임 필드 배치
 
-		/*위치 바꿀 예정*/
 		ManageElement.elementManager.initElement();
-		/*테스트 한 것*/
-		//GameOver gameover = new GameOver();
 	}
 }
 
