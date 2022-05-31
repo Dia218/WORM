@@ -7,6 +7,7 @@ import operation.ManageElement;
 
 public interface MoveElement {
 
+/*
 <<<<<<< HEAD
 	MoveInfo moveInfo = new MoveInfo();
 
@@ -43,6 +44,7 @@ public interface MoveElement {
 		for(int index = 1; index < ManageElement.elementManager.wormHead.returnWormSize(); index++) {
 			//지렁이 객체 받아오기
 =======
+*/
 	
 	default void moveWorm() {
 		int[] headXY = ManageElement.elementManager.wormHead.returnWormHead();
@@ -51,7 +53,7 @@ public interface MoveElement {
 		int x = 0, y = 0;
 		for(int index = 0; index < ManageElement.elementManager.wormHead.returnWormSize(); index++) {
 			//index번째 지렁이 객체 받아오기
->>>>>>> worm
+//>>>>>>> worm
 			Worm worm = ManageElement.elementManager.wormHead.getWorm(index);
 			
 			//지렁이 좌표
@@ -78,7 +80,7 @@ public interface MoveElement {
 		moveInfo.directXY[0] = ManageElement.elementManager.wormHead.returnX();
 		moveInfo.directXY[1] = ManageElement.elementManager.wormHead.returnY();
 		
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		//이동 여부 확인
 		//if (ManageElement.elementManager.wormDirection.isMove == true)
 		//{좌표 변화 값 계산 및 공간 메소드 실행}
@@ -90,7 +92,7 @@ public interface MoveElement {
 		
 		//공간 확인 및 요소 메소드 실행
 		checkArea(moveInfo.directXY[0] + moveInfo.moveXY[0], moveInfo.directXY[1] + moveInfo.moveXY[1]);
-=======
+//=======
 		//오른쪽 : x+1, y
 		if (ManageElement.elementManager.wormDirection.getDirection().equals(ManageElement.elementManager.wormDirection.direction.RIGHT)) {
 			//이동할 공간 확인
@@ -173,7 +175,7 @@ public interface MoveElement {
 		//이동없음
 		else
 			;
->>>>>>> worm
+//>>>>>>> worm
 	}
 	
 

@@ -8,7 +8,6 @@ import element.worm.WormBody;
 import element.worm.WormHead;
 import screen.*;
 
-<<<<<<< HEAD
 public class WormEvent extends Thread {
 	
 	//지렁이 이동속도 (1000은 임시)
@@ -63,15 +62,12 @@ public class WormEvent extends Thread {
 	
 	WormDirection wormDirection = new WormDirection();
 	
-=======
-<<<<<<< HEAD
 //똠치가 제작함
 public class WormEvent {
 	
 	WormEvent(){
 		Thread thread = new Thread(new Runnable(){
-=======
->>>>>>> worm
+
 
 
 	
@@ -177,4 +173,4 @@ public class WormEvent extends Thread {
 		Worm.size--;
 	}
 }
-
+*/
