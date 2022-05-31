@@ -8,15 +8,13 @@ import element.worm.WormBody;
 import element.worm.WormHead;
 import screen.*;
 
-public class WormEvent implements Runnable {
+public class WormEvent extends Thread {
 	
 	//지렁이 이동속도 (1000은 임시)
 	int wormSpeed = 1000;
-	
+	WormDirection wormDirection = ManageElement.elementManager.wormDirection;
 	
 	public WormEvent() {
-		
-		
 	}
 	
 	@Override
@@ -25,6 +23,19 @@ public class WormEvent implements Runnable {
 		while(true) {
 			try {
 				Thread.sleep(wormSpeed);
+				switch(wormDirection.getDirection()) {
+				case NONE: 
+					System.out.println(wormDirection.getDirection() + "호출"); break;
+				case RIGHT: 
+					System.out.println(wormDirection.getDirection() + "호출"); break;
+				case LEFT: 
+					System.out.println(wormDirection.getDirection() + "호출"); break;
+				case UP: 
+					System.out.println(wormDirection.getDirection() + "호출"); break;
+				case DOWN: 
+					System.out.println(wormDirection.getDirection() + "호출"); break;
+				}
+				System.out.println(wormDirection.getDirection());
 			}
 			catch(InterruptedException e) {return;}
 		}

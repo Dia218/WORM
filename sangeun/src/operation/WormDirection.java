@@ -7,7 +7,8 @@ import screen.GameField;
 
 //똠치가 제작함
 public class WormDirection {
-
+	
+	
 	//지렁이 움직이는 위치
 	public Direction direction;
 	public boolean isReverse = false;
@@ -15,11 +16,13 @@ public class WormDirection {
 	//없어도 될것
 	private boolean gameOver = false;
 
-	private int headX,headY,itemX,itemY,size,score,speed;
+	private int headX,headY,itemX,itemY,size,score;
 
 	private boolean permitRotation;
 	
-	
+	public enum Direction {
+		NONE, RIGHT, LEFT, UP, DOWN
+	}
 	
 	//움직일 때
 	public WormDirection() {
@@ -28,19 +31,15 @@ public class WormDirection {
 		this.headY=12;
 		this.size=0;
 		this.score = 0;
+		this.direction = Direction.NONE;
 		
 		//없어도 될것
 		this.gameOver = false;
-		
 		this.permitRotation = true;
-		this.speed = 150;
 		
 		//동작 확인
 		System.out.println("방향 전환 실행");
 
-		Worm worm = new Worm(1, 1);
-		Thread wormevent = new Thread(new WormEvent(worm));
-		wormevent.start();
 	}
 
 	//위치 return
@@ -61,10 +60,6 @@ public class WormDirection {
 
 	public boolean isGameOver() {
 		return gameOver;
-	}
-	
-	public int getSpeed() {
-		return speed;
 	}
 
 	public boolean isPermitRotation() {
