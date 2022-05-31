@@ -35,7 +35,9 @@ public class InputKey extends KeyAdapter {
 		super.keyPressed(e);
 		
 		int keyCode = e.getKeyCode();
-		
+
+		//키 입력을 한번 받았을 때
+		if(ManageElement.elementManager.wormDirection.getKeyPressed() == true) return;
 		//입력된 키를 체크해서 ?
 		switch (keyCode) {
 		
@@ -48,7 +50,10 @@ public class InputKey extends KeyAdapter {
 			//혼란 아이템을 먹고 키입력을 반대로 받는 메소드가 true가 될 때
 			else if(ManageElement.elementManager.wormDirection.getisReverse() == true) {
 				Log("Right Key");
+				//Direction을 RIGHT 로 설정
 				ManageElement.elementManager.wormDirection.setDirection(Direction.RIGHT);
+				//키입력 여부를 true로 설정
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
@@ -57,6 +62,7 @@ public class InputKey extends KeyAdapter {
 			else {
 				Log("Left Key");
 				ManageElement.elementManager.wormDirection.setDirection(Direction.LEFT);
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;
@@ -72,6 +78,7 @@ public class InputKey extends KeyAdapter {
 			else if(ManageElement.elementManager.wormDirection.getisReverse() == true) {
 				Log("DOWN Key");
 				ManageElement.elementManager.wormDirection.setDirection(Direction.DOWN);
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
@@ -80,6 +87,7 @@ public class InputKey extends KeyAdapter {
 			else {
 				Log("Up Key");
 				ManageElement.elementManager.wormDirection.setDirection(Direction.UP);
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;
@@ -95,6 +103,7 @@ public class InputKey extends KeyAdapter {
 			else if(ManageElement.elementManager.wormDirection.getisReverse() == true) {
 				Log("LEFT Key");
 				ManageElement.elementManager.wormDirection.setDirection(Direction.LEFT);
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
@@ -103,6 +112,7 @@ public class InputKey extends KeyAdapter {
 			else {
 				Log("Right Key");
 				ManageElement.elementManager.wormDirection.setDirection(Direction.RIGHT);
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;
@@ -118,6 +128,7 @@ public class InputKey extends KeyAdapter {
 			else if(ManageElement.elementManager.wormDirection.getisReverse() == true) {
 				Log("UP Key");
 				ManageElement.elementManager.wormDirection.setDirection(Direction.UP);
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 			}
@@ -126,6 +137,7 @@ public class InputKey extends KeyAdapter {
 			else {
 				Log("Down Key");
 				ManageElement.elementManager.wormDirection.setDirection(Direction.DOWN);
+				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
 				//im.LeftKeyPressed();
 				break;

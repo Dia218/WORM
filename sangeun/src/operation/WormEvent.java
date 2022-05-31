@@ -11,7 +11,7 @@ import screen.*;
 public class WormEvent extends Thread {
 	
 	//지렁이 이동속도 (1000은 임시)
-	int wormSpeed = 1000;
+	int wormSpeed = 100;
 	WormDirection wormDirection = ManageElement.elementManager.wormDirection;
 	
 	public WormEvent() {
@@ -23,19 +23,22 @@ public class WormEvent extends Thread {
 		while(true) {
 			try {
 				Thread.sleep(wormSpeed);
-				switch(wormDirection.getDirection()) {
-				case NONE: 
-					System.out.println(wormDirection.getDirection() + "호출"); break;
-				case RIGHT: 
-					System.out.println(wormDirection.getDirection() + "호출"); break;
-				case LEFT: 
-					System.out.println(wormDirection.getDirection() + "호출"); break;
-				case UP: 
-					System.out.println(wormDirection.getDirection() + "호출"); break;
-				case DOWN: 
-					System.out.println(wormDirection.getDirection() + "호출"); break;
+				if(wormDirection.getIsMove() == true) {
+					switch(wormDirection.getDirection()) {
+					case RIGHT: 
+						System.out.println(wormDirection.getDirection() + "호출"); break;
+					case LEFT: 
+						System.out.println(wormDirection.getDirection() + "호출"); break;
+					case UP: 
+						System.out.println(wormDirection.getDirection() + "호출"); break;
+					case DOWN: 
+						System.out.println(wormDirection.getDirection() + "호출"); break;
+					}
 				}
-				System.out.println(wormDirection.getDirection());
+				else {
+					System.out.println(wormDirection.getIsMove());
+				}
+				wormDirection.setKeyPressed(false);
 			}
 			catch(InterruptedException e) {return;}
 		}

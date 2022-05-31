@@ -11,18 +11,21 @@ public class WormDirection {
 	
 	//지렁이 움직이는 위치
 	public Direction direction;
+	//지렁이 움직임 역방향 변수
 	public boolean isReverse = false;
-	
-	//없어도 될것
-	private boolean gameOver = false;
+	//지렁이 움직임 감지 변수
+	public boolean isMove = false;
+	//키입력 여부 변수
+	public boolean keyPressed = false;
+
+	public enum Direction {
+		RIGHT, LEFT, UP, DOWN
+	}
 
 	private int headX,headY,itemX,itemY,size,score;
 
 	private boolean permitRotation;
 	
-	public enum Direction {
-		NONE, RIGHT, LEFT, UP, DOWN
-	}
 	
 	//움직일 때
 	public WormDirection() {
@@ -31,10 +34,8 @@ public class WormDirection {
 		this.headY=12;
 		this.size=0;
 		this.score = 0;
-		this.direction = Direction.NONE;
 		
 		//없어도 될것
-		this.gameOver = false;
 		this.permitRotation = true;
 		
 		//동작 확인
@@ -58,11 +59,26 @@ public class WormDirection {
 		return isReverse;
 	}
 
-	public boolean isGameOver() {
-		return gameOver;
-	}
-
 	public boolean isPermitRotation() {
 		return permitRotation;
+	}
+	
+	//움직임 여부 설정 메소드
+	public void setIsMove(boolean isMove) {
+		this.isMove = isMove;
+	}
+	
+	//움직임 여부 return 메소드
+	public boolean getIsMove() {
+		return isMove;
+	}
+	
+	//키입력 여부 설정 메소드
+	public void setKeyPressed(boolean keyPressed) {
+		this.keyPressed = keyPressed;
+	}
+	
+	public boolean getKeyPressed() {
+		return keyPressed;
 	}
 }
