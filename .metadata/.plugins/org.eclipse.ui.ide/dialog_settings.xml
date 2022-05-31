@@ -6,12 +6,15 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< HEAD
 			<item value="C:\Users\koreamms\eclipse-workspace\project\WormGame"/>
 			<item value="C:\Users\koreamms\eclipse-workspace\project\WormMoveTest"/>
 			<item value="C:\Users\koreamms\eclipse-workspace\project\test_worm2"/>
 			<item value="C:\Users\koreamms\eclipse-workspace\project\kimteawom"/>
 			<item value="C:\Users\koreamms\eclipse-workspace\project\Test_worm"/>
 			<item value="C:\Users\koreamms\eclipse-workspace\project\sangeun"/>
+=======
+>>>>>>> ac7a3505b788a83f04fadd376e2082a35ec7b797
 			<item value="D:\dia\TEAM\java-team\sangeun"/>
 		</list>
 	</section>

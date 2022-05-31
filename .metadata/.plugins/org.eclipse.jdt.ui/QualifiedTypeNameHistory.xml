@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="team.Element"/>
     <fullyQualifiedTypeName name="screen.GameOver"/>
     <fullyQualifiedTypeName name="operation.WormDirection"/>
     <fullyQualifiedTypeName name="operation.WormDirection.Direction"/>
     <fullyQualifiedTypeName name="operation.WormEvent"/>
     <fullyQualifiedTypeName name="operation.ManageElement"/>
+=======
+    <fullyQualifiedTypeName name="operation.WormEvent"/>
+>>>>>>> ac7a3505b788a83f04fadd376e2082a35ec7b797
 </qualifiedTypeNameHistroy>
