@@ -30,8 +30,13 @@ public interface CreateElement {
 		
 		//지렁이 작동 생성
 		ManageElement.elementManager.wormDirection = new WormDirection();
+<<<<<<< HEAD
 		WormEvent wormEvent = new WormEvent();
 		wormEvent.start();
+=======
+		//InputKey inputKey = new InputKey(wormDirection);
+		//WormEvent wormEvent = new WormEvent(wormDirection);
+>>>>>>> block
 
 		//블록 이닛 호출
 		initBlock();

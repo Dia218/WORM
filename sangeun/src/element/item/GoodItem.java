@@ -11,7 +11,7 @@ public class GoodItem extends Item {
 	
 	public GoodItem(int blockX, int blockY) {
 		super(blockX, blockY);
-		super.color = Color.GREEN;
+		super.color = Color.CYAN;
 		// TODO Auto-generated constructor stub
 		
 		//동작 확인
