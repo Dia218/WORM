@@ -23,11 +23,12 @@ public class Element extends JPanel implements InputKey.InputMethod, Change{
 				try {
 					while(!gaming.isGameOver()) {
 						Thread.sleep(gaming.getSpeed());
-						
-							gaming.tern();
+							
+							gaming.tern(); //방향키 입력받기
 							repaint();
 
 					}
+					
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

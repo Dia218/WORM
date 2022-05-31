@@ -35,7 +35,7 @@ public class Gaming implements ElementFunction{
 		this.direction = Direction.RIGHT;
 		this.obs = new ArrayList<>();
 		this.permitRotation = true;
-		this.speed = 150;
+		this.speed = 500;
 		
 		init();
 		makeEat();
@@ -278,16 +278,16 @@ public class Gaming implements ElementFunction{
 	}
 	
 	private void changeSpeed() {
-		if(size==2)setSpeed(speedchange(10));
-		if(size==4)setSpeed(speedchange(10));
-		if(size==6)setSpeed(speedchange(10));
-		if(size==12)setSpeed(speedchange(10));
-		if(size==16)setSpeed(speedchange(10));
-		if(size==25)setSpeed(speedchange(10));
-		if(size==30)setSpeed(speedchange(10));
-		if(size==40)setSpeed(speedchange(10));
-		if(size==60)setSpeed(speedchange(10));
-		if(size==70)setSpeed(speedchange(10));
+//		if(size==2)setSpeed(speedchange(10));
+//		if(size==4)setSpeed(speedchange(10));
+//		if(size==6)setSpeed(speedchange(10));
+//		if(size==12)setSpeed(speedchange(10));
+//		if(size==16)setSpeed(speedchange(10));
+//		if(size==25)setSpeed(speedchange(10));
+//		if(size==30)setSpeed(speedchange(10));
+//		if(size==40)setSpeed(speedchange(10));
+//		if(size==60)setSpeed(speedchange(10));
+//		if(size==70)setSpeed(speedchange(10));
 		if(getSpeed() <= 150) return;
 	}
 	
@@ -396,7 +396,7 @@ public class Gaming implements ElementFunction{
 			return;
 			
 		}
-			Iterator<Change> its = obs.iterator();
+		Iterator<Change> its = obs.iterator();
 		while(its.hasNext()) {
 			its.next().update();
 		}

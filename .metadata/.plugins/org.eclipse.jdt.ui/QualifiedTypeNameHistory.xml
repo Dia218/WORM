@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="element.Worm"/>
-    <fullyQualifiedTypeName name="element.worm.WormBody"/>
-    <fullyQualifiedTypeName name="operation.ManageElement"/>
-    <fullyQualifiedTypeName name="element.block.TelpoBlock"/>
-</qualifiedTypeNameHistroy>
+<qualifiedTypeNameHistroy/>
