@@ -18,8 +18,7 @@ public class ConfuseItem extends Item {
 	}
 	
 	public static void conpuseEat() {	
-		//어떻게 할까요? -> 시러요 코드 예쁘게 짜줘 엉엉
-		Worm.wormMove();
+		//Worm.wormMove(); -> 직접 움직이지 않음
 	}
 
 }

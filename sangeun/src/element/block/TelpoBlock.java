@@ -27,12 +27,12 @@ public class TelpoBlock extends Block {
 	}
 	
 	
-	//tp 용
+	/*텔레포트 블록 메소드*/
 	public int[] telpoOtherReturn() {
 		return this.telpoOtherXY;
 	}
 	
-	/*텔레포트 블록 메소드*/
+	/*텔레포트 블록 execute 메소드*/
 	@Override
 	public void executeBlock() {
 		// TODO Auto-generated method stub
@@ -42,7 +42,7 @@ public class TelpoBlock extends Block {
 		//다른 블록 좌표로 지렁이 머리를 이동시킨다
 		int telpoXY[] = telpoOtherReturn();
 		ManageElement.elementManager.wormHead.returnWorm().setXY(telpoXY[0], telpoXY[1]);
-		Worm.wormMove();
+		//Worm.wormMove(); -> 텔포는 지렁이를 직접 움직이지 않는다
 	}
 	
 }

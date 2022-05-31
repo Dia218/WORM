@@ -12,6 +12,9 @@ public class BasicBlock extends Block {
 		//동작 확인
 		System.out.println("기본 블록 생성자 호출");
 	}
+	
+	
+	/*기본 블록 execute 메소드*/
 
 	@Override
 	public void executeBlock() {

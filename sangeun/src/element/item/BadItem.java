@@ -21,6 +21,6 @@ public class BadItem extends Item {
 	public static void badItemEat() {
 		GameField.gamefield.removeElement(ManageElement.elementManager.wormHead.returnLastWormBody().returnX(),ManageElement.elementManager.wormHead.returnLastWormBody().returnY());
 		ManageElement.elementManager.wormHead.returnWormVector().remove(ManageElement.elementManager.wormHead.returnWormSize()-1);
-		Worm.wormMove();
+		//Worm.wormMove(); -> 직접 움직이지 않음
 	}
 }

@@ -13,16 +13,14 @@ public class Worm extends Element {
 	
 	protected static int wormHeadXY[] = new int[2]; 
 	
-	/*이상은 추가 - 벡터*/
+	//지렁이 벡터
 	protected static Vector<Worm> wormVector = new Vector<>(15);
 	
 	public Worm(int elementX, int elementY) {
 		super(elementX, elementY);
-	
-			
 		
 		//동작 확인
-		System.out.println("지렁이 만들기");
+		System.out.println("지렁이 생성자 호출");
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -43,7 +41,7 @@ public class Worm extends Element {
 	
 	
 
-	/*이상은 추가 - 벡터*/
+	/*지렁이 벡터 메소드*/
 	public int returnWormSize() {
 		int wormSize = wormVector.size();
 		return wormSize;
@@ -55,7 +53,6 @@ public class Worm extends Element {
 		return wormVector.get(0);
 	}
 	
-	//김태완 추가
 	public Vector returnWormVector() {
 		return this.wormVector;
 	}

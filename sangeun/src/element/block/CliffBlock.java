@@ -14,6 +14,9 @@ public class CliffBlock extends Block {
 		System.out.println("절벽 블록 생성자 호출");
 	}
 
+	
+	/*절벽 블록 execute 메소드*/
+
 	@Override
 	public void executeBlock() {
 		// TODO Auto-generated method stub

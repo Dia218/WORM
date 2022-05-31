@@ -22,7 +22,7 @@ public class GoodItem extends Item {
 		if(ManageElement.elementManager.wormHead.returnWormSize() < 14) {
 			//ManageElement.elementManager.createWormBody(1, 1);
 		}
-		Worm.wormMove();
+		//Worm.wormMove(); -> 직접 움직이지 않음
 		
 }
 	
