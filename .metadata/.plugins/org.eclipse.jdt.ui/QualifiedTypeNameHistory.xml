@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="operation.WormEvent"/>
-    <fullyQualifiedTypeName name="element.Worm"/>
-    <fullyQualifiedTypeName name="element.worm.WormHead"/>
-    <fullyQualifiedTypeName name="screen.GameOver"/>
-</qualifiedTypeNameHistroy>

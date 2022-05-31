@@ -2,6 +2,7 @@ package element.block;
 
 import java.awt.*;
 import element.*;
+import screen.GameOver;
 
 public class CliffBlock extends Block {
 
@@ -20,11 +21,11 @@ public class CliffBlock extends Block {
 	@Override
 	public void executeBlock() {
 		// TODO Auto-generated method stub
-		
+		executeCliffBlock();
 	}
 	private void executeCliffBlock() {
 		//Áö··ÀÌ¸¦ Á×ÀÎ´Ù
-		//new GameOver();
+		new GameOver();
 		//IsGameOver = true;
 	}
 

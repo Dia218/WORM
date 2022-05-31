@@ -68,7 +68,7 @@ public interface MoveElement {
 		
 		//이동 상태 확인 후 체크
 		if (ManageElement.elementManager.wormDirection.getIsMove() == true) {
-			;//checkArea(moveInfo.directXY[0]+moveX, moveInfo.directXY[1]+moveY);
+			checkArea(moveInfo.directXY[0]+moveX, moveInfo.directXY[1]+moveY);
 			}
 		else
 			;
@@ -88,7 +88,7 @@ public interface MoveElement {
 		}
 		//이동할 공간에 들어있는 요소의 메소드 호출
 		else {
-			//ManageElement.elementManager.gamefield.checkElement(areaX, areaY).executeElement();
+			ManageElement.elementManager.gamefield.checkElement(areaX, areaY).executeElement();
 		}
 	}
 	
