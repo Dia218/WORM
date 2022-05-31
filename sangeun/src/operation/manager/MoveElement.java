@@ -25,23 +25,23 @@ public interface MoveElement {
 
 	private void moveWormHead() {
 		//현재 머리 좌표 저장
-		moveInfo.indexXY[0] = moveInfo.wormHead.returnX();
-		moveInfo.indexXY[1] = moveInfo.wormHead.returnY();
+		moveInfo.indexXY[0] = ManageElement.elementManager.wormHead.returnX();
+		moveInfo.indexXY[1] = ManageElement.elementManager.wormHead.returnY();
 		
 		//게임 필드에서 삭제
-		ManageElement.elementManager.gamefield.removeElement(moveInfo.wormHead.returnX(), moveInfo.wormHead.returnY());
+		ManageElement.elementManager.gamefield.removeElement(ManageElement.elementManager.wormHead.returnX(), ManageElement.elementManager.wormHead.returnY());
 		
 		//지렁이 머리의 좌표 설정
-		moveInfo.wormHead.setXY(moveInfo.directXY[0] + moveInfo.moveXY[0], moveInfo.directXY[1] + moveInfo.moveXY[1]);
+		ManageElement.elementManager.wormHead.setXY(moveInfo.directXY[0] + moveInfo.moveXY[0], moveInfo.directXY[1] + moveInfo.moveXY[1]);
 		
 		//게임 필드에 지렁이 머리 저장
-		ManageElement.elementManager.gamefield.setElement(moveInfo.wormHead);
+		ManageElement.elementManager.gamefield.setElement(ManageElement.elementManager.wormHead);
 	}
 	
 	private void moveWormBody() {
-		for(int index = 1; index < moveInfo.wormHead.returnWormSize(); index++) {
+		for(int index = 1; index < ManageElement.elementManager.wormHead.returnWormSize(); index++) {
 			//지렁이 객체 받아오기
-			Worm worm = moveInfo.wormHead.getWorm(index);
+			Worm worm = ManageElement.elementManager.wormHead.getWorm(index);
 			
 			//지렁이 좌표
 			int x = worm.returnX();
@@ -64,8 +64,8 @@ public interface MoveElement {
 	
 	default void checkMove() {
 		//현재 위치 저장
-		moveInfo.directXY[0] = moveInfo.wormHead.returnX();
-		moveInfo.directXY[1] = moveInfo.wormHead.returnY();
+		moveInfo.directXY[0] = ManageElement.elementManager.wormHead.returnX();
+		moveInfo.directXY[1] = ManageElement.elementManager.wormHead.returnY();
 		
 		//이동 여부 확인
 		//if (ManageElement.elementManager.wormDirection.isMove == true)
@@ -135,9 +135,6 @@ public interface MoveElement {
 }
 
 class MoveInfo {
-	//지렁이 머리 레퍼런스 저장
-	WormHead wormHead = ManageElement.elementManager.wormHead;
-	
 	//0 : x좌표 변화 값, 1 : y좌표 변화 값
 	int moveXY[] = new int[2];
 	
