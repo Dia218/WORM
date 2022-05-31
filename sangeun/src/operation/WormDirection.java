@@ -58,6 +58,10 @@ public class WormDirection {
 	public boolean getisReverse() {
 		return isReverse;
 	}
+	
+	public void setisReverse(boolean isReverse) {
+		this.isReverse = isReverse;
+	}
 
 	public boolean isPermitRotation() {
 		return permitRotation;
