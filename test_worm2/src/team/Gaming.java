@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class Gaming implements ElementFunction{
 	
+	final static Gaming gaming = new Gaming();
 	private int maxSize = Element.maxSize;
 	private final static int MAXSIZE = 100;
 	private int[][] field = new int[maxSize+1][maxSize+1];
@@ -32,7 +33,7 @@ public class Gaming implements ElementFunction{
 		this.size=0;
 		this.score = 0;
 		this.gameOver = false;
-		this.direction = Direction.RIGHT;
+		this.direction = Direction.UP;
 		this.obs = new ArrayList<>();
 		this.permitRotation = true;
 		this.speed = 500;

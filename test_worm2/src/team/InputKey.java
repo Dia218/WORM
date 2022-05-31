@@ -4,7 +4,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 class InputKey extends KeyAdapter{
-		
+	
 		interface InputMethod{
 			void LeftKeyPressed();
 			void RightKeyPressed();
@@ -33,6 +33,7 @@ class InputKey extends KeyAdapter{
 				case 37:
 					Log("Left Key");
 					im.LeftKeyPressed();
+					
 					break;
 				//Up Key
 				case 38:
