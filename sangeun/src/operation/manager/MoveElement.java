@@ -10,6 +10,13 @@ public interface MoveElement {
 	MoveInfo moveInfo = new MoveInfo();
 
 	default void moveWorm() {
+		
+		//이동 여부 확인
+		//if (ManageElement.elementManager.wormDirection.isMove == true)
+		//{머리이동 및 몸통 이동 호출}
+		//else
+		//{아무것도 실행 안함}
+		
 		//지렁이 머리 이동 호출
 		moveWormHead();
 		//지렁이 몸통 이동 호출
@@ -60,6 +67,12 @@ public interface MoveElement {
 		moveInfo.directXY[0] = moveInfo.wormHead.returnX();
 		moveInfo.directXY[1] = moveInfo.wormHead.returnY();
 		
+		//이동 여부 확인
+		//if (ManageElement.elementManager.wormDirection.isMove == true)
+		//{좌표 변화 값 계산 및 공간 메소드 실행}
+		//else
+		//{아무것도 실행 안함}
+		
 		//좌표 변화 값 계산
 		calcMove(moveInfo.moveXY);
 		
@@ -91,15 +104,16 @@ public interface MoveElement {
 		}
 		//이동없음
 		else {
-			moveXY[0] = 0;
-			moveXY[1] = 0;
+			;
 		}
 	}
 	
 	private void checkArea(int areaX, int areaY) {
+		//이동할 공간에 아무것도 없으면 작동 안함
 		if(null == ManageElement.elementManager.gamefield.checkElement(areaX, areaY)) {
 			;
 		}
+		//이동할 공간에 들어있는 요소의 메소드 호출
 		else {
 			//ManageElement.elementManager.gamefield.checkElement(areaX, areaY).executeElement();
 		}
