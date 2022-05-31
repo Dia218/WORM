@@ -17,8 +17,10 @@ public class WormBody extends Worm {
 	      a[1][super.wormSize++]= wormY;
 	      super.setWormXY(a);
 
+
 	      super.color = Color.GREEN;
 	      // TODO Auto-generated constructor stub
+
 
 	      /*이상은 추가 - 벡터*/
 	      wormVector.add(this);

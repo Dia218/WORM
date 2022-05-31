@@ -14,6 +14,10 @@
 <workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1653926753255_0" label="Java Main Sources" name="Java Main Sources"/>
 <workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1653926753263_1" label="Java Test Sources" name="Java Test Sources"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1653926754005_2" label="Window Working Set" name="Aggregate for window 1653926754005"/>
+<<<<<<< HEAD
 >>>>>>> 134a5c3ae77a990dbfce4b054eb82326794a8eea
 >>>>>>> block
+=======
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1653928143659_3" label="창 작업 세트" name="Aggregate for window 1653928143659"/>
+>>>>>>> worm
 </workingSetManager>

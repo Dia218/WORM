@@ -8,6 +8,7 @@ import element.worm.WormBody;
 import element.worm.WormHead;
 import screen.*;
 
+<<<<<<< HEAD
 public class WormEvent extends Thread {
 	
 	//지렁이 이동속도 (1000은 임시)
@@ -69,34 +70,18 @@ public class WormEvent {
 	
 	WormEvent(){
 		Thread thread = new Thread(new Runnable(){
-
-			@Override
-			public void run() {
-				// TODO 자동 생성된 메소드 스텁
-				try {
-					Thread.sleep(500);
-				} catch (InterruptedException e) {
-					// TODO 자동 생성된 catch 블록
-					e.printStackTrace();
-				}
-				finally {
-					new GameOver();
-				}
-			}
-			
-		});
-	}
-	
-	
-	tern tern = new tern();
 =======
-/*
-public class WormEvent extends Thread {
+>>>>>>> worm
+
+
 	
+	
+
+
+public class WormEvent extends Thread {
+	tern tern = new tern();	
 	WormDirection wormDirection = new WormDirection();
 	
->>>>>>> 9792229385d67fbd23921367b7154d5cf8b478ff
->>>>>>> worm
 	public void event() {
 		try { 
 			for(int i = 0 ; i < 10 ; i++){
@@ -152,10 +137,6 @@ public class WormEvent extends Thread {
 			
 		
 	}
-	
-<<<<<<< HEAD
-	
-=======
 	public static void wormMove() {
 		System.out.println("지렁이 무브");
 		//지렁이 움직이는 알고리즘
@@ -188,19 +169,12 @@ public class WormEvent extends Thread {
 		wormBody.setdo(Worm.bodyXY[0][0], Worm.bodyXY[1][0]);
 		GameField.gamefield.setElement(wormHead);
 		//여기까지
-	}
->>>>>>> 9792229385d67fbd23921367b7154d5cf8b478ff
 	
-
-	
-<<<<<<< HEAD
 
 }
-=======
 	public static void badItemEat() {
 		GameField.gamefield.removeElement(Worm.bodyXY[0][Worm.size-1], Worm.bodyXY[1][Worm.size-1]);
 		Worm.size--;
 	}
-}*/
-
+}
 
