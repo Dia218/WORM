@@ -1,98 +1,78 @@
 package operation;
 
-//똠치가 제작함
+import javax.swing.event.*;
+
+import element.Worm;
+import element.block.TelpoBlock;
+import element.worm.WormBody;
+import element.worm.WormHead;
+import screen.*;
+
 public class WormEvent extends Thread {
-	tern tern = new tern();
-	public void event() {
-		try { 
-			for(int i = 0 ; i < 10 ; i++){
-				Thread.sleep(500);
+	
+	//지렁이 이동속도 (1000은 임시)
+	int wormSpeed = 120;
+
+	WormDirection wormDirection = ManageElement.elementManager.wormDirection;
+	
+	public WormEvent() {
+	}
+	
+	@Override
+	public void run() {
+
+		while(true) {
+			try {
+				Thread.sleep(wormSpeed);
+				if(wormDirection.getIsMove() == true) {
+					switch(wormDirection.getDirection()) {
+					//오른쪽 : x+1, y
+					case RIGHT: 
+						ManageElement.elementManager.checkMove(+1, 0);
+						ManageElement.elementManager.moveWorm(+1, 0);
+						System.out.println(wormDirection.getDirection() + "호출"); 
+						break;
+					//왼쪽 : x-1, y
+					case LEFT: 
+						ManageElement.elementManager.checkMove(-1, 0);
+						ManageElement.elementManager.moveWorm(-1, 0);
+						System.out.println(wormDirection.getDirection() + "호출"); 
+						break;
+					//위쪽 : x, y+1
+					case UP:
+						ManageElement.elementManager.checkMove(0, -1);
+						ManageElement.elementManager.moveWorm(0, -1);
+						System.out.println(wormDirection.getDirection() + "호출"); 
+						break;
+					//아래쪽 : x, y-1
+					case DOWN:
+						ManageElement.elementManager.checkMove(0, +1);						
+						ManageElement.elementManager.moveWorm(0, +1);
+						System.out.println(wormDirection.getDirection() + "호출"); 
+						break;
+					}
 				}
-		}catch(InterruptedException e) {
-			System.out.println(e);
+				else {
+					System.out.println(wormDirection.getIsMove());
+				}
+				wormDirection.setKeyPressed(false);
+				wormDirection.setIsMove(true);
+				if( ManageElement.elementManager.returnisGameOver()) {
+					break;
+				}
+			}
+			catch(InterruptedException e) {return;}
 		}
-		Thread thread = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					while(!tern.isGameOver()) {
-						Thread.sleep(tern.getSpeed());
-						
-						tern.tern();
-							
-
-					}
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				//게임 오버
-				/*
-				finally{
-						try {
-							//게임 오버쪽에서 해야 하는 일
-							//for(int p =0;p<maxSize+1;p++) {
-								//Thread.sleep(100);
-								//tern.GameOverScreen(p);
-								//repaint();
-							//}
-							} 
-						catch (InterruptedException e) {
-							// TODO 자동 생성된 catch 블록
-							e.printStackTrace();
-						}
-						finally {
-							//게임  오버쪽에서 해야 하는 일
-							//tern.end = true;
-							//tern.endGame();
-							//repaint();
-						}
-					}
-				*/
-				}
-				
-			
-		});
-		thread.start();
-		
 	}
 	
-
-	@Override
-	public void LeftKeyPressed() {
+	//지렁이 이동속도 return 메소드
+	public int getWormSpeed() {
+		return wormSpeed;
+	}
 	
-			if(tern.getDirection().equals(tern.Direction.RIGHT))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.LEFT);
-		
-		
+	//지렁이 이동속도 설정 메소드
+	public void setWormSpeed(int i) {
+		wormSpeed += i;
 	}
-
-	@Override
-	public void RightKeyPressed() {
-		if(tern.getDirection().equals(tern.Direction.LEFT))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.RIGHT);
-		
-			
-	}
-
-	@Override
-	public void UpKeyPressed() {
-
-			if(tern.getDirection().equals(tern.Direction.DOWN))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.UP);
-
-	}
-
-	@Override
-	public void DownKeyPressed() {
-			if(tern.getDirection().equals(tern.Direction.UP))return;
-			if(tern.isPermitRotation())
-				tern.setDirection(tern.Direction.DOWN);
-		
-			
-		
-	}
+	
 }
-
