@@ -65,6 +65,7 @@ public class WormEvent extends Thread {
 		}
 	}
 	
+	
 	//지렁이 이동속도 return 메소드
 	public int getWormSpeed() {
 		return wormSpeed;
