@@ -19,11 +19,7 @@ public class GoodItem extends Item {
 	}
 	
 	public static void goodItemEat() {
-<<<<<<< HEAD
-		if(ManageElement.elementManager.wormHead.returnWormSize() < 99) {
-=======
 		if(ManageElement.elementManager.wormHead.returnWormSize() < 29) {
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
 			ManageElement.elementManager.createWormBody(1, 1);
 		}
 		System.out.print("좋은 아이템을 먹었어");

@@ -6,9 +6,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-<<<<<<< HEAD
-			<item value="C:\Users\Lee Dongheon\workspace2\kimteawom"/>
 			<item value="C:\Users\Lee Dongheon\workspace2"/>
+			<item value="C:\Users\koreamms\eclipse-workspace\project\kimteawom"/>
 		</list>
 	</section>
 	<section name="ExternalProjectImportWizard">
@@ -18,13 +17,10 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\Lee Dongheon\workspace2"/>
+			<item value="C:\Users\Lee Dongheon\workspace2\kimteawom"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
-=======
-			<item value="C:\Users\koreamms\eclipse-workspace\project\kimteawom"/>
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
 		</list>
 	</section>
 </section>

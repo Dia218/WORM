@@ -2,8 +2,4 @@
 <<<<<<<=HEAD
 >>>>>>>=main
 eclipse.preferences.version=1
-<<<<<<< HEAD
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1654004572098" defaultVMConnector\="">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1654004572098" name\="jdk-17.0.2" path\="C\:\\Program Files\\Java\\jdk-17.0.2"/>\r\n    </vmType>\r\n</vmSettings>\r\n
-=======
-org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1654025125690" defaultVMConnector\="">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1654025125690" name\="jre" path\="C\:\\Users\\koreamms\\Desktop\\\uD504\uB85C\uADF8\uB798\uBC0D \uB3C4\uAD6C\\eclipse\\plugins\\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.1.v20211116-1657\\jre"/>\r\n    </vmType>\r\n</vmSettings>\r\n
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
+org.eclipse.jdt.launching.PREF_VM_XML=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<vmSettings defaultVM\="57,org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType13,1654076777744" defaultVMConnector\="">\r\n    <vmType id\="org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType">\r\n        <vm id\="1654076777744" name\="jdk-17.0.2" path\="C\:\\Program Files\\Java\\jdk-17.0.2"/>\r\n    </vmType>\r\n</vmSettings>\r\n

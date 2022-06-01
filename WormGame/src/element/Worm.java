@@ -9,18 +9,8 @@ import screen.GameField;
 
 public abstract class Worm extends Element {
 
-<<<<<<< HEAD
-	private static int wormXY[][] = new int[2][100];
-	public static int wormSize = 0;
-	
-	protected static int wormHeadXY[] = new int[2]; 
-	
-	//¡ˆ∑∑¿Ã ∫§≈Õ
-	protected static Vector<Worm> wormVector = new Vector<>(100);
-=======
 	//¡ˆ∑∑¿Ã ∫§≈Õ
 	protected static Vector<Worm> wormVector = new Vector<>(30);
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
 	
 	public Worm(int elementX, int elementY) {
 		super(elementX, elementY);

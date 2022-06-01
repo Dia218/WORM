@@ -21,28 +21,11 @@ public class WormDirection {
 	public enum Direction {
 		RIGHT, LEFT, UP, DOWN
 	}
-<<<<<<< HEAD
-=======
-
-	private int headX,headY,itemX,itemY,size,score;
-
-
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
-	
 	
 	//움직일 때
 	public WormDirection() {
 		
-<<<<<<< HEAD
-=======
-		this.headX=12;
-		this.headY=12;
-		this.size=0;
-		this.score = 0;
 		
-
-		
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
 		//방향 초기 설정
 		direction = Direction.RIGHT;
 		
@@ -59,10 +42,7 @@ public class WormDirection {
 	//위치 설정 메소드
 	public void setDirection(Direction direction) {
 		this.direction = direction;
-<<<<<<< HEAD
-=======
 		
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
 	}
 	
 	//방향 입력 반대 여부 return
@@ -72,11 +52,7 @@ public class WormDirection {
 	public void setisReverse(boolean bool) {
 		isReverse = bool;
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 10bd8a1447f4220a256e2ed433d4ccfe307ef84c
 	//움직임 여부 설정 메소드
 	public void setIsMove(boolean isMove) {
 		this.isMove = isMove;

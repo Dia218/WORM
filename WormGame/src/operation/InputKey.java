@@ -9,7 +9,7 @@ import operation.WormDirection.Direction;
 
 public class InputKey extends KeyAdapter {
 	
-
+	
 	public InputKey() {
 	}
 	
