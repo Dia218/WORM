@@ -6,7 +6,7 @@ import operation.ManageElement;
 public abstract class Worm extends Element {
 
 	//지렁이 벡터
-	protected static Vector<Worm> wormVector = new Vector<>(15);
+	protected static Vector<Worm> wormVector = new Vector<>(30);
 	
 	public Worm(int elementX, int elementY) {
 		super(elementX, elementY);
@@ -31,10 +31,10 @@ public abstract class Worm extends Element {
 	public Worm returnLastWormBody() {
 		return wormVector.get(wormVector.size()-1);
 	}
-	public Worm lastWormBodyDelete() {
-		return wormVector.remove(ManageElement.elementManager.wormHead.returnWormSize()-1);
+	public void lastWormBodyDelete() {
+		wormVector.remove(ManageElement.elementManager.wormHead.returnWormSize()-1);
 	}
-	
+
 	public void executeElement() {
 		// TODO 자동 생성된 메소드 스텁
 		executeWorm();

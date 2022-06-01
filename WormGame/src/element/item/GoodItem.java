@@ -17,7 +17,7 @@ public class GoodItem extends Item {
 	}
 	
 	public static void goodItemEat() {
-		if(ManageElement.elementManager.wormHead.returnWormSize() < 14) {
+		if(ManageElement.elementManager.wormHead.returnWormSize() < 29) {
 			ManageElement.elementManager.createWormBody(1, 1);
 		}
 		System.out.print("좋은 아이템을 먹었다");	
