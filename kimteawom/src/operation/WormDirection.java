@@ -22,21 +22,9 @@ public class WormDirection {
 		RIGHT, LEFT, UP, DOWN
 	}
 	
-	private int headX,headY,itemX,itemY,size,score;
-
-	private boolean permitRotation;
-	
 	
 	//움직일 때
 	public WormDirection() {
-		
-		this.headX=12;
-		this.headY=12;
-		this.size=0;
-		this.score = 0;
-		
-		//없어도 될것
-		this.permitRotation = true;
 		
 		//방향 초기 설정
 		direction = Direction.RIGHT;
@@ -54,19 +42,14 @@ public class WormDirection {
 	//위치 설정 메소드
 	public void setDirection(Direction direction) {
 		this.direction = direction;
-		this.permitRotation = false;
 	}
 	
 	//방향 입력 반대 여부 return
 	public boolean getisReverse() {
 		return isReverse;
 	}
-	
 	public void setisReverse(boolean bool) {
 		isReverse = bool;
-	}
-	public boolean isPermitRotation() {
-		return permitRotation;
 	}
 	
 	//움직임 여부 설정 메소드

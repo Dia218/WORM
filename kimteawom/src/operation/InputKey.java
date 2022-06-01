@@ -9,15 +9,7 @@ import operation.WormDirection.Direction;
 
 public class InputKey extends KeyAdapter {
 	
-	
-	interface InputMethod {
-		void LeftKeyPressed();
-		void RightKeyPressed();
-		void UpKeyPressed();
-		void DownKeyPressed();
-	}
-	
-	private InputMethod im;
+
 	public InputKey() {
 	}
 	
@@ -55,7 +47,6 @@ public class InputKey extends KeyAdapter {
 				//키입력 여부를 true로 설정
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 			
@@ -65,7 +56,6 @@ public class InputKey extends KeyAdapter {
 				ManageElement.elementManager.wormDirection.setDirection(Direction.LEFT);
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 			
@@ -81,7 +71,6 @@ public class InputKey extends KeyAdapter {
 				ManageElement.elementManager.wormDirection.setDirection(Direction.DOWN);
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 
@@ -91,7 +80,6 @@ public class InputKey extends KeyAdapter {
 				ManageElement.elementManager.wormDirection.setDirection(Direction.UP);
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 			
@@ -107,7 +95,6 @@ public class InputKey extends KeyAdapter {
 				ManageElement.elementManager.wormDirection.setDirection(Direction.LEFT);
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 
@@ -117,7 +104,6 @@ public class InputKey extends KeyAdapter {
 				ManageElement.elementManager.wormDirection.setDirection(Direction.RIGHT);
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 			
@@ -133,7 +119,6 @@ public class InputKey extends KeyAdapter {
 				ManageElement.elementManager.wormDirection.setDirection(Direction.UP);
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 
@@ -143,7 +128,6 @@ public class InputKey extends KeyAdapter {
 				ManageElement.elementManager.wormDirection.setDirection(Direction.DOWN);
 				ManageElement.elementManager.wormDirection.setKeyPressed(true);
 				System.out.println(ManageElement.elementManager.wormDirection.getDirection());
-				//im.LeftKeyPressed();
 				break;
 			}
 			

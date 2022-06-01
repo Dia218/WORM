@@ -9,13 +9,13 @@ import screen.GameField;
 
 public abstract class Worm extends Element {
 
-	private static int wormXY[][] = new int[2][15];
+	private static int wormXY[][] = new int[2][100];
 	public static int wormSize = 0;
 	
 	protected static int wormHeadXY[] = new int[2]; 
 	
 	//¡ˆ∑∑¿Ã ∫§≈Õ
-	protected static Vector<Worm> wormVector = new Vector<>(15);
+	protected static Vector<Worm> wormVector = new Vector<>(100);
 	
 	public Worm(int elementX, int elementY) {
 		super(elementX, elementY);
