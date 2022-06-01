@@ -291,7 +291,7 @@ public interface CreateElement {
 	}
 	
 	//생성된 사이즈가 올바른지 테스트 하는 메소드
-	private Boolean testSize(int randXY[], int sizeWL[]) {
+	private boolean testSize(int randXY[], int sizeWL[]) {
 		//동작 확인
 		System.out.println("블록 사이즈 테스트 호출");
 		
