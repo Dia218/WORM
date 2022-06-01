@@ -14,10 +14,6 @@ public class WormBody extends Worm {
 	   }
 	   public WormBody(int wormX, int wormY) {
 	      super(wormX,wormY);
-	      int [][] a = super.getWormXY();
-	      a[0][super.wormSize]= wormX;
-	      a[1][super.wormSize++]= wormY;
-	      super.setWormXY(a);
 
 
 	      super.color = Color.GREEN;
