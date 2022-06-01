@@ -246,7 +246,6 @@ public interface CreateElement {
 
 	default void createWormBody(int x, int y) {
 		WormBody wormBody = new WormBody(x, y);
-		//GameField.gamefield.setElement(wormBody);
 
 	}
 
@@ -302,7 +301,7 @@ public interface CreateElement {
 		//좌표를 돌아가면서 검사
 
 
-		int x = randXY[0];int y =0;
+		int x = 0; int y = 0;
 
 		
 		for(x = randXY[0]; x <= randXY[0]+sizeWL[0]-1; x++) {
